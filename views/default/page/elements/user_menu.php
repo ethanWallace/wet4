@@ -45,14 +45,19 @@ elgg_register_menu_item('user_menu_subMenu', array(
 $dropdown = elgg_view_menu('user_menu_subMenu', array('class' => 'dropdown-menu pull-right subMenu'));
 
 
+//create initial badge
+$email = get_loggedin_user()->email;
+$breakup = explode('.', $email);
+$initials = substr($breakup[0], 0, 1) . substr($breakup[1], 0, 1);
+
 //create user menu
 elgg_register_menu_item('user_menu', array(
-    'name' => elgg_echo('user_menu:profile'),
+    'name' => 'Profile',
     'href' => $site_url . 'profile/' . $user,
-    'text' => 'Profile',
+    'text' => '<span class="badge">' . strtoupper($initials) . '</span>' . $user,
     'title' => 'My Profile',
     'item_class' => 'brdr-rght',
-    'class' => 'profile-avatar',
+    'class' => '',
     'priority' => '1',
     ));
 

@@ -26,10 +26,6 @@ function wet4_theme_init() {
 	}
     
     
-    
-    
-    
-    
 }
 
 /**
