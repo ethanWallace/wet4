@@ -1,13 +1,13 @@
 /*!
  * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
- * v4.0.18 - 2015-09-24
+ * v4.0.12 - 2015-03-23
  *
  *//*! Modernizr (Custom Build) | MIT & BSD */
 /* Modernizr (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-elem_details-elem_progress_meter-mathml-cors-load-mq-css3-input-inputtypes-svg-cssclasses-csstransitions-fontface-backgroundsize-borderimage-teststyles-testprops-testallprops-hasevents-prefixes-domprefixes
  */
-;window.Modernizr=function(e,t,n){function L(e){f.cssText=e}function A(e,t){return L(p.join(e+";")+(t||""))}function O(e,t){return typeof e===t}function M(e,t){return!!~(""+e).indexOf(t)}function _(e,t){for(var r in e){var i=e[r];if(!M(i,"-")&&f[i]!==n)return t=="pfx"?i:!0}return!1}function D(e,t,r){for(var i in e){var s=t[e[i]];if(s!==n)return r===!1?e[i]:O(s,"function")?s.bind(r||t):s}return!1}function P(e,t,n){var r=e.charAt(0).toUpperCase()+e.slice(1),i=(e+" "+v.join(r+" ")+r).split(" ");return O(t,"string")||O(t,"undefined")?_(i,t):(i=(e+" "+m.join(r+" ")+r).split(" "),D(i,t,n))}function H(){i.input=function(n){for(var r=0,i=n.length;r<i;r++)w[n[r]]=n[r]in l;return w.list&&(w.list=!!t.createElement("datalist")&&!!e.HTMLDataListElement),w}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" ")),i.inputtypes=function(e){for(var r=0,i,s,u,a=e.length;r<a;r++)l.setAttribute("type",s=e[r]),i=l.type!=="text",i&&(l.value=c,l.style.cssText="position:absolute;visibility:hidden;",/^range$/.test(s)&&l.style.WebkitAppearance!==n?(o.appendChild(l),u=t.defaultView,i=u.getComputedStyle&&u.getComputedStyle(l,null).WebkitAppearance!=="textfield"&&l.offsetHeight!==0,o.removeChild(l)):/^(search|tel)$/.test(s)||(/^(url|email)$/.test(s)?i=l.checkValidity&&l.checkValidity()===!1:i=l.value!=c)),b[e[r]]=!!i;return b}("search tel url email datetime date month week time datetime-local number range color".split(" "))}var r="2.8.3",i={},s=!0,o=t.documentElement,u="modernizr",a=t.createElement(u),f=a.style,l=t.createElement("input"),c=":)",h={}.toString,p=" -webkit- -moz- -o- -ms- ".split(" "),d="Webkit Moz O ms",v=d.split(" "),m=d.toLowerCase().split(" "),g={svg:"http://www.w3.org/2000/svg"},y={},b={},w={},E=[],S=E.slice,x,T=function(e,n,r,i){var s,a,f,l,c=t.createElement("div"),h=t.body,p=h||t.createElement("body");if(parseInt(r,10))while(r--)f=t.createElement("div"),f.id=i?i[r]:u+(r+1),c.appendChild(f);return s=["&#173;",'<style id="s',u,'">',e,"</style>"].join(""),c.id=u,(h?c:p).innerHTML+=s,p.appendChild(c),h||(p.style.background="",p.style.overflow="hidden",l=o.style.overflow,o.style.overflow="hidden",o.appendChild(p)),a=n(c,e),h?c.parentNode.removeChild(c):(p.parentNode.removeChild(p),o.style.overflow=l),!!a},N=function(t){var n=e.matchMedia||e.msMatchMedia;if(n)return n(t)&&n(t).matches||!1;var r;return T("@media "+t+" { #"+u+" { position: absolute; } }",function(t){r=(e.getComputedStyle?getComputedStyle(t,null):t.currentStyle)["position"]=="absolute"}),r},C={}.hasOwnProperty,k;!O(C,"undefined")&&!O(C.call,"undefined")?k=function(e,t){return C.call(e,t)}:k=function(e,t){return t in e&&O(e.constructor.prototype[t],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(t){var n=this;if(typeof n!="function")throw new TypeError;var r=S.call(arguments,1),i=function(){if(this instanceof i){var e=function(){};e.prototype=n.prototype;var s=new e,o=n.apply(s,r.concat(S.call(arguments)));return Object(o)===o?o:s}return n.apply(t,r.concat(S.call(arguments)))};return i}),y.backgroundsize=function(){return P("backgroundSize")},y.borderimage=function(){return P("borderImage")},y.csstransitions=function(){return P("transition")},y.fontface=function(){var e;return T('@font-face {font-family:"font";src:url("https://")}',function(n,r){var i=t.getElementById("smodernizr"),s=i.sheet||i.styleSheet,o=s?s.cssRules&&s.cssRules[0]?s.cssRules[0].cssText:s.cssText||"":"";e=/src/i.test(o)&&o.indexOf(r.split(" ")[0])===0}),e},y.svg=function(){return!!t.createElementNS&&!!t.createElementNS(g.svg,"svg").createSVGRect};for(var B in y)k(y,B)&&(x=B.toLowerCase(),i[x]=y[B](),E.push((i[x]?"":"no-")+x));return i.input||H(),i.addTest=function(e,t){if(typeof e=="object")for(var r in e)k(e,r)&&i.addTest(r,e[r]);else{e=e.toLowerCase();if(i[e]!==n)return i;t=typeof t=="function"?t():t,typeof s!="undefined"&&s&&(o.className+=" "+(t?"":"no-")+e),i[e]=t}return i},L(""),a=l=null,i._version=r,i._prefixes=p,i._domPrefixes=m,i._cssomPrefixes=v,i.mq=N,i.testProp=function(e){return _([e])},i.testAllProps=P,i.testStyles=T,o.className=o.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(s?" js "+E.join(" "):""),i}(this,this.document),function(e,t,n){function r(e){return"[object Function]"==d.call(e)}function i(e){return"string"==typeof e}function s(){}function o(e){return!e||"loaded"==e||"complete"==e||"uninitialized"==e}function u(){var e=v.shift();m=1,e?e.t?h(function(){("c"==e.t?k.injectCss:k.injectJs)(e.s,0,e.a,e.x,e.e,1)},0):(e(),u()):m=0}function a(e,n,r,i,s,a,f){function l(t){if(!d&&o(c.readyState)&&(w.r=d=1,!m&&u(),c.onload=c.onreadystatechange=null,t)){"img"!=e&&h(function(){b.removeChild(c)},50);for(var r in T[n])T[n].hasOwnProperty(r)&&T[n][r].onload()}}var f=f||k.errorTimeout,c=t.createElement(e),d=0,g=0,w={t:r,s:n,e:s,a:a,x:f};1===T[n]&&(g=1,T[n]=[]),"object"==e?c.data=n:(c.src=n,c.type=e),c.width=c.height="0",c.onerror=c.onload=c.onreadystatechange=function(){l.call(this,g)},v.splice(i,0,w),"img"!=e&&(g||2===T[n]?(b.insertBefore(c,y?null:p),h(l,f)):T[n].push(c))}function f(e,t,n,r,s){return m=0,t=t||"j",i(e)?a("c"==t?E:w,e,t,this.i++,n,r,s):(v.splice(this.i++,0,e),1==v.length&&u()),this}function l(){var e=k;return e.loader={load:f,i:0},e}var c=t.documentElement,h=e.setTimeout,p=t.getElementsByTagName("script")[0],d={}.toString,v=[],m=0,g="MozAppearance"in c.style,y=g&&!!t.createRange().compareNode,b=y?c:p.parentNode,c=e.opera&&"[object Opera]"==d.call(e.opera),c=!!t.attachEvent&&!c,w=g?"object":c?"script":"img",E=c?"script":w,S=Array.isArray||function(e){return"[object Array]"==d.call(e)},x=[],T={},N={timeout:function(e,t){return t.length&&(e.timeout=t[0]),e}},C,k;k=function(e){function t(e){var e=e.split("!"),t=x.length,n=e.pop(),r=e.length,n={url:n,origUrl:n,prefixes:e},i,s,o;for(s=0;s<r;s++)o=e[s].split("="),(i=N[o.shift()])&&(n=i(n,o));for(s=0;s<t;s++)n=x[s](n);return n}function o(e,i,s,o,u){var a=t(e),f=a.autoCallback;a.url.split(".").pop().split("?").shift(),a.bypass||(i&&(i=r(i)?i:i[e]||i[o]||i[e.split("/").pop().split("?")[0]]),a.instead?a.instead(e,i,s,o,u):(T[a.url]?a.noexec=!0:T[a.url]=1,s.load(a.url,a.forceCSS||!a.forceJS&&"css"==a.url.split(".").pop().split("?").shift()?"c":n,a.noexec,a.attrs,a.timeout),(r(i)||r(f))&&s.load(function(){l(),i&&i(a.origUrl,u,o),f&&f(a.origUrl,u,o),T[a.url]=2})))}function u(e,t){function n(e,n){if(e){if(i(e))n||(f=function(){var e=[].slice.call(arguments);l.apply(this,e),c()}),o(e,f,t,0,u);else if(Object(e)===e)for(p in h=function(){var t=0,n;for(n in e)e.hasOwnProperty(n)&&t++;return t}(),e)e.hasOwnProperty(p)&&(!n&&!--h&&(r(f)?f=function(){var e=[].slice.call(arguments);l.apply(this,e),c()}:f[p]=function(e){return function(){var t=[].slice.call(arguments);e&&e.apply(this,t),c()}}(l[p])),o(e[p],f,t,p,u))}else!n&&c()}var u=!!e.test,a=e.load||e.both,f=e.callback||s,l=f,c=e.complete||s,h,p;n(u?e.yep:e.nope,!!a),a&&n(a)}var a,f,c=this.yepnope.loader;if(i(e))o(e,0,c,0);else if(S(e))for(a=0;a<e.length;a++)f=e[a],i(f)?o(f,0,c,0):S(f)?k(f):Object(f)===f&&u(f,c);else Object(e)===e&&u(e,c)},k.addPrefix=function(e,t){N[e]=t},k.addFilter=function(e){x.push(e)},k.errorTimeout=1e4,null==t.readyState&&t.addEventListener&&(t.readyState="loading",t.addEventListener("DOMContentLoaded",C=function(){t.removeEventListener("DOMContentLoaded",C,0),t.readyState="complete"},0)),e.yepnope=l(),e.yepnope.executeStack=u,e.yepnope.injectJs=function(e,n,r,i,a,f){var l=t.createElement("script"),c,d,i=i||k.errorTimeout;l.src=e;for(d in r)l.setAttribute(d,r[d]);n=f?u:n||s,l.onreadystatechange=l.onload=function(){!c&&o(l.readyState)&&(c=1,n(),l.onload=l.onreadystatechange=null)},h(function(){c||(c=1,n(1))},i),a?l.onload():p.parentNode.insertBefore(l,p)},e.yepnope.injectCss=function(e,n,r,i,o,a){var i=t.createElement("link"),f,n=a?u:n||s;i.href=e,i.rel="stylesheet",i.type="text/css";for(f in r)i.setAttribute(f,r[f]);o||(p.parentNode.insertBefore(i,p),h(n,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))},Modernizr.addTest("details",function(){var e=document,t=e.createElement("details"),n,r,i;return"open"in t?(r=e.body||function(){var t=e.documentElement;return n=!0,t.insertBefore(e.createElement("body"),t.firstElementChild||t.firstChild)}(),t.innerHTML="<summary>a</summary>b",t.style.display="block",r.appendChild(t),i=t.offsetHeight,t.open=!0,i=i!=t.offsetHeight,r.removeChild(t),n&&r.parentNode.removeChild(r),i):!1}),Modernizr.addTest("progressbar",function(){return document.createElement("progress").max!==undefined}),Modernizr.addTest("meter",function(){return document.createElement("meter").max!==undefined}),Modernizr.addTest("mathml",function(){var e=!1;if(document.createElementNS){var t="http://www.w3.org/1998/Math/MathML",n=document.createElement("div");n.style.position="absolute";var r=n.appendChild(document.createElementNS(t,"math")).appendChild(document.createElementNS(t,"mfrac"));r.appendChild(document.createElementNS(t,"mi")).appendChild(document.createTextNode("xx")),r.appendChild(document.createElementNS(t,"mi")).appendChild(document.createTextNode("yy")),document.body.appendChild(n),e=n.offsetHeight>n.offsetWidth}return e}),Modernizr.addTest("cors",!!(window.XMLHttpRequest&&"withCredentials"in new XMLHttpRequest));
+;window.Modernizr=function(e,t,n){function L(e){f.cssText=e}function A(e,t){return L(p.join(e+";")+(t||""))}function O(e,t){return typeof e===t}function M(e,t){return!!~(""+e).indexOf(t)}function _(e,t){for(var r in e){var i=e[r];if(!M(i,"-")&&f[i]!==n)return t=="pfx"?i:!0}return!1}function D(e,t,r){for(var i in e){var s=t[e[i]];if(s!==n)return r===!1?e[i]:O(s,"function")?s.bind(r||t):s}return!1}function P(e,t,n){var r=e.charAt(0).toUpperCase()+e.slice(1),i=(e+" "+v.join(r+" ")+r).split(" ");return O(t,"string")||O(t,"undefined")?_(i,t):(i=(e+" "+m.join(r+" ")+r).split(" "),D(i,t,n))}function H(){i.input=function(n){for(var r=0,i=n.length;r<i;r++)w[n[r]]=n[r]in l;return w.list&&(w.list=!!t.createElement("datalist")&&!!e.HTMLDataListElement),w}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" ")),i.inputtypes=function(e){for(var r=0,i,s,u,a=e.length;r<a;r++)l.setAttribute("type",s=e[r]),i=l.type!=="text",i&&(l.value=c,l.style.cssText="position:absolute;visibility:hidden;",/^range$/.test(s)&&l.style.WebkitAppearance!==n?(o.appendChild(l),u=t.defaultView,i=u.getComputedStyle&&u.getComputedStyle(l,null).WebkitAppearance!=="textfield"&&l.offsetHeight!==0,o.removeChild(l)):/^(search|tel)$/.test(s)||(/^(url|email)$/.test(s)?i=l.checkValidity&&l.checkValidity()===!1:i=l.value!=c)),b[e[r]]=!!i;return b}("search tel url email datetime date month week time datetime-local number range color".split(" "))}var r="2.8.3",i={},s=!0,o=t.documentElement,u="modernizr",a=t.createElement(u),f=a.style,l=t.createElement("input"),c=":)",h={}.toString,p=" -webkit- -moz- -o- -ms- ".split(" "),d="Webkit Moz O ms",v=d.split(" "),m=d.toLowerCase().split(" "),g={svg:"http://www.w3.org/2000/svg"},y={},b={},w={},E=[],S=E.slice,x,T=function(e,n,r,i){var s,a,f,l,c=t.createElement("div"),h=t.body,p=h||t.createElement("body");if(parseInt(r,10))while(r--)f=t.createElement("div"),f.id=i?i[r]:u+(r+1),c.appendChild(f);return s=["&#173;",'<style id="s',u,'">',e,"</style>"].join(""),c.id=u,(h?c:p).innerHTML+=s,p.appendChild(c),h||(p.style.background="",p.style.overflow="hidden",l=o.style.overflow,o.style.overflow="hidden",o.appendChild(p)),a=n(c,e),h?c.parentNode.removeChild(c):(p.parentNode.removeChild(p),o.style.overflow=l),!!a},N=function(t){var n=e.matchMedia||e.msMatchMedia;if(n)return n(t)&&n(t).matches||!1;var r;return T("@media "+t+" { #"+u+" { position: absolute; } }",function(t){r=(e.getComputedStyle?getComputedStyle(t,null):t.currentStyle)["position"]=="absolute"}),r},C={}.hasOwnProperty,k;!O(C,"undefined")&&!O(C.call,"undefined")?k=function(e,t){return C.call(e,t)}:k=function(e,t){return t in e&&O(e.constructor.prototype[t],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(t){var n=this;if(typeof n!="function")throw new TypeError;var r=S.call(arguments,1),i=function(){if(this instanceof i){var e=function(){};e.prototype=n.prototype;var s=new e,o=n.apply(s,r.concat(S.call(arguments)));return Object(o)===o?o:s}return n.apply(t,r.concat(S.call(arguments)))};return i}),y.backgroundsize=function(){return P("backgroundSize")},y.borderimage=function(){return P("borderImage")},y.csstransitions=function(){return P("transition")},y.fontface=function(){var e;return T('@font-face {font-family:"font";src:url("https://")}',function(n,r){var i=t.getElementById("smodernizr"),s=i.sheet||i.styleSheet,o=s?s.cssRules&&s.cssRules[0]?s.cssRules[0].cssText:s.cssText||"":"";e=/src/i.test(o)&&o.indexOf(r.split(" ")[0])===0}),e},y.svg=function(){return!!t.createElementNS&&!!t.createElementNS(g.svg,"svg").createSVGRect};for(var B in y)k(y,B)&&(x=B.toLowerCase(),i[x]=y[B](),E.push((i[x]?"":"no-")+x));return i.input||H(),i.addTest=function(e,t){if(typeof e=="object")for(var r in e)k(e,r)&&i.addTest(r,e[r]);else{e=e.toLowerCase();if(i[e]!==n)return i;t=typeof t=="function"?t():t,typeof s!="undefined"&&s&&(o.className+=" "+(t?"":"no-")+e),i[e]=t}return i},L(""),a=l=null,i._version=r,i._prefixes=p,i._domPrefixes=m,i._cssomPrefixes=v,i.mq=N,i.testProp=function(e){return _([e])},i.testAllProps=P,i.testStyles=T,o.className=o.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(s?" js "+E.join(" "):""),i}(this,this.document),function(e,t,n){function r(e){return"[object Function]"==d.call(e)}function i(e){return"string"==typeof e}function s(){}function o(e){return!e||"loaded"==e||"complete"==e||"uninitialized"==e}function u(){var e=v.shift();m=1,e?e.t?h(function(){("c"==e.t?k.injectCss:k.injectJs)(e.s,0,e.a,e.x,e.e,1)},0):(e(),u()):m=0}function a(e,n,r,i,s,a,f){function l(t){if(!d&&o(c.readyState)&&(w.r=d=1,!m&&u(),c.onload=c.onreadystatechange=null,t)){"img"!=e&&h(function(){b.removeChild(c)},50);for(var r in T[n])T[n].hasOwnProperty(r)&&T[n][r].onload()}}var f=f||k.errorTimeout,c=t.createElement(e),d=0,g=0,w={t:r,s:n,e:s,a:a,x:f};1===T[n]&&(g=1,T[n]=[]),"object"==e?c.data=n:(c.src=n,c.type=e),c.width=c.height="0",c.onerror=c.onload=c.onreadystatechange=function(){l.call(this,g)},v.splice(i,0,w),"img"!=e&&(g||2===T[n]?(b.insertBefore(c,y?null:p),h(l,f)):T[n].push(c))}function f(e,t,n,r,s){return m=0,t=t||"j",i(e)?a("c"==t?E:w,e,t,this.i++,n,r,s):(v.splice(this.i++,0,e),1==v.length&&u()),this}function l(){var e=k;return e.loader={load:f,i:0},e}var c=t.documentElement,h=e.setTimeout,p=t.getElementsByTagName("script")[0],d={}.toString,v=[],m=0,g="MozAppearance"in c.style,y=g&&!!t.createRange().compareNode,b=y?c:p.parentNode,c=e.opera&&"[object Opera]"==d.call(e.opera),c=!!t.attachEvent&&!c,w=g?"object":c?"script":"img",E=c?"script":w,S=Array.isArray||function(e){return"[object Array]"==d.call(e)},x=[],T={},N={timeout:function(e,t){return t.length&&(e.timeout=t[0]),e}},C,k;k=function(e){function t(e){var e=e.split("!"),t=x.length,n=e.pop(),r=e.length,n={url:n,origUrl:n,prefixes:e},i,s,o;for(s=0;s<r;s++)o=e[s].split("="),(i=N[o.shift()])&&(n=i(n,o));for(s=0;s<t;s++)n=x[s](n);return n}function o(e,i,s,o,u){var a=t(e),f=a.autoCallback;a.url.split(".").pop().split("?").shift(),a.bypass||(i&&(i=r(i)?i:i[e]||i[o]||i[e.split("/").pop().split("?")[0]]),a.instead?a.instead(e,i,s,o,u):(T[a.url]?a.noexec=!0:T[a.url]=1,s.load(a.url,a.forceCSS||!a.forceJS&&"css"==a.url.split(".").pop().split("?").shift()?"c":n,a.noexec,a.attrs,a.timeout),(r(i)||r(f))&&s.load(function(){l(),i&&i(a.origUrl,u,o),f&&f(a.origUrl,u,o),T[a.url]=2})))}function u(e,t){function n(e,n){if(e){if(i(e))n||(f=function(){var e=[].slice.call(arguments);l.apply(this,e),c()}),o(e,f,t,0,u);else if(Object(e)===e)for(p in h=function(){var t=0,n;for(n in e)e.hasOwnProperty(n)&&t++;return t}(),e)e.hasOwnProperty(p)&&(!n&&!--h&&(r(f)?f=function(){var e=[].slice.call(arguments);l.apply(this,e),c()}:f[p]=function(e){return function(){var t=[].slice.call(arguments);e&&e.apply(this,t),c()}}(l[p])),o(e[p],f,t,p,u))}else!n&&c()}var u=!!e.test,a=e.load||e.both,f=e.callback||s,l=f,c=e.complete||s,h,p;n(u?e.yep:e.nope,!!a),a&&n(a)}var a,f,c=this.yepnope.loader;if(i(e))o(e,0,c,0);else if(S(e))for(a=0;a<e.length;a++)f=e[a],i(f)?o(f,0,c,0):S(f)?k(f):Object(f)===f&&u(f,c);else Object(e)===e&&u(e,c)},k.addPrefix=function(e,t){N[e]=t},k.addFilter=function(e){x.push(e)},k.errorTimeout=1e4,null==t.readyState&&t.addEventListener&&(t.readyState="loading",t.addEventListener("DOMContentLoaded",C=function(){t.removeEventListener("DOMContentLoaded",C,0),t.readyState="complete"},0)),e.yepnope=l(),e.yepnope.executeStack=u,e.yepnope.injectJs=function(e,n,r,i,a,f){var l=t.createElement("script"),c,d,i=i||k.errorTimeout;l.src=e;for(d in r)l.setAttribute(d,r[d]);n=f?u:n||s,l.onreadystatechange=l.onload=function(){!c&&o(l.readyState)&&(c=1,n(),l.onload=l.onreadystatechange=null)},h(function(){c||(c=1,n(1))},i),a?l.onload():p.parentNode.insertBefore(l,p)},e.yepnope.injectCss=function(e,n,r,i,o,a){var i=t.createElement("link"),f,n=a?u:n||s;i.href=e,i.rel="stylesheet",i.type="text/css";for(f in r)i.setAttribute(f,r[f]);o||(p.parentNode.insertBefore(i,p),h(n,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))},Modernizr.addTest("cors",!!(window.XMLHttpRequest&&"withCredentials"in new XMLHttpRequest)),Modernizr.addTest("mathml",function(){var e=!1;if(document.createElementNS){var t="http://www.w3.org/1998/Math/MathML",n=document.createElement("div");n.style.position="absolute";var r=n.appendChild(document.createElementNS(t,"math")).appendChild(document.createElementNS(t,"mfrac"));r.appendChild(document.createElementNS(t,"mi")).appendChild(document.createTextNode("xx")),r.appendChild(document.createElementNS(t,"mi")).appendChild(document.createTextNode("yy")),document.body.appendChild(n),e=n.offsetHeight>n.offsetWidth}return e}),Modernizr.addTest("details",function(){var e=document,t=e.createElement("details"),n,r,i;return"open"in t?(r=e.body||function(){var t=e.documentElement;return n=!0,t.insertBefore(e.createElement("body"),t.firstElementChild||t.firstChild)}(),t.innerHTML="<summary>a</summary>b",t.style.display="block",r.appendChild(t),i=t.offsetHeight,t.open=!0,i=i!=t.offsetHeight,r.removeChild(t),n&&r.parentNode.removeChild(r),i):!1}),Modernizr.addTest("progressbar",function(){return document.createElement("progress").max!==undefined}),Modernizr.addTest("meter",function(){return document.createElement("meter").max!==undefined});
 /**
  * @title WET-BOEW Vapour loader
  * @overview Helper methods for WET
@@ -42,7 +42,7 @@ var getUrlParts = function( url ) {
 			// A collection of the parameters of the query string part of the URL.
 			params: ( function() {
 				var results = {},
-					queryString = encodeURI( decodeURI( a.search.replace( /^\?/, "" ) ) ).replace( /'/g, "%27" ).split( "&" ),
+					queryString = a.search.replace( /^\?/, "" ).split( "&" ),
 					len = queryString.length,
 					key, strings, i;
 
@@ -172,7 +172,7 @@ var getUrlParts = function( url ) {
 			return "wb-auto-" + ( seed += 1 );
 		},
 
-		init: function( event, componentName, selector, noAutoId ) {
+		init: function( event, componentName, selector, autoId ) {
 			var	eventTarget = event.target,
 				isEvent = !!eventTarget,
 				node = isEvent ? eventTarget : event,
@@ -189,7 +189,7 @@ var getUrlParts = function( url ) {
 				if ( !isDocumentNode ) {
 					node.className += " " + initedClass;
 
-					if ( !noAutoId && !node.id ) {
+					if ( autoId && !node.id ) {
 						node.id = wb.getId();
 					}
 				}
@@ -202,22 +202,10 @@ var getUrlParts = function( url ) {
 
 		ready: function( $elm, componentName, context ) {
 			if ( $elm ) {
-
-				// Trigger any nested elements (excluding nested within nested)
-				$elm
-					.find( wb.allSelectors )
-						.addClass( "wb-init" )
-						.filter( ":not(#" + $elm.attr( "id" ) + " .wb-init .wb-init)" )
-							.trigger( "timerpoke.wb" );
-
-				// Identify that the component is ready
 				$elm.trigger( "wb-ready." + componentName, context );
 				this.initQueue -= 1;
-			} else {
-				this.doc.trigger( "wb-ready." + componentName, context );
 			}
 
-			// Identify that global initialization is complete
 			if ( !this.isReady && this.isStarted && this.initQueue < 1 ) {
 				this.isReady = true;
 				this.doc.trigger( "wb-ready.wb" );
@@ -297,37 +285,42 @@ var getUrlParts = function( url ) {
 		},
 
 		// Handles triggering of timerpoke events
-		timerpoke: function( initial ) {
+		timerpoke: function() {
 			var selectorsLocal = wb.selectors.slice( 0 ),
 				len = selectorsLocal.length,
-				selector, $elms, $foundElms, i;
+				selector, currentSelector, $elms, elmsLength, i;
 
-			if ( initial ) {
-				$foundElms = $();
-				for ( i = 0; i !== len; i += 1 ) {
-					selector = selectorsLocal[ i ];
-					$elms = $( selector );
-					if ( $elms.length !== 0 ) {
-						$foundElms = $foundElms.add( $elms );
+			for ( i = 0; i !== len; i += 1 ) {
+				selector = selectorsLocal[ i ];
+				currentSelector = selector;
+				$elms = $( selector );
 
-					// If the selector returns no elements, remove the selector
-					} else {
-						wb.remove( selector );
+				// If the selector returns elements, trigger a timerpoke event
+				elmsLength = $elms.length;
+				if ( elmsLength !== 0 ) {
+					while ( elmsLength !== 0 ) {
+
+						currentSelector += " " + selector;
+
+						// Filter out nested elements
+						$elms = $elms.filter( ":not(" + currentSelector + ")" );
+						$elms.trigger( "timerpoke.wb" );
+
+						// Handle nested elements
+						elmsLength -= $elms.length;
+						if ( elmsLength !== 0 ) {
+							$elms = $( currentSelector );
+						}
 					}
-				}
 
-				// Keep only the non-nested plugin/polyfill elements
-				$elms = $foundElms.filter( ":not(.wb-init .wb-init)" ).addClass( "wb-init" );
-			} else {
-				$elms = $( selectorsLocal.join( ", " ) );
+				// If the selector returns no elements, remove the selector
+				} else {
+					wb.remove( selector );
+				}
 			}
-			$elms.trigger( "timerpoke.wb" );
 		},
 
 		start: function() {
-
-			// Save a copy of all the possible selectors
-			wb.allSelectors = wb.selectors.join( ", " );
 
 			// Initiate timerpoke events right way
 			wb.timerpoke( true );
@@ -369,33 +362,6 @@ var getUrlParts = function( url ) {
 				default:
 					return "";
 			}
-		},
-
-		hashString: function( str ) {
-
-			// Sources:
-			//	http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
-			//	http://jsperf.com/hashing-strings
-			var hash = 0,
-				chr, i;
-
-			if ( str.length === 0 ) {
-				return hash;
-			}
-
-			for ( i = 0; i < str.length; i++ ) {
-				chr = str.charCodeAt( i );
-				hash = ( ( hash << 5 ) - hash ) + chr;
-
-				// Convert to 32bit integer
-				hash = hash & hash;
-			}
-
-			return hash;
-		},
-
-		stripWhitespace: function( str ) {
-			return str.replace( /\s+/g, "" );
 		}
 	};
 
@@ -1658,10 +1624,6 @@ Modernizr.load( [
 		} );
 	};
 
-	wb.escapeAttribute = function( str ) {
-		return str.replace( /'/g, "&#39;" ).replace( /"/g, "&#34;" );
-	};
-
 } )( wb );
 
 ( function( $, undef ) {
@@ -1742,7 +1704,8 @@ Modernizr.load( [
 				nodeName === "a" ?
 				element.href || isTabIndexNotNaN :
 				isTabIndexNotNaN ) &&
-			visible( element ); /* the element and all of its ancestors must be visible */
+			// the element and all of its ancestors must be visible
+			visible( element );
 		} else {
 			return ( /input|select|textarea|button|object/.test( nodeName ) ? !element.disabled :
 				nodeName === "a" ?
@@ -1767,7 +1730,6 @@ Modernizr.load( [
 				return !!$.data( elem, dataName );
 			};
 		} ) :
-
 		// support: jQuery <1.8
 
 		function( elem, i, match ) {
@@ -2053,7 +2015,6 @@ var componentName = "wb-calevt",
 				 * Fixes IE tabbing error:
 				 * http://www.earthchronicle.com/ECv1point8/Accessibility01IEAnchoredKeyboardNavigation.aspx
 				 */
-
 				// TODO: Which versions of IE should this fix be limited to?
 				if ( wb.ie ) {
 					event.tabIndex = "-1";
@@ -2997,7 +2958,8 @@ $document.on( "click", ".cal-goto-cancel", function( event ) {
 			captionHtml = $caption.html() || "",
 			captionText = $caption.text() || "",
 			valuePoint = 0,
-			dataCellUnitRegExp = /[^\+\-\.\, 0-9]+[^\-\+0-9]*/,
+			floatRegExp = /[\+\-0-9]+[0-9,\. ]*/,
+			floatRegExp2 = /[^\+\-\.\, 0-9]+[^\-\+0-9]*/,
 			lowestFlotDelta, $imgContainer, $placeHolder,
 			$wetChartContainer, htmlPlaceHolder, figurehtml,
 			cellValue, datacolgroupfound, dataGroup, header,
@@ -3137,19 +3099,41 @@ $document.on( "click", ".cal-goto-cancel", function( event ) {
 						fn: {
 							"/getcellvalue": function( elem ) {
 
-								// Get the number from the data cell, #3267
-								var cellValue = $.trim( $( elem ).text() );
+								// Default Cell value extraction
+								var cellRawValue = $.trim( $( elem ).text() ).replace( /\s/g, "" );
+
 								return [
-									parseFloat( cellValue.replace( /(\d{1,3}(?:(?: |,)\d{3})*)(?:(?:.|,)(\d{1,2}))?$/, function( a, b, c ) {
-										return b.replace( / |,/g, "" ) + "." + c || "0";
-									} ), 10 ),
-									cellValue.match ( dataCellUnitRegExp )
+									parseFloat( cellRawValue.match( floatRegExp ) ),
+									cellRawValue.match ( floatRegExp2 )
+								];
+							}
+						}
+
+					},
+					donut: {
+						decimal: 1
+					},
+					thousandcomma: {
+						fn: {
+							"/getcellvalue": function( elem ) {
+								var raw = $.trim( $( elem ).text() ).replace( /,/g, "" );
+								return [
+									parseFloat( raw.match( floatRegExp ) ),
+									raw.match( floatRegExp2 )
 								];
 							}
 						}
 					},
-					donut: {
-						decimal: 1
+					thousanddot: {
+						fn: {
+							"/getcellvalue": function( elem ) {
+								var raw = $.trim( $( elem ).text() ).replace( /\./g, "" );
+								return [
+									parseFloat( raw.match( floatRegExp ) ),
+									raw.match( floatRegExp2 )
+								];
+							}
+						}
 					}
 				}
 			};
@@ -3616,7 +3600,6 @@ $document.on( "click", ".cal-goto-cancel", function( event ) {
 		 * @param {object} parsedData - Generic object generated by the table parser
 		 */
 		function horizontalLabels( parsedData ) {
-
 			// Find the range of the first data colgroup
 			var dataColgroupStart = -1,
 				headerlevel = 0,
@@ -3670,18 +3653,13 @@ $document.on( "click", ".cal-goto-cancel", function( event ) {
 		 * @method wrapTableIntoDetails
 		 */
 		function wrapTableIntoDetails() {
-			var $summary;
-
 			if ( !captionHtml.length ) {
 				return;
 			}
 
-			$summary = $( "<summary>" + captionHtml + i18nText.tableMention + "</summary>" );
 			$elm
 				.wrap( "<details/>" )
-				.before( $summary );
-
-			$summary.trigger( "wb-init.wb-details" );
+				.before( "<summary>" + captionHtml + i18nText.tableMention + "</summary>" );
 		}
 
 		function createContainer( withDimension ) {
@@ -3878,7 +3856,6 @@ $document.on( "click", ".cal-goto-cancel", function( event ) {
 		}
 
 		if ( !reverseTblParsing ) {
-
 			// If normal parsing
 			dataGroup = currentRowGroup;
 			rIndex = ( parsedData.colgroup[ 0 ].type === 1 ?
@@ -3886,7 +3863,6 @@ $document.on( "click", ".cal-goto-cancel", function( event ) {
 				parsedData.colgroup[ 0 ].col.length ) - 1;
 			chartslabels = horizontalLabels( parsedData );
 		} else {
-
 			// If reverse parsing
 			dataGroup = parsedData.colgroup[ 0 ].type === 1 ?
 				parsedData.colgroup[ 1 ] :
@@ -4029,7 +4005,7 @@ $document.on( "click", ".cal-goto-cancel", function( event ) {
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName, selector ),
+		var elm = wb.init( event, componentName, selector, true ),
 			settings = window[ componentName ],
 			elmId, modeJS, deps;
 
@@ -4372,7 +4348,7 @@ var componentName = "wb-data-ajax",
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName + "-" + ajaxType, selector );
+		var elm = wb.init( event, componentName + "-" + ajaxType, selector, true );
 
 		if ( elm ) {
 
@@ -4553,35 +4529,7 @@ var componentName = "wb-inview",
 			// partial - part of the element is in the viewport
 			// none - no part of the element is in the viewport
 			viewState = ( scrollBottom > y2 && scrollTop < y1 ) ? "all" : inView ? "none" : "partial",
-			$dataInView = $( "#" + $elm.attr( "data-inview" ) ),
-			show;
-
-		// Remove any element that no longer exists in the DOM
-		if ( elementWidth === 0 || elementHeight === 0 ) {
-			$elms = $elms.not( $elm );
-			$dataInView.addClass( "user-closed" );
-			$dataInView.trigger( {
-				type: ( "close" ),
-				namespace: "wb-overlay",
-				noFocus: true
-			} );
-
-			return;
-		}
-
-		// Link the overlay close button to the dismiss action if the inview content is dismissable
-		if ( $elm.hasClass( "wb-dismissable" ) ) {
-			if ( $dataInView.hasClass( "wb-overlay" ) ) {
-				$dataInView.children( ".overlay-close" ).on( "click vclick", function( event ) {
-					var which = event.which;
-
-					// Ignore middle/right mouse buttons
-					if ( !which || which === 1 ) {
-						$elm.parent().siblings( ".content-dismiss" ).trigger( "click" );
-					}
-				} );
-			}
-		}
+			$dataInView, show;
 
 		// Only if the view state has changed
 		if ( viewState !== oldViewState ) {
@@ -4590,6 +4538,7 @@ var componentName = "wb-inview",
 			show = inView || ( $elm.hasClass( "show-none" ) ? false : viewState === "partial" );
 
 			$elm.attr( "data-inviewstate", viewState );
+			$dataInView = $( "#" + $elm.attr( "data-inview" ) );
 
 			if ( $dataInView.length !== 0 ) {
 
@@ -4652,12 +4601,6 @@ $window.on( "scroll scrollstop", function() {
 
 $document.on( "txt-rsz.wb win-rsz-width.wb win-rsz-height.wb", function() {
 	$elms.trigger( scrollEvent );
-} );
-
-$document.on( "refresh.wb", function() {
-	$elms.each( function() {
-		onInView( $( this ) );
-	} );
 } );
 
 // Add the timer poke to initialize the plugin
@@ -4784,128 +4727,6 @@ $document.on( "timerpoke.wb " + initEvent + " " + picturefillEvent, selector, fu
 // Handles window resize so images can be updated as new media queries match
 $document.on( "txt-rsz.wb win-rsz-width.wb win-rsz-height.wb", function() {
 	$( selector ).trigger( picturefillEvent );
-} );
-
-// Add the timer poke to initialize the plugin
-wb.add( selector );
-
-} )( jQuery, window, wb );
-
-/**
- * @title WET-BOEW Dismissable content plugin
- * @overview Enables content to be dismissed
- * @license wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
- * @author @thomasgohard
- */
-( function( $, window, wb ) {
-"use strict";
-
-/*
- * Variable and function definitions.
- * These are global to the event - meaning that they will be initialized once per page,
- * not once per instance of event on the page.
- */
-var componentName = "wb-dismissable",
-	selector = "." + componentName,
-	initEvent = "wb-init." + componentName,
-	containerClass = "wb-dismissable-container",
-	wrapperClass = "wb-dismissable-wrapper",
-	dismissClass = "content-dismiss",
-	idKey = "dismissable-item-id",
-	$document = wb.doc,
-	i18n, i18nText,
-
-	/**
-	 * @method init
-	 * @param {jQuery Event} event Event that triggered the function call
-	 */
-	init = function( event ) {
-
-		// Start initialization
-		// returns DOM object = proceed with init
-		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName, selector ),
-			itemId, dismissedState, contentContainer, contentWrapper, dismissButton;
-
-		if ( elm ) {
-
-			// Only initialize the i18nText once
-			if ( !i18nText ) {
-				i18n = wb.i18n;
-				i18nText = {
-					dismiss: i18n( "dismiss" )
-				};
-			}
-
-			// Give the dismissable element a unique ID
-			if ( elm.hasAttribute( "id" ) ) {
-				itemId = elm.getAttribute( "id" );
-
-				// Ignore an ID assigned by wb
-				if ( itemId.indexOf( "wb-auto-" ) === 0 ) {
-					itemId = undefined;
-				}
-			}
-			if ( itemId === undefined ) {
-				itemId = wb.hashString( wb.stripWhitespace( elm.innerHTML ) );
-			}
-
-			dismissedState = getDismissedState( itemId );
-
-			if ( dismissedState === "true" ) {
-
-				// Remove the element if it has been dismissed
-				if ( elm.parentNode ) {
-					elm.parentNode.removeChild( elm );
-				}
-			} else {
-				$( elm ).wrap( "<div class='" + wrapperClass + "'>" );
-				contentWrapper = elm.parentNode;
-
-				$( contentWrapper ).wrap( "<div class='" + containerClass + "'>" );
-				contentContainer = contentWrapper.parentNode;
-
-				dismissButton = "<button type='button' class='mfp-close " + dismissClass +
-					"' title='" + i18nText.dismiss + "'>&#xd7;<span class='wb-inv'> " +
-					i18nText.dismiss + "</span></button>";
-				$( contentContainer ).append( dismissButton );
-
-				contentContainer.setAttribute( "data-" + idKey, itemId );
-			}
-
-			// Identify that initialization has completed
-			wb.ready( $document, componentName );
-		}
-	},
-
-	getDismissedState = function( id ) {
-		var dismissState = localStorage.getItem( id );
-
-		if ( dismissState === null ) {
-			return false;
-		}
-
-		return dismissState;
-	},
-
-	dismissContent = function( elm ) {
-		localStorage.setItem( elm.getAttribute( "data-" + idKey ), true );
-		elm.parentNode.removeChild( elm );
-		$document.trigger( "refresh.wb" );
-	};
-
-// Bind the init event of the plugin
-$document.on( "timerpoke.wb " + initEvent, selector, init );
-
-// Handler for clicking on the dismiss button
-$document.on( "click vclick", "." + dismissClass, function( event ) {
-	var elm = event.currentTarget,
-		which = event.which;
-
-	// Ignore middle/right mouse buttons
-	if ( !which || which === 1 ) {
-		dismissContent( elm.parentNode );
-	}
 } );
 
 // Add the timer poke to initialize the plugin
@@ -5176,7 +4997,7 @@ var componentName = "wb-favicon",
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName, selector, true ),
+		var elm = wb.init( event, componentName, selector ),
 			$favicon, settings;
 
 		if ( elm ) {
@@ -5341,16 +5162,21 @@ var componentName = "wb-feeds",
 		 * @return {string}	HTML string for creating a photowall effect
 		 */
 		flickr: function( data ) {
-			var media = data.media.m,
-				flickrData = {
-					title: data.title,
-					thumbnail: media.replace( "_m.", "_s." ),
-					image: media.replace( "_m", "" ),
-					description: data.description.replace( /^\s*<p>(.*?)<\/p>\s*<p>(.*?)<\/p>/i, "" )
-				};
+
+			var seed = wb.getId(),
+				title = data.title,
+				media = data.media.m,
+				thumbnail = media.replace( "_m.", "_s." ),
+				image = media.replace( "_m", "" ),
+				description = data.description.replace( /^\s*<p>(.*?)<\/p>\s*<p>(.*?)<\/p>/i, "" );
 
 			// due to CORS we cannot default to simple ajax pulls of the image. We have to inline the content box
-			return "<li><a class='feed-flickr' href='javascript:;' data-flickr='" + wb.escapeAttribute( JSON.stringify( flickrData ) ) + "'><img src='" + flickrData.thumbnail + "' alt='" + wb.escapeAttribute( flickrData.title ) + "' title='" + wb.escapeAttribute( flickrData.title ) + "' class='img-responsive'/></a></li>";
+			return "<li><a class='wb-lbx' href='#" + seed + "'><img src='" + thumbnail + "' alt='" + title + "' title='" + title + "' class='img-responsive'/></a>" +
+					"<section id='" + seed + "' class='mfp-hide modal-dialog modal-content overlay-def'>" +
+					"<header class='modal-header'><h2 class='modal-title'>" + title + "</h2></header>" +
+					"<div class='modal-body'><img src='" + image + "' class='thumbnail center-block' alt='" + title + "' />" +
+					description + "</div></section>" +
+					"</li>";
 		},
 
 		/**
@@ -5359,13 +5185,24 @@ var componentName = "wb-feeds",
 		 * @return {string}	HTML string for creating a photowall effect
 		 */
 		youtube: function( data ) {
-			var youtubeDate = {
-				title: data.title,
-				videoId: data.id
-			};
+			var seed = wb.getId(),
+				mediaGroup = data.media$group,
+				title = mediaGroup.media$title.$t,
+				thumbnail = mediaGroup.media$thumbnail[ 1 ].url,
+				description = mediaGroup.media$description.$t,
+				videoid = mediaGroup.yt$videoid.$t;
 
 			// Due to CORS we cannot default to simple ajax pulls of the image. We have to inline the content box
-			return "<li class='col-md-4 col-sm-6 feed-youtube' data-youtube='" + wb.escapeAttribute( JSON.stringify( youtubeDate ) ) + "'><a href='javascript:;'><img src='http://img.youtube.com/vi/" + youtubeDate.videoId + "/mqdefault.jpg' alt='" + wb.escapeAttribute( youtubeDate.title ) + "' title='" + wb.escapeAttribute( youtubeDate.title ) + "' class='img-responsive' /></a></li>";
+			return "<li class='col-md-4 col-sm-6' ><a class='wb-lbx' href='#" + seed + "'><img src='" + thumbnail + "' alt='" + title + "' title='" + title + "' class='img-responsive' /></a>" +
+					"<section id='" + seed + "' class='mfp-hide modal-dialog modal-content overlay-def'>" +
+					"<header class='modal-header'><h2 class='modal-title'>" + title + "</h2></header>" +
+					"<div class='modal-body'>" +
+					"<figure class='wb-mltmd'><video title='" + title + "'>" +
+					"<source type='video/youtube' src='http://www.youtube.com/watch?v=" + videoid + "' />" +
+					"</video><figcaption><p>" +  description + "</p>" +
+					"</figcaption></figure>" +
+					"</div></section>" +
+					"</li>";
 		},
 		/**
 		 * [pinterest template]
@@ -5455,7 +5292,7 @@ var componentName = "wb-feeds",
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
 		var elm = wb.init( event, componentName, selector ),
-			fetch, url, $content, limit, feeds, fType, last, i, callback, fElem, fIcon, youtubeData;
+			fetch, url, $content, limit, feeds, fType, last, i, callback, fElem, fIcon;
 
 		if ( elm ) {
 			$content = $( elm ).find( ".feeds-cont" );
@@ -5485,29 +5322,14 @@ var componentName = "wb-feeds",
 						callback = "jsoncallback";
 						$content.data( componentName + "-postProcess", [ ".wb-lbx" ] );
 					} else {
-						fType = "generic";
-						callback = "callback";
+						fType = "youtube";
+						$content.data( componentName + "-postProcess", [ ".wb-lbx", ".wb-mltmd" ] );
 					}
 
 					// We need a Gallery so lets add another plugin
 					// #TODO: Lightbox review for more abstraction we should not have to add a wb.add() for overlaying
 					fetch.url = fElem.attr( "data-ajax" );
 					fetch.jsonp = callback;
-				} else if ( fElem.attr( "data-youtube" ) ) {
-					youtubeData = wb.getData( fElem, "youtube" );
-
-					$content.data( componentName + "-postProcess", [ ".wb-lbx", ".wb-mltmd" ] );
-
-					if ( youtubeData.playlist ) {
-						fElem.trigger( {
-							type: "data-ready.wb-feeds",
-							feedsData: youtubeData.playlist
-						}, {
-							feedType: "youtube",
-							_content: $content
-						} );
-					}
-
 				} else {
 					url = jsonRequest( fElem.attr( "href" ), limit );
 					fetch.url = url;
@@ -5562,7 +5384,6 @@ var componentName = "wb-feeds",
 
 			entries.push( items[ i ] );
 		}
-
 		// lets merge with latest entries
 		entries = $.merge( entries, $content.data( "entries" ) );
 
@@ -5598,13 +5419,9 @@ var componentName = "wb-feeds",
 			hasVisibilityHandler = "vis-handler",
 			i, sorted, sortedEntry, $tabs;
 
-		if ( feedtype !== "youtube" ) {
-			sorted = entries.sort( function( a, b ) {
-				return compare( b.publishedDate, a.publishedDate );
-			} );
-		} else {
-			sorted = entries;
-		}
+		sorted = entries.sort( function( a, b ) {
+			return compare( b.publishedDate, a.publishedDate );
+		} );
 
 		for ( i = 0; i !== cap; i += 1 ) {
 			sortedEntry = sorted[ i ];
@@ -5677,20 +5494,14 @@ var componentName = "wb-feeds",
 		$elm.trigger( "wb-feed-ready" + selector );
 	};
 
-$document.on( "ajax-fetched.wb data-ready.wb-feeds", selector + " " + feedLinkSelector, function( event, context ) {
-	var eventTarget = event.target,
-		data, response;
+$document.on( "ajax-fetched.wb", selector + " " + feedLinkSelector, function( event, context ) {
+	var response = event.fetch.response,
+		eventTarget = event.target,
+		data;
 
 	// Filter out any events triggered by descendants
 	if ( event.currentTarget === eventTarget ) {
-		switch ( event.type ) {
-			case "ajax-fetched":
-				response = event.fetch.response;
-				data = ( response.responseData ) ? response.responseData.feed.entries : response.items || response.feed.entry;
-				break;
-			default:
-				data = event.feedsData;
-		}
+		data = ( response.responseData ) ? response.responseData.feed.entries : response.items || response.feed.entry;
 
 		// Identify that initialization has completed
 		// if there are no entries left to process
@@ -5698,62 +5509,6 @@ $document.on( "ajax-fetched.wb data-ready.wb-feeds", selector + " " + feedLinkSe
 			wb.ready( $( eventTarget ).closest( selector ), componentName );
 		}
 	}
-} );
-
-$document.on( "click", selector + " .feed-youtube", function( event ) {
-	var youTubeOverlaySelector  = "#wb-feeds-youtube-lbx",
-		$youTubeOverlay = $( youTubeOverlaySelector ),
-		youtubeData = wb.getData( event.currentTarget, "youtube" ),
-		videoUrl = "http://www.youtube.com/watch?v=" + youtubeData.videoId,
-		videoSource = "<figure class='wb-mltmd'><video title='" + youtubeData.title + "'>" +
-			"<source type='video/youtube' src='" + videoUrl + "' />" +
-			"</video><figcaption><p>" +  youtubeData.title + "</p>" +
-			"</figcaption></figure>";
-
-	if ( $youTubeOverlay.length === 0 ) {
-		$youTubeOverlay = $( "<section id='wb-feeds-youtube-lbx' class='mfp-hide modal-dialog modal-content overlay-def'>" +
-			"<header class='modal-header'><h2 class='modal-title'>" + youtubeData.title + "</h2></header>" +
-			"<div class='modal-body'>" +
-			videoSource +
-			"</div></section>" ).insertAfter( "main" );
-	} else {
-
-		//Modify lightbox
-		$youTubeOverlay.find( ".modal-title" ).text( youtubeData.title );
-		$youTubeOverlay.find( ".modal-body" ).empty().append( videoSource );
-	}
-
-	//Temporary fix until lightbox auto initialize the multimedia player
-	$youTubeOverlay.find( ".wb-mltmd" ).trigger( "wb-init.wb-mltmd" );
-
-	$( document ).trigger( "open.wb-lbx", [ {
-		src: youTubeOverlaySelector,
-		type: "inline"
-	} ] );
-} );
-
-$document.on( "click", selector + " .feed-flickr", function( event ) {
-	var flickrOverlaySelector  = "#wb-feeds-flick-lbx",
-		$flickrOverlay = $( flickrOverlaySelector ),
-		flickrData = wb.getData( event.currentTarget, "flickr" ),
-		body = "<img src='" + flickrData.image + "' class='thumbnail center-block' alt='" + flickrData.title + "' /><span>" +
-			flickrData.description + "</span>";
-
-	if ( $flickrOverlay.length === 0 ) {
-		$flickrOverlay = $( "<section id='wb-feeds-flick-lbx' class='mfp-hide modal-dialog modal-content overlay-def'>" +
-			"<header class='modal-header'><h2 class='modal-title'>" + flickrData.title + "</h2></header>" +
-			"<div class='modal-body'>" + body + "</div></section>" ).insertAfter( "main" );
-	} else {
-
-		//Modify lightbox
-		$flickrOverlay.find( ".modal-title" ).text( flickrData.title );
-		$flickrOverlay.find( ".modal-body" ).empty().append( body );
-	}
-
-	$( document ).trigger( "open.wb-lbx", [ {
-		src: flickrOverlaySelector,
-		type: "inline"
-	} ] );
 } );
 
 // Bind the init event to the plugin
@@ -6124,37 +5879,36 @@ var componentName = "wb-frmvld",
 									}
 								}, 100 );
 							} else {
-
 								// Update the aria-live region as necessary
 								if ( ariaLive.innerHTML.length !== 0 ) {
 									ariaLive.innerHTML = "";
 								}
 								$summaryContainer.detach();
 							}
-
-						}, /* End of showErrors() */
+						}, // End of showErrors()
 						invalidHandler: function() {
 							submitted = true;
 						}
-					} ); /* end of validate() */
+					} ); //end of validate()
 
 					// Clear the form and remove error messages on reset
 					$document.on( "click vclick touchstart", selector + " input[type=reset]", function( event ) {
-						var which = event.which,
+						var $summaryContainer,
+							which = event.which,
 							ariaLive;
 
 						// Ignore middle/right mouse buttons
 						if ( !which || which === 1 ) {
 							validator.resetForm();
-							$( "#" + errorFormId ).detach();
+							$summaryContainer = $form.find( "#" + errorFormId );
+							if ( $summaryContainer.length > 0 ) {
+								$summaryContainer.empty();
+							}
 
 							ariaLive = $form.parent().find( ".arialive" )[ 0 ];
 							if ( ariaLive.innerHTML.length !== 0 ) {
 								ariaLive.innerHTML = "";
 							}
-
-							// Correct the colouring of fields that are no longer invalid
-							$form.find( ".has-error" ).removeClass( "has-error" );
 						}
 					} );
 
@@ -6199,7 +5953,7 @@ var componentName = "wb-geomap",
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName, selector ),
+		var elm = wb.init( event, componentName, selector, true ),
 			$elm, modeJS;
 
 		if ( elm ) {
@@ -6235,7 +5989,7 @@ wb.add( selector );
  * @license wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
  * @author @pjackson28
  */
-( function( $, window, document, wb, undef ) {
+( function( $, window, document, wb ) {
 "use strict";
 
 /*
@@ -6262,7 +6016,7 @@ var componentName = "wb-lbx",
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName, selector ),
+		var elm = wb.init( event, componentName, selector, true ),
 			elmId;
 
 		if ( elm ) {
@@ -6442,9 +6196,8 @@ var componentName = "wb-lbx",
 				},
 				parseAjax: function( mfpResponse ) {
 					var currItem = this.currItem,
-						currEl = currItem.el,
 						urlHash = currItem.src.split( "#" )[ 1 ],
-						filter = currEl ? currEl.data( "wbLbxFilter" ) : undef,
+						filter = currItem.el.data( "wbLbxFilter" ),
 						selector = filter || ( urlHash ? "#" + urlHash : false ),
 						$response;
 
@@ -6579,7 +6332,7 @@ $( document ).on( "click", ".popup-modal-dismiss", function( event ) {
 } );
 
 // Event handler for opening a popup without a link
-$( document ).on( "open" + selector, function( event, items, modal, title, ajax ) {
+$( document ).on( "open" + selector, function( event, items, modal, title ) {
 	if ( event.namespace === componentName ) {
 		var isGallery = items.length > 1,
 			isModal = modal && !isGallery ? modal : false,
@@ -6600,11 +6353,8 @@ $( document ).on( "open" + selector, function( event, items, modal, title, ajax 
 				image: {
 					titleSrc: titleSrc
 				},
-				callbacks: callbacks,
-				ajax: ajax
+				callbacks: callbacks
 			} );
-
-			wb.ready( undef, componentName );
 		} );
 
 		// Load dependencies as needed
@@ -6734,10 +6484,10 @@ var componentName = "wb-menu",
 		var k, $elm, elm, $item, $subItems, subItemsLength,
 			$section = $( section ),
 			posinset = "' aria-posinset='",
-			menuitem = " role='menuitem' aria-setsize='",
+			menuitem = "role='menuitem' aria-setsize='",
 			sectionHtml = "<li><details>" + "<summary class='mb-item" +
 				( $section.hasClass( "wb-navcurr" ) || $section.children( ".wb-navcurr" ).length !== 0 ? " wb-navcurr'" : "'" ) +
-				menuitem + sectionsLength + posinset + ( sectionIndex + 1 ) +
+				"' " + menuitem + sectionsLength + posinset + ( sectionIndex + 1 ) +
 				"' aria-haspopup='true'>" + $section.text() + "</summary>" +
 				"<ul class='list-unstyled mb-sm' role='menu' aria-expanded='false' aria-hidden='true'>";
 
@@ -6752,7 +6502,7 @@ var componentName = "wb-menu",
 			if ( elm && subItemsLength === 0 && elm.nodeName.toLowerCase() === "a" ) {
 				sectionHtml += "<li>" + $item[ 0 ].innerHTML.replace(
 						/(<a\s)/,
-						"$1" + menuitem + itemsLength +
+						"$1 " + menuitem + itemsLength +
 							posinset + ( k + 1 ) +
 							"' tabindex='-1' "
 					) + "</li>";
@@ -6817,7 +6567,7 @@ var componentName = "wb-menu",
 
 			// Create the panel section
 			panel += "<nav role='navigation' typeof='SiteNavigationElement' id='" +
-				properties[ 1 ] + "' class='" + properties[ 1 ] + " wb-menu wb-menu-inited'>" +
+				properties[ 1 ] + "' class='" + properties[ 1 ] + " wb-menu'>" +
 				"<h3>" + properties[ 2 ] + "</h3>" +
 				"<ul class='list-unstyled mb-menu' role='menu'>" +
 				sectionHtml + "</ul></nav>";
@@ -6934,6 +6684,7 @@ var componentName = "wb-menu",
 		$panel
 			.trigger( "wb-init.wb-overlay" )
 			.find( "summary" )
+				.trigger( "wb-init.wb-details" )
 				.attr( "tabindex", "-1" );
 		$panel
 			.find( ".mb-menu > li:first-child" )
@@ -7113,13 +6864,11 @@ $document.on( "timerpoke.wb " + initEvent + " ajax-fetched.wb ajax-failed.wb", s
 } );
 
 $document.on( "mouseleave", selector + " .menu", function( event ) {
-    var $currentTarget = $( event.currentTarget );
-
 	// Clear the timeout for open/closing menus
 	clearTimeout( globalTimeout );
 
 	globalTimeout = setTimeout( function() {
-		menuClose( $currentTarget.find( ".active" ), true );
+		menuClose( $( event.currentTarget ).find( ".active" ), true );
 	}, hoverDelay );
 } );
 
@@ -7351,7 +7100,7 @@ $document.on( "keydown", selector + " [role=menuitem]", function( event ) {
 						// Close the menu but keep the referring link active
 						setTimeout( function() {
 							menuClose( $menuLink.parent(), false );
-						}, 100 );
+						}, 1 );
 
 					// Left / right key = Next / previous menu bar item
 					} else if ( $parentMenu.attr( "role" ) === "menubar" ) {
@@ -7475,7 +7224,7 @@ var componentName = "wb-mltmd",
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var eventTarget = wb.init( event, componentName, selector ),
+		var eventTarget = wb.init( event, componentName, selector, true ),
 			elmId;
 
 		if ( eventTarget ) {
@@ -7533,7 +7282,6 @@ var componentName = "wb-mltmd",
 
 		//Loop to extract hours, minutes and seconds
 		while ( index >= 0 ) {
-
 			//Get the number of seconds for the current iteration (hour, minute or second)
 			secondsIn = Math.pow( 60, index );
 			current = Math.floor( time / secondsIn );
@@ -7560,11 +7308,9 @@ var componentName = "wb-mltmd",
 
 		if ( time !== undef ) {
 			if ( time.charAt( time.length - 1 ) === "s" ) {
-
 				//Duration parsing
 				return parseFloat( time.substring( 0, time.length - 1 ) );
 			} else {
-
 				//SMTPE Timecode Parsing
 				parts = time.split( ":" ).reverse();
 				seconds = 0;
@@ -7589,12 +7335,10 @@ var componentName = "wb-mltmd",
 	tmpl = ( function() {
 		var start = "{{",
 			end = "}}",
-
 			// e.g. config.person.name
 			path = "[a-z0-9_$][\\.a-z0-9_]*",
 			pattern = new RegExp( start + "\\s*(" + path + ")\\s*" + end, "gi" );
 		return function( template, data ) {
-
 			// Merge data into the template string
 			return template.replace( pattern, function( tag, token ) {
 				var path = token.split( "." ),
@@ -7603,12 +7347,10 @@ var componentName = "wb-mltmd",
 					i = 0;
 				for ( ; i < len; i += 1 ) {
 					lookup = lookup[ path[ i ] ];
-
 					// Property not found
 					if ( lookup === undef ) {
 						throw "tim: '" + path[ i ] + "' not found in " + tag;
 					}
-
 					// Return the required value
 					if ( i === len - 1 ) {
 						return lookup;
@@ -7709,7 +7451,6 @@ var componentName = "wb-mltmd",
 		$.ajax( {
 			url: url,
 			dataType: "html",
-
 			//Filters out images and objects from the content to avoid loading them
 			dataFilter: function( data ) {
 				return data.replace( /<img|object [^>]*>/g, "" );
@@ -7882,13 +7623,8 @@ var componentName = "wb-mltmd",
 		case "setCaptionsVisible":
 			if ( args ) {
 				$( this ).addClass( captionClass );
-				try {
-					this.object.loadModule( "cc" );
-					this.object.setOption( "cc", "track", { languageCode: this.object.getOption( "cc", "tracklist" )[ 0 ].languageCode } );
-				} catch ( e ) {
-					this.object.loadModule( "captions" );
-					this.object.setOption( "captions", "track", { languageCode: this.object.getOption( "captions", "tracklist" )[ 0 ].languageCode } );
-				}
+				this.object.loadModule( "cc" );
+				this.object.loadModule( "captions" );
 			} else {
 				$( this ).removeClass( captionClass );
 				this.object.unloadModule( "cc" );
@@ -8009,7 +7745,6 @@ $document.on( initializedEvent, selector, function( event ) {
 		$this.addClass( type );
 
 		if ( $media.find( "[type='video/youtube']" ).length > 0 ) {
-
 			// lets tweak some variables and start the load sequence
 			url = wb.getUrlParts( $this.find( "[type='video/youtube']" ).attr( "src" ) );
 
@@ -8051,7 +7786,7 @@ $document.on( fallbackEvent, selector, function( event, data ) {
 			width = data.width,
 			height = data.height > 0 ? data.height : Math.round( data.width / 1.777 ),
 			playerresource = wb.getPath( "/assets" ) + "/multimedia.swf?" + new Date().getTime(),
-			poster, $newMedia;
+			poster;
 
 		flashvars += "&amp;media=" + encodeURI( wb.getUrlParts( source ).absolute );
 		if ( type === "video" ) {
@@ -8062,7 +7797,7 @@ $document.on( fallbackEvent, selector, function( event, data ) {
 				width + "&amp;posterimg=" + encodeURI( wb.getUrlParts( posterUrl ).absolute );
 		}
 
-		$newMedia = $( "<object id='" + data.mId + "' width='" + width +
+		data.media = $media.replaceWith( "<object id='" + data.mId + "' width='" + width +
 			"' height='" + height + "' class='" + type +
 			"' type='application/x-shockwave-flash' data='" +
 			playerresource + "' tabindex='-1' play='' pause=''>" +
@@ -8072,10 +7807,6 @@ $document.on( fallbackEvent, selector, function( event, data ) {
 			"<param name='bgcolor' value='#000000'/>" +
 			"<param name='wmode' value='opaque'/>" +
 			poster + "</object>" );
-
-		$media.replaceWith( $newMedia );
-
-		data.media = $newMedia;
 
 		$this.trigger( renderUIEvent, [ type, data ] );
 	}
@@ -8109,7 +7840,6 @@ $document.on( youtubeEvent, selector, function( event, data ) {
 				},
 				onStateChange: youTubeEvents,
 				onApiChange: function() {
-
 					//If captions were enabled before the module was ready, re-enable them
 					var t = $this.get( 0 );
 					t.player( "setCaptionsVisible", t.player( "getCaptionsVisible" ) );
@@ -8324,7 +8054,7 @@ $document.on( multimediaEvents, selector, function( event, simulated ) {
 				.toggleClass( "glyphicon-volume-off", isMuted )
 				.html( invStart + buttonData + invEnd );
 		$slider = $this.find( "input[type='range']" );
-		$slider[ 0 ].value = isMuted ? 0 : volume;
+		$slider[0].value = isMuted ? 0 : volume;
 		$slider.trigger( "wb-update.wb-slider" );
 		break;
 
@@ -8617,7 +8347,6 @@ var componentName = "wb-overlay",
 	closeClass = "overlay-close",
 	linkClass = "overlay-lnk",
 	ignoreOutsideClass = "outside-off",
-	initialized = false,
 	sourceLinks = {},
 	setFocusEvent = "setfocus.wb",
 	$document = wb.doc,
@@ -8659,7 +8388,7 @@ var componentName = "wb-overlay",
 				closeText = i18nText.closeOverlay;
 			}
 			closeText = closeText.replace( "'", "&#39;" );
-			overlayClose = "<button type='button' class='mfp-close " + closeClass +
+			overlayClose = "<button class='mfp-close " + closeClass +
 				"' title='" + closeText + "'>&#xd7;<span class='wb-inv'> " +
 				closeText + "</span></button>";
 
@@ -8667,7 +8396,6 @@ var componentName = "wb-overlay",
 			elm.setAttribute( "aria-hidden", "true" );
 
 			// Identify that initialization has completed
-			initialized = true;
 			wb.ready( $elm, componentName );
 		}
 	},
@@ -8780,8 +8508,8 @@ $document.on( "timerpoke.wb " + initEvent + " keydown open" + selector +
 $document.on( "click vclick", "." + closeClass, function( event ) {
 	var which = event.which;
 
-	// Ignore if not initialized and middle/right mouse buttons
-	if ( initialized && ( !which || which === 1 ) ) {
+	// Ignore middle/right mouse buttons
+	if ( !which || which === 1 ) {
 		closeOverlay(
 			$( event.currentTarget ).closest( selector ).attr( "id" ),
 			false,
@@ -8796,8 +8524,8 @@ $document.on( "click vclick", "." + linkClass, function( event ) {
 		sourceLink = event.currentTarget,
 		overlayId = sourceLink.hash.substring( 1 );
 
-	// Ignore if not initialized and middle/right mouse buttons
-	if ( initialized && ( !which || which === 1 ) ) {
+	// Ignore middle/right mouse buttons
+	if ( !which || which === 1 ) {
 		event.preventDefault();
 
 		// Introduce a delay to prevent outside activity detection
@@ -8818,8 +8546,8 @@ $document.on( "click vclick", selector + " a[href^='#']", function( event ) {
 		eventTarget = event.target,
 		href, overlay, linkTarget;
 
-	// Ignore if not initialized and middle/right mouse buttons
-	if ( initialized && ( !which || which === 1 ) ) {
+	// Ignore middle/right mouse buttons
+	if ( !which || which === 1 ) {
 		overlay = $( eventTarget ).closest( selector )[ 0 ];
 		href = eventTarget.getAttribute( "href" );
 		linkTarget = document.getElementById( href.substring( 1 ) );
@@ -8847,8 +8575,8 @@ $document.on( "click vclick touchstart focusin", "body", function( event ) {
 		which = event.which,
 		overlayId, overlay;
 
-	// Ignore if not initialized and middle/right mouse buttons
-	if ( initialized && ( !which || which === 1 ) ) {
+	// Ignore middle/right mouse buttons
+	if ( !which || which === 1 ) {
 
 		// Close any overlays with outside activity
 		for ( overlayId in sourceLinks ) {
@@ -8861,52 +8589,6 @@ $document.on( "click vclick touchstart focusin", "body", function( event ) {
 				// Close the overlay
 				closeOverlay( overlayId );
 			}
-		}
-	}
-} );
-
-// Ensure any element in focus outside an overlay is visible
-$document.on( "keyup", function( ) {
-	var elmInFocus, elmInFocusRect, focusAreaBelow, focusAreaAbove,
-		overlayId, overlay, overlayRect;
-
-	// Ignore if not initialized
-	if ( initialized ) {
-		elmInFocus = document.activeElement;
-		elmInFocusRect = elmInFocus.getBoundingClientRect();
-		focusAreaBelow = 0;
-		focusAreaAbove = window.innerHeight;
-
-		// Ensure that at least one overlay is visible, and that the element in focus is not an overlay,
-		// a child of an overlay, or the body element
-		if ( $.isEmptyObject( sourceLinks ) || elmInFocus.className.indexOf( componentName ) !== -1 ||
-			$( elmInFocus ).parents( selector ).length !== 0 || elmInFocus === document.body ) {
-			return;
-		}
-
-		// Determine the vertical portion of the viewport that is not obscured by an overlay
-		for ( overlayId in sourceLinks ) {
-			overlay = document.getElementById( overlayId );
-			if ( overlay && overlay.getAttribute( "aria-hidden" ) === "false" ) {
-				overlayRect = overlay.getBoundingClientRect();
-				if ( overlay.className.indexOf( "wb-bar-t" ) !== -1 ) {
-					focusAreaBelow = Math.max( overlayRect.bottom, focusAreaBelow );
-				} else if ( overlay.className.indexOf( "wb-bar-b" ) !== -1 ) {
-					focusAreaAbove = Math.min( overlayRect.top, focusAreaAbove );
-				}
-			}
-		}
-
-		// Ensure the element in focus is visible
-		// TODO: Find a solution for when there isn't enough page to scoll up or down
-		if ( elmInFocusRect.top < focusAreaBelow ) {
-
-			// Scroll down till the top of the element is visible
-			window.scrollBy( 0, focusAreaBelow - elmInFocusRect.top );
-		} else if ( elmInFocusRect.bottom > focusAreaAbove ) {
-
-			// Scroll up till the bottom of the element is visible
-			window.scrollBy( 0, elmInFocusRect.bottom - focusAreaAbove );
 		}
 	}
 } );
@@ -9234,18 +8916,13 @@ var $modal, $modalLink, countdownInterval, i18n, i18nText,
 	 * For example, adding the attribute data-option1="false", will override option1 for that plugin instance.
 	 */
 	defaults = {
-		inactivity: 1200000,		/* default inactivity period 20 minutes */
-		reactionTime: 180000,		/* default confirmation period of 3 minutes */
-		sessionalive: 1200000,		/* default keepalive period of 20 minutes */
-		refreshCallbackUrl: null,	/* refresh callback if using AJAX keepalive (no default) */
-		logouturl: "./",			/* logout URL once the session has expired */
-		refreshOnClick: true,		/* refresh session if user clicks on the page */
-		refreshLimit: 120000,		/* default period of 2 minutes (ajax calls happen only once during this period) */
-		method: "POST",				/* the request method to use */
-		additionalData: null,		/* additional data to send with the request */
-		refreshCallback: function( response ) {	/* callback function used to check the server response */
-				return response.replace( /\s/g, "" ) === "true";
-			}
+		inactivity: 1200000,		// default inactivity period 20 minutes
+		reactionTime: 180000,		// default confirmation period of 3 minutes
+		sessionalive: 1200000,		// default keepalive period of 20 minutes
+		refreshCallbackUrl: null,	// refresh callback if using AJAX keepalive (no default)
+		logouturl: "./",			// logout URL once the session has expired
+		refreshOnClick: true,		// refresh session if user clicks on the page
+		refreshLimit: 200000		// default period of 2 minutes (ajax calls happen only once during this period)
 	},
 
 	/**
@@ -9288,7 +8965,6 @@ var $modal, $modalLink, countdownInterval, i18n, i18nText,
 			}
 
 			onReady = function() {
-
 				// Setup the refresh on click behaviour
 				initRefreshOnClick( $elm, settings );
 
@@ -9313,7 +8989,6 @@ var $modal, $modalLink, countdownInterval, i18n, i18nText,
 	 * @param {Object} settings Key-value object
 	 */
 	initEventTimeout = function( $elm, eventName, time, settings ) {
-
 		// Clear any existing timeout for the event
 		clearTimeout( $elm.data( eventName ) );
 
@@ -9384,8 +9059,8 @@ var $modal, $modalLink, countdownInterval, i18n, i18nText,
 						$elm
 							.trigger( resetEvent, settings )
 							.trigger( keepaliveEvent, settings );
-						$elm.data( "lastActivity", currentTime );
 					}
+					$elm.data( "lastActivity", currentTime );
 				}
 			} );
 		}
@@ -9400,31 +9075,24 @@ var $modal, $modalLink, countdownInterval, i18n, i18nText,
 	keepalive = function( event, settings ) {
 		var $elm = $( event.target );
 		if ( settings.refreshCallbackUrl !== null ) {
-			$.ajax( {
-				url: settings.refreshCallbackUrl,
-				data: settings.additionalData,
-				dataType: "text",
-				method: settings.method,
-				success: function( response ) {
+			$.post( settings.refreshCallbackUrl, function( response ) {
+				// Session is valid
+				if ( response && response.replace( /\s/g, "" ) === "true" ) {
+					$elm.trigger( resetEvent, settings );
 
-					// Session is valid
-					if ( response && settings.refreshCallback( response ) ) {
-						$elm.trigger( resetEvent, settings );
+				// Session has timed out - let the user know they need to sign in again
+				} else {
 
-					// Session has timed out - let the user know they need to sign in again
-					} else {
+					// End the inactivity timeouts since the session is already kaput
+					clearTimeout( $elm.data( inactivityEvent ) );
+					clearTimeout( $elm.data( keepaliveEvent ) );
 
-						// End the inactivity timeouts since the session is already kaput
-						clearTimeout( $elm.data( inactivityEvent ) );
-						clearTimeout( $elm.data( keepaliveEvent ) );
-
-						openModal( {
-							body: "<p>" + i18nText.timeoutAlready + "</p>",
-							buttons: $( "<button type='button' class='" + confirmClass +
-								" btn btn-primary'>" + i18nText.buttonSignin + "</button>" )
-									.data( "logouturl", settings.logouturl )
-						} );
-					}
+					openModal( {
+						body: "<p>" + i18nText.timeoutAlready + "</p>",
+						buttons: $( "<button type='button' class='" + confirmClass +
+							" btn btn-primary'>" + i18nText.buttonSignin + "</button>" )
+								.data( "logouturl", settings.logouturl )
+					} );
 				}
 			} );
 		}
@@ -9751,7 +9419,7 @@ var componentName = "wb-share",
 			},
 			pinterest: {
 				name: "Pinterest",
-				url: "http://www.pinterest.com/pin/create/button/?url={u}&amp;media={i}&amp;description={t}"
+				url: "http://www.pinterest.com/pin/create/link/?url={u}&amp;media={i}&amp;description={t}"
 			},
 			reddit: {
 				name: "reddit",
@@ -9806,7 +9474,7 @@ var componentName = "wb-share",
 				};
 
 				// Add an email mailto option
-				defaults.sites.email = {
+				defaults.sites[ i18nText.email ] = {
 					name: i18nText.email,
 					url: "mailto:?to=&subject={t}&body={u}%0A{d}",
 					isMailto: true
@@ -9830,7 +9498,7 @@ var componentName = "wb-share",
 			id = "shr-pg" + ( pnlId.length !== 0 ? "-" + pnlId : panelCount );
 			pageHref = encodeURIComponent( settings.url );
 
-			regex = /\'|&#39;|&apos;/g;
+			regex = /\'|&#39;|&apos;/;
 			pageTitle = encodeURIComponent( settings.title )
 							.replace( regex, "%27" );
 			pageImage = encodeURIComponent( settings.img );
@@ -10022,7 +9690,6 @@ var componentName = "wb-tables",
 					/*
 					 * Extend type detection
 					 */
-
 					// Formatted numbers detection
 					// Based on: http://datatables.net/plug-ins/type-detection#formatted_numbers
 					dataTableExt.aTypes.unshift(
@@ -10143,7 +9810,7 @@ var componentName = "wb-tabs",
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName, selector ),
+		var elm = wb.init( event, componentName, selector, true ),
 			hashFocus = false,
 			isCarousel = true,
 			open = "open",
@@ -10441,7 +10108,7 @@ var componentName = "wb-tabs",
 			listItems = $tabList.children().get(),
 			listCounter = listItems.length - 1,
 			isDetails = $panels[ 0 ].nodeName.toLowerCase() === "details",
-			isActive, item, link, panelId, activeFound;
+			isActive, item, link, panelId;
 
 		$panels.attr( "tabindex", "-1" );
 
@@ -10456,18 +10123,10 @@ var componentName = "wb-tabs",
 			item.setAttribute( "aria-labelledby", item.id + "-lnk" );
 		}
 
-		activeFound = false;
 		for ( ; listCounter !== -1; listCounter -= 1 ) {
 			item = listItems[ listCounter ];
 			item.setAttribute( "role", "presentation" );
-
 			isActive = item.className.indexOf( "active" ) !== -1;
-			if ( isActive ) {
-				activeFound = true;
-			} else if ( listCounter === 0 && !activeFound ) {
-				isActive = true;
-				item.className += " active";
-			}
 
 			link = item.getElementsByTagName( "a" )[ 0 ];
 			panelId = link.getAttribute( "href" ).substring( 1 );
@@ -10656,16 +10315,15 @@ var componentName = "wb-tabs",
 	 * @param {jQuery Object} $currentElm Element being initialized (only during initialization process).
 	 */
 	onResize = function( $currentElm ) {
-		var $elms, $elm, $tabPanels, $details, $detailsElm, $tablist,
-			$openDetails, openDetailsId, activeId, $summary, $panelElm,
-			i, len, j, len2, viewChange, isInit, isActive;
+		var $elms, $elm, $tabPanels, $details, $tablist, $openDetails, openDetailsId,
+			$nonOpenDetails, $active, $summary, i, len, viewChange, isInit;
 
 		if ( initialized ) {
 			isSmallView = document.documentElement.className.indexOf( smallViewPattern ) !== -1;
 			viewChange = isSmallView !== oldIsSmallView;
 			isInit = $currentElm.length ? true : false;
 
-			if ( viewChange || isInit ) {
+			if ( viewChange ) {
 				$elms = isInit ? $currentElm : $( selector );
 				len = $elms.length;
 
@@ -10673,7 +10331,6 @@ var componentName = "wb-tabs",
 					$elm = $elms.eq( i );
 					$tabPanels = $elm.children( ".tabpanels" );
 					$details = $tabPanels.children( "details" );
-					len2 = $details.length;
 
 					if ( $details.length !== 0 ) {
 						$tabPanels.detach();
@@ -10683,37 +10340,19 @@ var componentName = "wb-tabs",
 						if ( isSmallView ) {
 
 							// Switch to small view
-							activeId = $tablist.find( ".active a" ).attr( "href" ).substring( 1 );
-							for ( j = 0; j !== len2; j += 1 ) {
-								$detailsElm = $details.eq( j );
-								$panelElm = $detailsElm.children( ".tgl-panel" );
-								isActive = $detailsElm.attr( "id" ) === activeId;
-
-								$detailsElm
-									.removeAttr( "role aria-expanded aria-hidden" )
-									.removeClass( "fade out in" )
-									.toggleClass( "open", isActive );
-
-								$panelElm
-									.attr( "role", "tabpanel" )
-									.removeAttr( "aria-expanded" )
-									.removeAttr( "aria-hidden" );
-
-								if ( isActive ) {
-									$detailsElm.attr( "open", "open" );
-								} else {
-									$detailsElm.removeAttr( "open" );
-								}
-
-								if ( !isInit ) {
-									$detailsElm
-										.children( "summary" )
-											.attr( {
-												"aria-expanded": isActive,
-												"aria-selected": isActive
-											} );
-								}
-							}
+							$active = $tablist.find( ".active a" );
+							$details
+								.removeAttr( "role aria-expanded aria-hidden" )
+								.removeClass( "fade out in" )
+								.children( ".tgl-panel" )
+									.attr( "role", "tabpanel" );
+							$openDetails = $details
+												.filter( "#" + $active.attr( "href" ).substring( 1 ) )
+													.attr( "open", "open" )
+													.addClass( "open" );
+							$nonOpenDetails = $details.not( $openDetails )
+														.removeAttr( "open" )
+														.removeClass( "open" );
 						} else if ( oldIsSmallView ) {
 
 							// Switch to large view
@@ -10755,7 +10394,7 @@ var componentName = "wb-tabs",
 						$elm.append( $tabPanels );
 
 						// Update the tablist role
-						if ( isSmallView && !isInit ) {
+						if ( isSmallView ) {
 							$elm.attr( "role", "tablist" );
 						} else if ( oldIsSmallView ) {
 							$elm
@@ -11153,10 +10792,9 @@ var componentName = "wb-toggle",
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
 		var link = wb.init( event, componentName, selector, true ),
-			$link, data, persistState;
+			$link, data;
 
 		if ( link ) {
-
 			// Merge the elements settings with the defaults
 			$link = $( link );
 			data = $.extend( {}, defaults, $link.data( "toggle" ) );
@@ -11167,7 +10805,7 @@ var componentName = "wb-toggle",
 
 			// Persist toggle state across page loads
 			if ( data.persist ) {
-				persistState = initPersist( $link, data );
+				initPersist( $link, data );
 			}
 
 			// Toggle behaviour when the page is printed
@@ -11175,9 +10813,7 @@ var componentName = "wb-toggle",
 				initPrint( $link, data );
 			}
 
-			// Set the initial state if the state has been specified and
-			// the persistent state has not been set
-			if ( !persistState && data.state ) {
+			if ( data.state ) {
 				setState( $link, data, data.state );
 			}
 
@@ -11212,6 +10848,9 @@ var componentName = "wb-toggle",
 
 				elms = parent.querySelectorAll( data.group );
 				tabs = parent.querySelectorAll( data.group + " " + selectorTab );
+
+				// Initialize the detail/summaries
+				$( tabs ).trigger( "wb-init.wb-details" );
 
 				// Set the tab and panel aria attributes
 				for ( i = 0, len = elms.length; i !== len; i += 1 ) {
@@ -11264,10 +10903,9 @@ var componentName = "wb-toggle",
 	},
 
 	/**
-	 * Initializes persistent behaviour of the toggle element
+	 * Initialize open on print behaviour of the toggle element
 	 * @param {jQuery Object} $link The toggle element to initialize
 	 * @param {Object} data Simple key/value data object passed when the event was triggered
-	 * @returns {string} Persistent state
 	 */
 	initPersist = function( $link, data ) {
 		var state,
@@ -11282,8 +10920,6 @@ var componentName = "wb-toggle",
 		if ( state ) {
 			$link.trigger( toggleEvent, $.extend( {}, data, { type: state } ) );
 		}
-
-		return state;
 	},
 
 	/**
@@ -11423,7 +11059,7 @@ var componentName = "wb-toggle",
 			if ( !Modernizr.details ) {
 				$detail
 					.attr( "open", isOn ? null : "open" )
-					.children( "summary" ).trigger( "toggle.wb-details" );
+					.find( "summary" ).trigger( "toggle.wb-details" );
 			}
 
 			if ( data.isTablist ) {
@@ -11705,7 +11341,7 @@ var componentName = "wb-disable",
 		// Start initialization
 		// returns DOM object = proceed with init
 		// returns undefined = do not proceed with init (e.g., already initialized)
-		var elm = wb.init( event, componentName, selector, true ),
+		var elm = wb.init( event, componentName, selector ),
 			nQuery = "?",
 			$html = wb.html,
 			i18n = wb.i18n,
@@ -11933,7 +11569,6 @@ $document.on( clickEvents, linkSelector, function( event ) {
 		if ( tblparser.lstrowgroup ) {
 			for ( i = 0, iLength = tblparser.lstrowgroup.length; i !== iLength; i += 1 ) {
 				tblGroup = tblparser.lstrowgroup[ i ];
-
 				// Add a class to the row
 				if ( tblGroup.type === 3 || tblGroup.row[ 0 ].type === 3 ) {
 					$( tblGroup.elem ).addClass( "wb-group-summary" );
@@ -11945,7 +11580,6 @@ $document.on( clickEvents, linkSelector, function( event ) {
 		if ( tblparser.colgroup ) {
 			for ( i = 0, iLength = tblparser.colgroup.length; i !== iLength; i += 1 ) {
 				tblGroup = tblparser.colgroup[ i ];
-
 				// Add a class to the row
 				if ( tblGroup.type === 3 ) {
 					$( tblGroup.elem ).addClass( "wb-group-summary" );

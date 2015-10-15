@@ -6,11 +6,11 @@
 
 // footer
 
-
+$site_url = elgg_get_site_url();
 ?>
 
 
-    <!-- This contains the bottom Footer Links -->
+  <!-- This contains the bottom Footer Links -->
     <div class="container">
 		<nav role="navigation">
 			<h2>About this site</h2>
@@ -55,19 +55,15 @@
     
     
     <!-- GC Info that will be at the bottom of the footer -->
-	<div id="gc-info">
-		<div class="container">
-			<nav role="navigation">
-				<h2>Government of Canada footer</h2>
-                    <ul class="list-inline">
-	                   <li><a href="http://healthycanadians.gc.ca"><span>Health</span></a></li>
-	                   <li><a href="http://travel.gc.ca"><span>Travel</span></a></li>
-	                   <li><a href="http://www.servicecanada.gc.ca/eng/home.shtml"><span>Service Canada</span></a></li>
-	                   <li><a href="http://www.jobbank.gc.ca"><span>Jobs</span></a></li>
-	                   <li><a href="http://actionplan.gc.ca/en"><span>Economy</span></a></li>
-	                   <li id="canada-ca"><a href="http://www.canada.ca/en/index.html">Canada.ca</a></li>
-                </ul>
-			</nav>
-		</div>
-	</div>
-    
+    <div class="brand">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 visible-sm visible-xs tofpg">
+                    <a href="#wb-cont">Top of Page <span class="glyphicon glyphicon-chevron-up"></span></a>
+                </div>
+                <div class="col-xs-6 col-md-12 text-right">
+                    <object type="image/svg+xml" tabindex="-1" role="img" data="<?php echo $site_url ?>/mod/wet4/graphics/wmms-blk.svg" aria-label="Symbol of the Government of Canada"></object>
+                </div>
+            </div>
+        </div>
+    </div>

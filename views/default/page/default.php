@@ -56,10 +56,8 @@ $body .= <<<__BODY
 	<header class="" role="banner">
     
     	<div id="wb-bnr">
-	   $topcanbar
-
-        $wavyblue
-	</div>   
+            $wavyblue
+	   </div>   
     
 		<div class="elgg-inner">
 			$header

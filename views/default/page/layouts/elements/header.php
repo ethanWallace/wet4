@@ -9,7 +9,7 @@
 //check what page we are on
 $checkPage = elgg_get_context();
 
-//echo $checkPage;
+echo $checkPage;
 
 if (isset($vars['header'])) {
 	echo '<div class="elgg-head clearfix">';
@@ -27,7 +27,7 @@ $buttons = elgg_view_menu('title', array(
 ));
 
 if ($title || $buttons) {
-	echo '<div class="elgg-head clearfix">';
+
 	// @todo .elgg-heading-main supports action buttons - maybe rename class name?
 	echo $buttons;
     
@@ -35,5 +35,5 @@ if ($title || $buttons) {
     if($checkPage != 'discussion'){
 	   echo elgg_view_title($vars['title'], array('class' => 'elgg-heading-main mrgn-lft-sm'));
     }
-	echo '</div>';
+
 }

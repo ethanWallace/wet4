@@ -69,7 +69,7 @@ foreach ($items as $item) {
 		$li_attrs['class'][] = "elgg-item-$type";
 		if ($subtype) {
             //                                               Added styling classes here ----------------
-			$li_attrs['class'][] = "elgg-item-$type-$subtype brdr-tp clearfix";
+			$li_attrs['class'][] = "elgg-item-$type-$subtype clearfix";
 		}
 	} else if (is_callable(array($item, 'getType'))) {
 		$li_attrs['id'] = "item-{$item->getType()}-{$item->id}";
