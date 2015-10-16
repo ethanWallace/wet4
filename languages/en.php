@@ -215,7 +215,7 @@ return array(
 
 	'group' => "Group",
 	'item:group' => "Groups",
-
+    'group_tools:groups:sorting:alphabetical' => 'Alphabetical',
 /**
  * Users
  */
