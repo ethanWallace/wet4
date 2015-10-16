@@ -29,7 +29,7 @@ if (isset($vars['class'])) {
     ?>
     
     <section class="col-md-8" id="wb-cont">
-        <div class=" panel panel-custom clearfix">
+        <div class=" clearfix">
 		<?php
 			
 			

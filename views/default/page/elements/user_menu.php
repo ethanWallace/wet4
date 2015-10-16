@@ -45,6 +45,13 @@ elgg_register_menu_item('user_menu_subMenu', array(
 $dropdown = elgg_view_menu('user_menu_subMenu', array('class' => 'dropdown-menu pull-right subMenu'));
 
 
+
+
+
+
+
+
+
 //create initial badge
 $email = get_loggedin_user()->email;
 $breakup = explode('.', $email);
@@ -54,7 +61,7 @@ $initials = substr($breakup[0], 0, 1) . substr($breakup[1], 0, 1);
 elgg_register_menu_item('user_menu', array(
     'name' => 'Profile',
     'href' => $site_url . 'profile/' . $user,
-    'text' => '<span class="badge">' . strtoupper($initials) . '</span>' . $user,
+    'text' => '<span class="init-badge">' . strtoupper($initials) . '</span>' . $user,
     'title' => 'My Profile',
     'item_class' => 'brdr-rght',
     'class' => '',
@@ -62,13 +69,15 @@ elgg_register_menu_item('user_menu', array(
     ));
 
 
+
+
 //display new message badge on messages
 if(elgg_is_active_plugin('messages')){
     $unread = messages_count_unread();
     
-    $msgbadge = "<span class='badge'>" . $unread . "</span>";
+    $msgbadge = "<span class='notif-badge'>" . $unread . "</span>";
     
-    $title = ' - New(' . $unread . ')';
+    $title = ' - ' . $unread . ' New';
     
     if($unread == 0){
         $msgbadge = '';
@@ -85,7 +94,12 @@ elgg_register_menu_item('user_menu', array(
     'priority' => '2',
     ));
 
-/*elgg_register_menu_item('user_menu', array(
+
+/*
+
+Colleague menu item runs in start.php - sorry
+
+elgg_register_menu_item('user_menu', array(
     'name' => 'Colleagues',
     'href' => 'friends/' . $user,
     'text' => 'Colleagues',
@@ -98,7 +112,7 @@ elgg_register_menu_item('user_menu', array(
 elgg_register_menu_item('user_menu', array(
     'name' => elgg_echo('user_menu:settings'),
 
-    'text' => 'Settings' . $dropdown,
+    'text' => 'Settings<b class="caret"></b>' . $dropdown,
     'title' => 'My Settings Menu',
     'item_class' => 'dropdown',
     'data-toggle' => 'dropdown',
@@ -108,54 +122,6 @@ elgg_register_menu_item('user_menu', array(
 
 
 
-echo elgg_view_menu('user_menu', array('sort_by' => 'priority', 'class' => 'list-inline'));
+echo elgg_view_menu('user_menu', array('sort_by' => 'priority', 'id' => 'userMenu', 'class' => 'list-inline'));
 ?>
 
-<style>
-    
-    .subMenu .dropdownToggle {
-        display: none;
-    }
-    
-    .profile-avatar {
-        padding-left: 27px;
-        background: transparent url(<?php echo $user_avatar ?>) no-repeat left;
-        background-size: 25px;
-        height: 25px;
-    }
-    
-    .msg-icon {
-        padding-left: 23px;
-        background: transparent url(<?php echo $site_url ?>/_graphics/elgg_sprites.png) no-repeat left;
-        background-position: 0 -644px;
-        height: 20px;
-    }
-    
-    .msg-icon:hover {
-        background-position: 0 -626px;
-        
-    }
-    
-    .friend-icon {
-        padding-left: 23px;
-        height: 20px;
-        background: transparent url(<?php echo $site_url ?>/_graphics/elgg_sprites.png) no-repeat left;
-        background-position: 0 -1492px;
-    }
-    
-    .friend-icon:hover {
-        background-position: 0 -1474px;
-    }
-    
-    .settings-icon {
-        padding-left: 23px;
-        background: transparent url(<?php echo $site_url ?>/_graphics/elgg_sprites.png) no-repeat left;
-        background-position: 0 -970px;
-        height: 21px;
-    }
-    
-    .settings-icon:hover {
-        background-position: 0 -951px;
-        height: 21px;
-    }
-</style>

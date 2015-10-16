@@ -22,13 +22,28 @@ if (!$owner) {
 }
 
 ?>
-<div class="groups-profile clearfix elgg-image-block">
+<div class="groups-profile panel panel-custom clearfix elgg-image-block">
 
         <?php 
-            /*
-            Come back to mobile layout for this summary ------------------------------------------------
-            */
+            
+            //load action buttons
+            $buttons = elgg_view_menu('title', array(
+                'sort_by' => 'priority',
+                'class' => 'list-inline pull-right',
+                'item_class' => 'mrgn-rght-sm mrgn-tp-sm btn btn-custom btn-group',
+                
+            ));
+            
         ?>
+    
+    
+        <div class="panel-heading col-xs-12 mrgn-lft-sm"> 
+            <?php 
+                //action buttons
+                echo $buttons; 
+            ?>
+            <h2 class="pull-left"><?php echo $group->name; ?></h2>
+        </div>
     
 		<div class="groups-profile-icon col-md-3 col-xs-3">
 			<?php
@@ -40,6 +55,7 @@ if (!$owner) {
 				)); 
 			?>
 		</div>
+        
     
     
     
@@ -86,7 +102,7 @@ if (!$owner) {
 
             ?>
             
-            <div class="groups-stats mrgn-tp-sm"></div>
+            <div class="groups-stats mrgn-tp-0 mrgn-bttm-sm"></div>
            
 		</div>
     

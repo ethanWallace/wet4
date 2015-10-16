@@ -4,12 +4,16 @@
  *
  * @uses $vars['title']  Title
  * @uses $vars['header'] Optional override for the header
+ 
+ 2015/10/15-
+ Removed page header from group profile page
+ Styled buttons
  */
 
 //check what page we are on
 $checkPage = elgg_get_context();
 
-echo $checkPage;
+//echo $checkPage;
 
 if (isset($vars['header'])) {
 	echo '<div class="elgg-head clearfix">';
@@ -23,17 +27,20 @@ $title = elgg_extract('title', $vars, '');
 $buttons = elgg_view_menu('title', array(
 	'sort_by' => 'priority',
 	'class' => 'list-inline pull-right',
-    'item_class' => 'mrgn-rght-sm mrgn-tp-sm',
+    'item_class' => 'mrgn-rght-sm mrgn-tp-sm btn btn-custom',
 ));
 
 if ($title || $buttons) {
 
-	// @todo .elgg-heading-main supports action buttons - maybe rename class name?
-	echo $buttons;
+	 
     
     //do not display main heading on discussion page
-    if($checkPage != 'discussion'){
-	   echo elgg_view_title($vars['title'], array('class' => 'elgg-heading-main mrgn-lft-sm'));
+    if($checkPage == 'group_profile'){
+	   
+    } else {
+        // @todo .elgg-heading-main supports action buttons - maybe rename class name?
+	  echo $buttons;   
+        echo elgg_view_title($vars['title'], array('class' => 'elgg-heading-main mrgn-lft-sm'));
     }
 
 }

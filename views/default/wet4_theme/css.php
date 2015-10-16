@@ -10499,9 +10499,90 @@ a.shr-opn, a.shr-opn:hover {
     
     /****************************************/
     
-    /******************** Custom Panel ********************/
+    /******************** user menu ********************/
 
+    .subMenu .dropdownToggle {
+        display: none;
+    }
     
+    .profile-avatar {
+        padding-left: 27px;
+        background: transparent url(<?php echo $user_avatar ?>) no-repeat left;
+        background-size: 25px;
+        height: 25px;
+    }
+    
+    .msg-icon {
+        padding-left: 23px;
+        background: transparent url(<?php echo $site_url ?>/_graphics/elgg_sprites.png) no-repeat left;
+        background-position: 0 -644px;
+        height: 20px;
+    }
+    
+    .msg-icon:hover {
+        background-position: 0 -626px;
+        
+    }
+    
+    .friend-icon {
+        padding-left: 23px;
+        height: 20px;
+        background: transparent url(<?php echo $site_url ?>/_graphics/elgg_sprites.png) no-repeat left;
+        background-position: 0 -1492px;
+    }
+    
+    .friend-icon:hover {
+        background-position: 0 -1474px;
+    }
+    
+    .settings-icon {
+        padding-left: 23px;
+        background: transparent url(<?php echo $site_url ?>/_graphics/elgg_sprites.png) no-repeat left;
+        background-position: 0 -970px;
+        height: 21px;
+    }
+    
+    .settings-icon:hover {
+        background-position: 0 -951px;
+        height: 21px;
+    }
+    
+    .notif-badge {
+      display: inline-block;
+      margin-left: -1px;
+      min-width: 10px;
+      padding: 2px 5px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      line-height: 1;
+      vertical-align: top;
+      white-space: nowrap;
+      text-align: center;
+      background-color: #d00;
+      border-radius: 10px; 
+
+    }
+    
+    .init-badge {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        padding: 8px 0px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        /* line-height: 1; */
+        vertical-align: baseline;
+        white-space: nowrap;
+        text-align: center;
+        background-color: #055959;
+        border-radius: 25px;
+        margin-right: 7px;
+    }
+
+<?php echo elgg_view('css/elements/icons - Copy', $vars); ?> 
+
     /****************************************/
     
     /******************** Custom Button Styles ********************/
@@ -10511,6 +10592,11 @@ a.shr-opn, a.shr-opn:hover {
           background-color: #f3f3f3;
           border-color: #dcdee1;
         border-radius: 0;
+    }
+
+    .btn-custom a {
+        color: #335075;
+        text-decoration: none;
     }
     
     .btn-custom:hover {
@@ -11075,7 +11161,7 @@ Carousel
   @title: All screen views
  */
   body {
-    background: #f9f9f9; }
+    background: #fcfcfc; }
   .overlay-def .modal-header {
     background: #2e5274; }
   .wb-sl {

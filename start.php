@@ -139,8 +139,8 @@ function wet4_theme_pagesetup() {
 			$params = array(
 				"name" => "Colleagues",
 				"href" => "friends/" . $user->username,
-				"text" => elgg_echo("friends") . "<span class='badge'>" . $count . "</span>",
-				"title" => elgg_echo('friends') . ' - Requests(' . $count .')',
+				"text" => elgg_echo("friends") . "<span class='notif-badge'>" . $count . "</span>",
+				"title" => elgg_echo('friends') . ' - ' . $count . ' Request(s)',
                 "class" => 'friend-icon',
                 'item_class' => 'brdr-rght',
 				'priority' => '3'

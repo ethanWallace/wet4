@@ -89,7 +89,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
         <meta name="dcterms.subject" title="scheme" content="French subject terms / Termes de sujet en français" />
         <meta name="dcterms.language" title="ISO639-2" content="eng" />
                 <!-- Meta data-->
-
+        <link href="<?php echo $site_url ?>/mod/wet4/graphics/favicon.ico" rel="icon" type="image/x-icon" />
 
 
         <noscript><link rel="stylesheet" href="./css/noscript.css" /></noscript>

@@ -52,6 +52,7 @@ if ($right || $left) {
         
         <ul class="dropdown-menu pull-right">
             <li><a data-toggle="tab" href="#calendar">Events</a></li>
+            <li><a data-toggle="tab" href="#pages">Pages</a></li>
             <li><a data-toggle="tab" href="#bookmarks">Bookmarks</a></li>
         </ul>
     </li>
@@ -66,7 +67,11 @@ if ($right || $left) {
 
     <div id="aboutTab" class="tab-pane fade-in active">
 
-        <?php echo elgg_view('groups/profile/fields', $vars);?>
+        <?php echo elgg_view('groups/profile/fields', $vars);
+                
+                
+                echo elgg_view('groups/profile/widget_area', $vars);
+        ?>
 
     </div>
 

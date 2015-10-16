@@ -10,5 +10,5 @@ $item = $vars['item'];
 echo elgg_view('page/components/image_block', array(
 	'image' => elgg_view('river/elements/image', $vars),
 	'body' => elgg_view('river/elements/body', $vars),
-	'class' => 'col-xs-12 brdr-tp mrgn-tp-sm',
+	'class' => 'col-xs-12 mrgn-tp-sm',
 ));

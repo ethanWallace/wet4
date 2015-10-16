@@ -64,7 +64,7 @@ if (empty($list_items)) {
 	return;
 }
 
-$icon = "<span class=\"glyphicon glyphicon-tag\"></span>";
+$icon = "<span class=\"fa fa-tags\"></span>";
 
 $list = <<<___HTML
 	<div class="clearfix">
