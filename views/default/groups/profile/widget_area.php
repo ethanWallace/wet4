@@ -1,6 +1,6 @@
 <?php
 
-echo '<div id="splashboard">';
+echo '<div id="customWidgets">';
 
                 $num_columns = elgg_extract('num_columns', $vars, 2);
                 $show_add_widgets = elgg_extract('show_add_widgets', $vars, true);
@@ -12,7 +12,7 @@ echo '<div id="splashboard">';
                 $widget_types = elgg_get_widget_types();
 
                 $context = elgg_get_context();
-
+                elgg_push_context('widgets');
 
                 $widgets = elgg_get_widgets($owner->guid, $context);
 
@@ -63,3 +63,5 @@ echo '<div id="splashboard">';
                     echo '</div>';
                 }
             echo '</div>'; 
+
+elgg_pop_context();

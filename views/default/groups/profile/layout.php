@@ -23,3 +23,4 @@ if (elgg_group_gatekeeper(false)) {
 		echo elgg_view('groups/profile/membersonly_closed');
 	}
 }
+

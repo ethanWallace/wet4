@@ -56,6 +56,9 @@ if ($right || $left) {
             <li><a data-toggle="tab" href="#bookmarks">Bookmarks</a></li>
         </ul>
     </li>
+    
+    
+    <li><a data-toggle="tab" href="#"><i class="fa fa-search"></i></a></li>
 </ul>
 
 
@@ -79,4 +82,3 @@ if ($right || $left) {
     echo elgg_view("groups/tool_latest", $vars);?>
 
 </div>
-
