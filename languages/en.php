@@ -1272,7 +1272,12 @@ To view %s's profile, click here:
 %s
 
 Please do not reply to this email.",
-
+/**
+*Blogs
+*/
+    
+'blog:title:all_blogs' => 'Blogs',    
+    
 /**
  * Entities
  */
