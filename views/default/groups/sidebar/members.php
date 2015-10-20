@@ -19,7 +19,7 @@ $members = elgg_list_entities_from_relationship(array(
 	'type' => 'user',
 ));
 
-$membersCount = '(' . count($members) . ')';
+$membersCount = '';//'(' . count($members) . ')';
 
 $all_link = elgg_view('output/url', array(
 	'href' => 'groups/members/' . $vars['entity']->guid,
