@@ -75,7 +75,7 @@ foreach ($items as $item) {
 		$li_attrs['id'] = "item-{$item->getType()}-{$item->id}";
 	}
 
-	$list_items = elgg_format_element('td', ['class' => ''], $item_view);
+	$list_items = elgg_format_element('td', $vars, $item_view);
     $tR .= elgg_format_element('tr', ['class' => 'gradeA', 'role' => 'row',], $list_items);
 }
 
@@ -83,9 +83,9 @@ if ($position == 'before' || $position == 'both') {
 	echo $nav;
 }
 
-$tBody = elgg_format_element('tbody', ['class' => ''], $tR);
+$tBody = elgg_format_element('tbody', $vars, $tR);
 
-$tHead = elgg_format_element('thead', ['class' => ''], '<th class="sorting_asc" tabindex="0" aria-controls="wb-auto-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rending engine: activate for ascending sort">red</th>');
+$tHead = elgg_format_element('thead', array('class' => 'red'), '<th class="sorting_asc" tabindex="0" aria-controls="wb-auto-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rending engine: activate for ascending sort">red</th>');
 
 
 //echo '<div id="wb-tables-1_wrapper" class="dataTables_wrapper no-footer">';
