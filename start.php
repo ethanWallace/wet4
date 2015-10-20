@@ -15,8 +15,8 @@ function wet4_theme_init() {
 	// theme specific CSS
 	elgg_extend_view('css/elgg', 'wet4_theme/css');
 
-	elgg_unextend_view('page/elements/header', 'search/header');
-	elgg_extend_view('page/elements/sidebar', 'search/header', 0);
+	//elgg_unextend_view('page/elements/header', 'search/header');
+	//elgg_extend_view('page/elements/sidebar', 'search/header', 0);
 	
 	elgg_register_plugin_hook_handler('head', 'page', 'wet4_theme_setup_head');
     
