@@ -68,21 +68,33 @@ foreach ($items as $item) {
 
 		$li_attrs['class'][] = "elgg-item-$type";
 		if ($subtype) {
-                                                          
-			$li_attrs['class'][] = "elgg-item-$type-$subtype clearfix";
+            //                                               Added styling classes here ----------------
+			$li_attrs['class'][] = "elgg-item-$type-$subtype brdr-tp clearfix";
 		}
 	} else if (is_callable(array($item, 'getType'))) {
 		$li_attrs['id'] = "item-{$item->getType()}-{$item->id}";
 	}
 
-	$list_items .= elgg_format_element('li', $li_attrs, $item_view);
+	$list_items = elgg_format_element('td', ['class' => ''], $item_view);
+    $tR .= elgg_format_element('tr', ['class' => 'gradeA', 'role' => 'row',], $list_items);
 }
 
 if ($position == 'before' || $position == 'both') {
 	echo $nav;
 }
 
-echo elgg_format_element('ul', ['class' => $list_classes], $list_items);
+$tBody = elgg_format_element('tbody', ['class' => ''], $tR);
+
+$tHead = elgg_format_element('thead', ['class' => ''], '<th class="sorting_asc" tabindex="0" aria-controls="wb-auto-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rending engine: activate for ascending sort">red</th>');
+
+
+//echo '<div id="wb-tables-1_wrapper" class="dataTables_wrapper no-footer">';
+
+echo elgg_format_element('table', ['class' => 'wb-tables table'], $tHead . $tBody);
+
+//echo '</div>';
+
+//echo elgg_format_element('ul', ['class' => $list_classes], $list_items);
 
 if ($position == 'after' || $position == 'both') {
 	echo $nav;
