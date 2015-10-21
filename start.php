@@ -12,6 +12,9 @@ function wet4_theme_init() {
     //reload groups library to have our sidebar changes
     elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'wet4/lib/groups.php');
     
+    
+    
+    
 	elgg_register_event_handler('pagesetup', 'system', 'wet4_theme_pagesetup', 1000);
     elgg_register_event_handler('pagesetup', 'system', 'messages_notifier');
 
@@ -35,7 +38,7 @@ function wet4_theme_init() {
  * Rearrange menu items
  */
 function wet4_theme_pagesetup() {
-
+    
 	if (elgg_is_logged_in()) {
 
 		elgg_register_menu_item('topbar', array(
