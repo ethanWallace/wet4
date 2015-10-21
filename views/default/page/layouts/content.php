@@ -21,6 +21,8 @@ if (!$vars['title'] && $vars['title'] !== false) {
 	$vars['title'] = elgg_echo($context);
 }
 
+
+
 // 1.8 supported 'filter_override'
 if (isset($vars['filter_override'])) {
 	$vars['filter'] = $vars['filter_override'];
@@ -32,6 +34,36 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
 	$filter_context = elgg_extract('filter_context', $vars, 'all');
 
 	// generate a list of default tabs
+    
+        if((elgg_get_context() == 'blog'))  {
+        $tabs = array(
+            'all' => array(
+                'text' => elgg_echo('all'),
+                'href' => (isset($vars['all_link'])) ? $vars['all_link'] : "$context/all",
+                'selected' => ($filter_context == 'all'),
+                'priority' => 200,
+            ),
+            'mine' => array(
+                'text' => elgg_echo('My blog'),
+                'href' => (isset($vars['mine_link'])) ? $vars['mine_link'] : "$context/owner/$username",
+                'selected' => ($filter_context == 'mine'),
+                'priority' => 300,
+            ),
+            'champions' => array(
+                'text' => elgg_echo('GCconnex Champions'),
+                'href' => (isset($vars['friend_link'])) ? $vars['friend_link'] : "$context/friends/$username",
+                'selected' => ($filter_context == 'friends'),
+                'priority' => 400,
+            ),
+            'authors' => array(
+                'text' => elgg_echo('My favorite Authors'),
+                'href' => "sharemaps/view/74/kite-spots",
+                'selected' => ($filter_context == 'sharemaps'),
+                'priority' => 500,
+            ),
+        );
+      }else{
+    
 	$tabs = array(
 		'all' => array(
 			'text' => elgg_echo('all'),
@@ -52,6 +84,7 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
 			'priority' => 400,
 		),
 	);
+        }
 
 	foreach ($tabs as $name => $tab) {
 		$tab['name'] = $name;
