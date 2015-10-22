@@ -19,6 +19,8 @@
  * @uses $vars['item_view']    Alternative view to render list items
  * @uses $vars['no_results']   Message to display if no results (string|Closure)
  */
+
+
 $items = $vars['items'];
 $count = elgg_extract('count', $vars);
 $pagination = elgg_extract('pagination', $vars, true);
@@ -87,19 +89,11 @@ $tBody = elgg_format_element('tbody', ['class' => ''], $tR);
 
 $tHead = elgg_format_element('thead', ['class' => ''], '<tr> <th>red</th> </tr>');
 
-
-//echo '<div id="wb-tables-1_wrapper" class="dataTables_wrapper no-footer">';
-
-echo elgg_format_element('table', ['id' => 'red'], $tHead . $tBody);
-
-//echo '</div>';
-
-//echo elgg_format_element('ul', ['class' => $list_classes], $list_items);
+echo elgg_format_element('table', ['id' => 'myTable'], $tHead . $tBody);
 
 if ($position == 'after' || $position == 'both') {
 	echo $nav;
 }
 
 
-
-elgg_require_js('//cdn.datatables.net/1.10.9/js/jquery.dataTables.js');
+?>

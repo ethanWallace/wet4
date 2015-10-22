@@ -28,6 +28,7 @@ if (elgg_get_context() == 'admin') {
 
 $site_url = elgg_get_site_url();
 $jsLocation = $site_url . "mod/wet4/views/default/js/wet-boew.js";
+$test = $site_url . "mod/wet4/views/default/js/telerik/test.js";
 
 $messages = elgg_view('page/elements/messages', array('object' => $vars['sysmessages']));
 
@@ -102,11 +103,11 @@ $body .= <<<__BODY
     
     
     
-    
 </div>
 __BODY;
 
-    
+
+
 
 $body .= elgg_view('page/elements/foot');
 
@@ -122,3 +123,4 @@ if (isset($vars['body_attrs'])) {
 }
 
 echo elgg_view("page/elements/html", $params);
+?>

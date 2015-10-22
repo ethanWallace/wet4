@@ -10,10 +10,9 @@ elgg_register_event_handler('init','system','wet4_theme_init');
 function wet4_theme_init() {
     
     //reload groups library to have our sidebar changes
-    elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'wet4/lib/groups.php');
+    elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'wet4/lib/groups.php'); 
     
-    
-    
+    //elgg_register_js('kendo.all', elgg_get_site_url() . 'mod/wet4/telerik/js/kendo.all.min.js');
     
 	elgg_register_event_handler('pagesetup', 'system', 'wet4_theme_pagesetup', 1000);
     elgg_register_event_handler('pagesetup', 'system', 'messages_notifier');
@@ -31,13 +30,15 @@ function wet4_theme_init() {
 		elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
 	}
     
-    
 }
 
 /**
  * Rearrange menu items
  */
 function wet4_theme_pagesetup() {
+    
+    //load Telerik Javascript using require
+    elgg_require_js('telerik/kendo.all.min');
     
 	if (elgg_is_logged_in()) {
 
@@ -182,8 +183,6 @@ function wet4_theme_pagesetup() {
             $item->setItemClass('msg-icon');
 
 		}
-	
-	
     
     
 }
