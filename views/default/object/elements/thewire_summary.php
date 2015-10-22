@@ -47,13 +47,13 @@ if ($title_link) {
 	echo "<h3 class=\"mrgn-bttm-0 panel-title\">$title_link</h3>";
 }
 
-echo "<div class=\"elgg-subtext mrgn-tp-sm clearfix\">$subtitle</div>";
+echo "<div class=\"elgg-subtext mrgn-tp-sm mrgn-lft-sm clearfix\">$subtitle</div>";
 echo "<div class=\"tags\">$tags</div>";
 
 echo elgg_view('object/summary/extend', $vars);
 
 if ($content) {
-	echo "<div class=\"elgg-content mrgn-tp-sm\">$content</div>";
+	echo "<div class=\"elgg-content mrgn-tp-sm mrgn-lft-md\">$content</div>";
 }
 
 if ($metadata) {
