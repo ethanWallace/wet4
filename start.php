@@ -108,11 +108,11 @@ function wet4_theme_pagesetup() {
     $params = array(
 				"name" => "Colleagues",
 				"href" => "friends/" . $user->username,
-				"text" => elgg_echo("friends"),
+				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i>' . elgg_echo("friends"),
 				"title" => elgg_echo('friends'),
-                "class" => 'friend-icon',
-                'item_class' => 'brdr-rght',
-				'priority' => '3'
+                "class" => '',
+                'item_class' => '',
+				'priority' => '1'
 			);
 			
 			elgg_register_menu_item("user_menu", $params);
@@ -142,11 +142,11 @@ function wet4_theme_pagesetup() {
 			$params = array(
 				"name" => "Colleagues",
 				"href" => "friends/" . $user->username,
-				"text" => elgg_echo("friends") . "<span class='notif-badge'>" . $count . "</span>",
+				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i>'. elgg_echo("friends") . "<span class='notif-badge'>" . $count . "</span>",
 				"title" => elgg_echo('friends') . ' - ' . $count . ' Request(s)',
-                "class" => 'friend-icon',
-                'item_class' => 'brdr-rght',
-				'priority' => '3'
+                "class" => '',
+                'item_class' => '',
+				'priority' => '1'
 			);
 			
 			elgg_register_menu_item("user_menu", $params);

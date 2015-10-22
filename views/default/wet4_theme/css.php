@@ -10583,6 +10583,44 @@ a.shr-opn, a.shr-opn:hover {
         margin-right: 7px;
     }
 
+.user-menu{
+    min-width: 400px;
+    min-height: 200px;
+   
+    /*position: relative;*/
+}
+
+.user-menu:after{
+       content: '';
+    display: block;
+    position: absolute;
+    left: 85%;
+    top: -10px;
+    width: 0;
+    height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	
+	border-bottom: 12px solid #fff;
+    clear: both;    
+}
+.user-menu:before{
+       content: '';
+    display: block;
+    position: absolute;
+    left: 85%;
+    top: -12px;
+    width: 0;
+    height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	
+	border-bottom: 12px solid rgba(0, 0, 0, 0.15) ;
+    clear: both;     
+}
+
+
+
 <?php echo elgg_view('css/elements/icons - Copy', $vars); ?> 
 
     /****************************************/
