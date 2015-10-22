@@ -24,11 +24,11 @@ if (isset($vars['header'])) {
 
 $title = elgg_extract('title', $vars, '');
 
-$buttons = elgg_view_menu('title', array(
+/*$buttons = elgg_view_menu('title', array(
 	'sort_by' => 'priority',
 	'class' => 'list-inline pull-right',
     'item_class' => 'mrgn-rght-sm mrgn-tp-sm btn btn-custom',
-));
+));*/
 
 if ($title || $buttons) {
 

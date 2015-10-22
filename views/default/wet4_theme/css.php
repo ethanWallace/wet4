@@ -11275,11 +11275,20 @@ Carousel
  .elgg-menu-filter:before,
  .elgg-menu-filter:after {
     content: " ";
-    display: table; }
+    display: table;
+    clear:both;}
       
 .elgg-menu-filter:after {
-    clear: both; }     
-
+    clear: both; } 
+      
+/*Buttom*/
+.btn-primary>a{
+    color:#fff;
+    text-decoration:none;}   
+      
+.btn-primary>a:visited{
+    color:#fff;}   
+    
 /*
  Views
  */
