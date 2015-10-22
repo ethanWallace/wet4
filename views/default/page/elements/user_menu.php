@@ -15,7 +15,7 @@ echo elgg_view_deprecated("navigation/topbar_tools", array(), "Extend the topbar
 $site_url = elgg_get_site_url();
 $user = get_loggedin_user()->username;
 $user_avatar = get_loggedin_user()->geticonURL('medium');
-
+$email = get_loggedin_user()->email;
 
 //create dropdown menu
 /*
@@ -45,7 +45,7 @@ elgg_register_menu_item('user_menu_subMenu', array(
 elgg_register_menu_item('user_menu_subMenu', array(
     'name' => 'thing',
     
-    'text' => '<div class="clearfix mrgn-bttm-sm"><div class="col-md-4"><a href="'. $site_url . 'profile/' . $user .'" title="Profile"><img class="mrgn-tp-md mrgn-lft-sm" src="'.$user_avatar.'" alt="'.$user.' Profile"></a></div><div class="col-md-8"><h4>'.$user.'</h4><div>Email@email.email</div><div>Department</div><a href="'. $site_url . 'profile/' . $user .'" class="btn btn-primary mrgn-tp-sm">My Profile</a></div></div><div class="panel-footer clearfix"><a href="'. $site_url .'settings" class="btn btn-default mrgn-tp-sm pull-left">Account Settings</a><a href="'. $site_url . 'action/logout" class="btn btn-default mrgn-tp-sm pull-right">Sign Out</a></div>',
+    'text' => '<div class="clearfix mrgn-bttm-sm"><div class="col-md-4"><a href="'. $site_url . 'profile/' . $user .'" title="Profile"><img class="mrgn-tp-md mrgn-lft-md" src="'.$user_avatar.'" alt="'.$user.' Profile"></a></div><div class="col-md-8"><h4>'.$user.'</h4><div>'. $email .'</div><div>Department</div><a href="'. $site_url . 'profile/' . $user .'" class="btn btn-default mrgn-tp-sm">My Profile</a></div></div><div class="panel-footer clearfix"><a href="'. $site_url .'settings" class="btn btn-default mrgn-tp-sm pull-left">Account Settings</a><a href="'. $site_url . 'action/logout" class="btn btn-default mrgn-tp-sm pull-right">Sign Out</a></div>',
     ));
 
 $dropdown = elgg_view_menu('user_menu_subMenu', array('class' => 'dropdown-menu user-menu pull-right subMenu'));
@@ -59,14 +59,14 @@ $dropdown = elgg_view_menu('user_menu_subMenu', array('class' => 'dropdown-menu 
 
 
 //create initial badge
-$email = get_loggedin_user()->email;
+
 $breakup = explode('.', $email);
 $initials = substr($breakup[0], 0, 1) . substr($breakup[1], 0, 1);
 
 //create user menu
 elgg_register_menu_item('user_menu', array(
     'name' => 'Profile',
-    'href' => $site_url . 'profile/' . $user ,
+    //'href' => $site_url . 'profile/' . $user ,
     'text' => '<span class="init-badge">' . strtoupper($initials) . '</span>' . $user . $dropdown,
     'title' => 'My Profile',
     'item_class' => 'brdr-lft dropdown',
@@ -130,6 +130,6 @@ elgg_register_menu_item('user_menu', array(
 */
 
 
-echo elgg_view_menu('user_menu', array('sort_by' => 'priority', 'id' => 'userMenu', 'class' => 'list-inline'));
+echo elgg_view_menu('user_menu', array('sort_by' => 'priority', 'id' => 'userMenu', 'class' => 'list-inline visited-link'));
 ?>
 

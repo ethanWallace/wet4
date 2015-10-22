@@ -22,11 +22,12 @@ if (!$thread_id) {
 
 $owner = $post->getOwnerEntity();
 
-$owner_icon = elgg_view_entity_icon($owner, 'tiny');
+$owner_icon = elgg_view_entity_icon($owner, 'medium');
 $owner_link = elgg_view('output/url', array(
 	'href' => "thewire/owner/$owner->username",
 	'text' => $owner->name,
 	'is_trusted' => true,
+    'class' => 'testing',
 ));
 $author_text = elgg_echo($owner_link);
 $date = elgg_view_friendly_time($post->time_created);
@@ -35,10 +36,10 @@ $metadata = elgg_view_menu('entity', array(
 	'entity' => $post,
 	'handler' => 'thewire',
 	'sort_by' => 'priority',
-	'class' => 'list-inline mrgn-bttm-sm mrgn-tp-sm',
+	'class' => 'list-inline mrgn-bttm-lg mrgn-tp-sm',
 ));
 
-$subtitle = "$author_text $date";
+$subtitle = "$author_text <i class=\"timeStamp\">$date</i>";
 
 // do not show the metadata and controls in widget view
 if (elgg_in_context('widgets')) {

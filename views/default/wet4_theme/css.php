@@ -10590,6 +10590,14 @@ a.shr-opn, a.shr-opn:hover {
     /*position: relative;*/
 }
 
+.visited-link li a:visited{
+   color: #284162; 
+}
+
+.btn-primary:visited{
+    color:#FFF;   
+}
+
 .user-menu:after{
        content: '';
     display: block;
