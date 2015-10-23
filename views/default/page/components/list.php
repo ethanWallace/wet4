@@ -70,8 +70,8 @@ foreach ($items as $item) {
 
 		$li_attrs['class'][] = "elgg-item-$type";
 		if ($subtype) {
-            //                                               Added styling classes here ----------------
-			$li_attrs['class'][] = "elgg-item-$type-$subtype brdr-tp clearfix";
+            //                                              
+			$li_attrs['class'][] = "elgg-item-$type-$subtype clearfix";
 		}
 	} else if (is_callable(array($item, 'getType'))) {
 		$li_attrs['id'] = "item-{$item->getType()}-{$item->id}";
@@ -89,11 +89,21 @@ $tBody = elgg_format_element('tbody', ['class' => ''], $tR);
 
 $tHead = elgg_format_element('thead', ['class' => ''], '<tr> <th>red</th> </tr>');
 
-echo elgg_format_element('table', ['id' => 'myTable'], $tHead . $tBody);
+echo elgg_format_element('table', ['id' => 'Grid'], $tHead . $tBody);
 
 if ($position == 'after' || $position == 'both') {
 	echo $nav;
 }
 
+
+
+// Create a new instance of Grid and specify its id
+$grid = new \Kendo\UI\Grid('Grid');
+
+// Configure it
+$grid->allowCopy(true);
+
+// Output it
+echo $grid->render();
 
 ?>

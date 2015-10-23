@@ -46,6 +46,7 @@ $ie_url = elgg_get_simplecache_url('css', 'ie');
 <?php
 
 foreach ($css as $url) {
+    
 	echo elgg_format_element('link', array('rel' => 'stylesheet', 'href' => $url));
 }
 
@@ -56,7 +57,14 @@ foreach ($css as $url) {
 
 	<script><?php echo $elgg_init; ?></script>
 <?php
+
+//replace deafult jquery with telerik's jquery
 foreach ($js as $url) {
+        
+    if (strpos($url,'jquery-1.11.0.min.js') !== false) {
+        $url = $site_url . 'mod/wet4/views/default/js/telerik/jquery.min.js';
+    }
+    
 	echo elgg_format_element('script', array('src' => $url));
 }
 

@@ -10,7 +10,11 @@ elgg_register_event_handler('init','system','wet4_theme_init');
 function wet4_theme_init() {
     
     //reload groups library to have our sidebar changes
-    elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'wet4/lib/groups.php'); 
+    elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'wet4/lib/groups.php');
+    
+    
+    //elgg_register_library('kendoData', elgg_get_plugins_path() . 'wet4/telerik/wrappers/php/lib/DataSourceResult.php'); 
+    //elgg_register_library('kendoAutoLoad', elgg_get_plugins_path() . 'wet4/telerik/wrappers/php/lib/Kendo/AutoLoad.php'); 
     
     //elgg_register_js('kendo.all', elgg_get_site_url() . 'mod/wet4/telerik/js/kendo.all.min.js');
     
@@ -36,6 +40,10 @@ function wet4_theme_init() {
  * Rearrange menu items
  */
 function wet4_theme_pagesetup() {
+    
+    //Telerik PHP UI Grid import
+    require_once 'telerik/wrappers/php/lib/DataSourceResult.php';
+    require_once 'telerik/wrappers/php/lib/Kendo/Autoload.php';
     
     //load Telerik Javascript using require
     elgg_require_js('telerik/kendo.all.min');

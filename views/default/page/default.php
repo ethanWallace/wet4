@@ -24,6 +24,9 @@ if (elgg_get_context() == 'admin') {
 	return true;
 }
 
+//require_once 'mod/wet4/telerik/wrappers/php/lib/DataSourceResult.php';
+//require_once 'mod/wet4/telerik/wrappers/php/lib/Kendo/Autoload.php';
+
 // render content before head so that JavaScript and CSS can be loaded. See #4032
 
 $site_url = elgg_get_site_url();
@@ -105,7 +108,7 @@ $body .= <<<__BODY
     
 </div>
 __BODY;
-
+//<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 
 
 
