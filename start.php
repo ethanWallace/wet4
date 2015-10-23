@@ -14,7 +14,9 @@ function wet4_theme_init() {
     
 	elgg_register_event_handler('pagesetup', 'system', 'wet4_theme_pagesetup', 1000);
     elgg_register_event_handler('pagesetup', 'system', 'messages_notifier');
-
+    elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_elgg_entity_menu_setup');
+    elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_likes_entity_menu_setup', 400);
+    //elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_delete_entity_menu', 400);
 	// theme specific CSS
 	elgg_extend_view('css/elgg', 'wet4_theme/css');
 
@@ -95,6 +97,19 @@ function wet4_theme_pagesetup() {
 				elgg_register_menu_item('extras', $item);
 			}
 		}
+        /*
+        if ($item->canEdit()) {
+            $control = elgg_view("output/url",array(
+            'href' => elgg_get_site_url() . "action/plugin_name/delete?guid=" . $entity->guid,
+            'text' => 'Delete ME!',
+            'is_action' => true,
+            'is_trusted' => true,
+            'confirm' => elgg_echo('deleteconfirm'),
+            'class' => 'testing',
+                   ));   
+                }*/
+        
+        
 	}
     
     
@@ -172,13 +187,18 @@ function wet4_theme_pagesetup() {
     
     
     
-    
+    //likes and stuff yo
     $item = elgg_get_menu_item('entity', 'likes');
 		if ($item) {
 			$item->setText('likes');
             $item->setItemClass('msg-icon');
-
+           
 		}
+    
+    $item = elgg_get_menu_item('entity', 'delete');
+		if ($item){
+          echo '<div> What that mean?</div>';          
+        }
 	
 	
     
@@ -209,6 +229,11 @@ function wet4_theme_setup_head($hook, $type, $data) {
 	return $data;
 }
 
+
+
+
+
+
 function wet4_likes_entity_menu_setup($hook, $type, $return, $params) {
 	if (elgg_in_context('widgets')) {
 		return $return;
@@ -224,7 +249,7 @@ function wet4_likes_entity_menu_setup($hook, $type, $return, $params) {
 		$return[] = ElggMenuItem::factory(array(
 			'name' => 'likes',
 			'href' => elgg_add_action_tokens_to_url("/action/likes/add?guid={$entity->guid}"),
-			'text' => 'can a brother get a like?!',
+			'text' => '<i class="fa fa-thumbs-up fa-lg icon-unsel"></i><span class="wb-inv">Like This</span>',
 			'title' => elgg_echo('likes:likethis'),
 			'item_class' => $hasLiked ? 'hidden' : '',
 			'priority' => 1000,
@@ -232,12 +257,32 @@ function wet4_likes_entity_menu_setup($hook, $type, $return, $params) {
 		$return[] = ElggMenuItem::factory(array(
 			'name' => 'unlike',
 			'href' => elgg_add_action_tokens_to_url("/action/likes/delete?guid={$entity->guid}"),
-			'text' => elgg_view_icon('thumbs-up-alt'),
+			'text' => '<i class="fa fa-thumbs-up fa-lg icon-sel"></i><span class="wb-inv">Like This</span>',
 			'title' => elgg_echo('likes:remove'),
 			'item_class' => $hasLiked ? '' : 'hidden',
 			'priority' => 1000,
 		));
 	}
+    
+    	
+		
+		
+	
+    // Always register both. That makes it super easy to toggle with javascript
+    /*
+    if($entity->canEditMetadata(1, 'delete')){
+      $return[] = array(
+			'name' => 'delete',
+			'href' =>  elgg_get_site_url() . "action/plugin_name/delete?guid=" . $entity->guid,
+			'text' => 'delete yo',
+			'title' => elgg_echo('likes:likethis'),
+			
+			'priority' => 100,
+		);  
+    }
+*/
+
+	
 	
 	// likes count
 	$count = elgg_view('likes/count', array('entity' => $entity));
@@ -251,10 +296,51 @@ function wet4_likes_entity_menu_setup($hook, $type, $return, $params) {
 		$return[] = ElggMenuItem::factory($options);
 	}
 
+
+    
 	return $return;
 }
 
 
+function wet4_elgg_entity_menu_setup($hook, $type, $return, $params) {
+	if (elgg_in_context('widgets')) {
+		return $return;
+	}
+	
+	$entity = $params['entity'];
+	/* @var \ElggEntity $entity */
+	$handler = elgg_extract('handler', $params, false);
+
+	
+	
+	if ($entity->canEdit() && $handler) {
+		// edit link
+        /*
+		$options = array(
+			'name' => 'edit',
+			'text' => '<i class="fa fa-edit fa-lg"></i>',
+			'title' => elgg_echo('edit:this'),
+			'href' => "$handler/edit/{$entity->getGUID()}",
+			'priority' => 200,
+		);
+		$return[] = \ElggMenuItem::factory($options);
+        */
+		// delete link
+		$options = array(
+			'name' => 'delete',
+			'text' => '<i class="fa fa-trash-o fa-lg icon-unsel"><span class="wb-inv">Delete This</span></i>',
+			'title' => elgg_echo('delete:this'),
+			'href' => "action/$handler/delete?guid={$entity->getGUID()}",
+			'confirm' => elgg_echo('deleteconfirm'),
+			'priority' => 300,
+		);
+		$return[] = \ElggMenuItem::factory($options);
+        
+
+	}
+
+	return $return;
+}
 
 
 

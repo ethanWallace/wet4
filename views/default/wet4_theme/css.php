@@ -10627,6 +10627,21 @@ a.shr-opn, a.shr-opn:hover {
     clear: both;     
 }
 
+.icon-unsel{
+    color: #b6b6b6;   
+}
+
+.icon-unsel:hover{
+    color:#047177;
+}
+
+.icon-sel{
+   color:#047177;   
+}
+
+.icon-sel:hover{
+    color: #b6b6b6; 
+}
 
 
 <?php echo elgg_view('css/elements/icons - Copy', $vars); ?> 
