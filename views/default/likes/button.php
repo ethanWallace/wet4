@@ -13,7 +13,6 @@ $entity = $vars['entity'];
 /* @var ElggEntity $entity */
 
 $guid = $entity->getGUID();
-$likeicon = "<span class=\"glyphicon glyphicon-thumbs-up\"></span>";
 
 // check to see if the user has already liked this
 if (elgg_is_logged_in() && $entity->canAnnotate(0, 'likes')) {
@@ -21,7 +20,7 @@ if (elgg_is_logged_in() && $entity->canAnnotate(0, 'likes')) {
 		$url = elgg_get_site_url() . "action/likes/add?guid={$guid}";
 		$params = array(
 			'href' => $url,
-			'text' => $likeicon,
+			'text' => 'can a brother get a like?!',
 			'title' => elgg_echo('likes:likethis'),
 			'is_action' => true,
 			'is_trusted' => true,
@@ -31,7 +30,7 @@ if (elgg_is_logged_in() && $entity->canAnnotate(0, 'likes')) {
 		$url = elgg_get_site_url() . "action/likes/delete?guid={$guid}";
 		$params = array(
 			'href' => $url,
-			'text' => "<span class=\"glyphicon glyphicon-thumbs-up\"></span>",
+			'text' => 'Can a brother get a like?!',
 			'title' => elgg_echo('likes:remove'),
 			'is_action' => true,
 			'is_trusted' => true,

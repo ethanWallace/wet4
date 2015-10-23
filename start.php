@@ -185,6 +185,8 @@ function wet4_theme_pagesetup() {
     
 }
 
+
+
 /**
  * Register items for the html head
  *
@@ -205,6 +207,51 @@ function wet4_theme_setup_head($hook, $type, $data) {
 	);
 
 	return $data;
+}
+
+function wet4_likes_entity_menu_setup($hook, $type, $return, $params) {
+	if (elgg_in_context('widgets')) {
+		return $return;
+	}
+
+	$entity = $params['entity'];
+	/* @var ElggEntity $entity */
+
+	if ($entity->canAnnotate(0, 'likes')) {
+		$hasLiked = \Elgg\Likes\DataService::instance()->currentUserLikesEntity($entity->guid);
+		
+		// Always register both. That makes it super easy to toggle with javascript
+		$return[] = ElggMenuItem::factory(array(
+			'name' => 'likes',
+			'href' => elgg_add_action_tokens_to_url("/action/likes/add?guid={$entity->guid}"),
+			'text' => 'can a brother get a like?!',
+			'title' => elgg_echo('likes:likethis'),
+			'item_class' => $hasLiked ? 'hidden' : '',
+			'priority' => 1000,
+		));
+		$return[] = ElggMenuItem::factory(array(
+			'name' => 'unlike',
+			'href' => elgg_add_action_tokens_to_url("/action/likes/delete?guid={$entity->guid}"),
+			'text' => elgg_view_icon('thumbs-up-alt'),
+			'title' => elgg_echo('likes:remove'),
+			'item_class' => $hasLiked ? '' : 'hidden',
+			'priority' => 1000,
+		));
+	}
+	
+	// likes count
+	$count = elgg_view('likes/count', array('entity' => $entity));
+	if ($count) {
+		$options = array(
+			'name' => 'likes_count',
+			'text' => $count,
+			'href' => false,
+			'priority' => 1001,
+		);
+		$return[] = ElggMenuItem::factory($options);
+	}
+
+	return $return;
 }
 
 
