@@ -19,8 +19,6 @@
  * @uses $vars['item_view']    Alternative view to render list items
  * @uses $vars['no_results']   Message to display if no results (string|Closure)
  */
-
-
 $items = $vars['items'];
 $count = elgg_extract('count', $vars);
 $pagination = elgg_extract('pagination', $vars, true);
@@ -70,14 +68,16 @@ foreach ($items as $item) {
 
 		$li_attrs['class'][] = "elgg-item-$type";
 		if ($subtype) {
-            //                                              
+            //                                               
 			$li_attrs['class'][] = "elgg-item-$type-$subtype clearfix";
 		}
 	} else if (is_callable(array($item, 'getType'))) {
 		$li_attrs['id'] = "item-{$item->getType()}-{$item->id}";
 	}
 
+    //stick items in <td> element
 	$list_items = elgg_format_element('td', ['class' => ''], $item_view);
+    //stick <td> elements in <tr>
     $tR .= elgg_format_element('tr', ['class' => '',], $list_items);
 }
 
@@ -85,25 +85,17 @@ if ($position == 'before' || $position == 'both') {
 	echo $nav;
 }
 
+//create table body
 $tBody = elgg_format_element('tbody', ['class' => ''], $tR);
 
-$tHead = elgg_format_element('thead', ['class' => ''], '<tr> <th>red</th> </tr>');
+//create table head
+$tHead = elgg_format_element('thead', ['class' => ''], '<tr> <th>Table Head</th> </tr>');
 
-echo elgg_format_element('table', ['id' => 'Grid'], $tHead . $tBody);
+//pull it all together and display table
+echo elgg_format_element('table', ['class' => 'wb-tables table table-striped table-hover'], $tHead . $tBody);
+
+
 
 if ($position == 'after' || $position == 'both') {
 	echo $nav;
 }
-
-
-
-// Create a new instance of Grid and specify its id
-$grid = new \Kendo\UI\Grid('Grid');
-
-// Configure it
-$grid->allowCopy(true);
-
-// Output it
-echo $grid->render();
-
-?>

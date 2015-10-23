@@ -62,7 +62,7 @@ foreach ($css as $url) {
 foreach ($js as $url) {
         
     if (strpos($url,'jquery-1.11.0.min.js') !== false) {
-        $url = $site_url . 'mod/wet4/views/default/js/telerik/jquery.min.js';
+        $url = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js';
     }
     
 	echo elgg_format_element('script', array('src' => $url));

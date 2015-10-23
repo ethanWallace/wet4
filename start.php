@@ -9,6 +9,9 @@ elgg_register_event_handler('init','system','wet4_theme_init');
 
 function wet4_theme_init() {
     
+    
+    
+    
     //reload groups library to have our sidebar changes
     elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'wet4/lib/groups.php');
     
@@ -17,6 +20,17 @@ function wet4_theme_init() {
     //elgg_register_library('kendoAutoLoad', elgg_get_plugins_path() . 'wet4/telerik/wrappers/php/lib/Kendo/AutoLoad.php'); 
     
     //elgg_register_js('kendo.all', elgg_get_site_url() . 'mod/wet4/telerik/js/kendo.all.min.js');
+    
+    
+    
+    //newest WET 4 version uses wet-boew.min.js
+    //using wet-boew.js to read errors easier
+    elgg_register_js('wet-boew', elgg_get_site_url() . 'mod/wet4/views/default/js/wet-boew.js', 'footer');
+    
+    
+    
+    
+    
     
 	elgg_register_event_handler('pagesetup', 'system', 'wet4_theme_pagesetup', 1000);
     elgg_register_event_handler('pagesetup', 'system', 'messages_notifier');
@@ -42,11 +56,13 @@ function wet4_theme_init() {
 function wet4_theme_pagesetup() {
     
     //Telerik PHP UI Grid import
-    require_once 'telerik/wrappers/php/lib/DataSourceResult.php';
-    require_once 'telerik/wrappers/php/lib/Kendo/Autoload.php';
+    //require_once 'telerik/wrappers/php/lib/DataSourceResult.php';
+    //require_once 'telerik/wrappers/php/lib/Kendo/Autoload.php';
     
     //load Telerik Javascript using require
-    elgg_require_js('telerik/kendo.all.min');
+    //elgg_require_js('telerik/kendo.all.min');
+    
+    elgg_load_js('wet-boew');
     
 	if (elgg_is_logged_in()) {
 
