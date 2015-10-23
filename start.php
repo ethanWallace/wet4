@@ -311,7 +311,18 @@ function wet4_elgg_entity_menu_setup($hook, $type, $return, $params) {
 	/* @var \ElggEntity $entity */
 	$handler = elgg_extract('handler', $params, false);
 
-	
+    if($entity->canAnnotate()){
+        $options = array(
+			'name' => 'thewire_tools_reshare',
+			'text' => '<i class="fa fa-share-alt fa-lg icon-unsel"><span class="wb-inv">Share this on the Wire</span></i>',
+			'title' => elgg_echo('thewire_tools:reshare'),
+			'href' => 'ajax/view/thewire_tools/reshare?reshare_guid=' . $reshare_guid,
+			'link_class' => 'elgg-lightbox',
+			'is_trusted' => true,
+			'priority' => 500
+		);
+		$return[] = \ElggMenuItem::factory($options);   
+    }
 	
 	if ($entity->canEdit() && $handler) {
 		// edit link
