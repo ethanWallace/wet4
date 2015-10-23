@@ -102,14 +102,15 @@ $body .= <<<__BODY
 	</footer>
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    
+    <script src=" $jsLocation "></script>
     
     
     
 </div>
 __BODY;
+//<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 
-//<script src=" $jsLocation "></script>
+
 
 $body .= elgg_view('page/elements/foot');
 

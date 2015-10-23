@@ -1,3 +1,9 @@
+/*!
+ * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+ * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
+ * v4.0.12 - 2015-03-23
+ *
+ *//*! Modernizr (Custom Build) | MIT & BSD */
 /*
  * Web Experience Toolkit (WET) / Boîte à outils de l"expérience Web (BOEW)
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
@@ -186,7 +192,7 @@ wb.i18nDict = {
 	"geo-bmapttl": "BaseMaps_CBCT3978",
 	"geo-bmapurltxt": "http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBCT_TXT_3978/MapServer/WMTS/tile/1.0.0/BaseMaps_CBMT3978/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpg",
 	"geo-attrlnk": "http://geogratis.gc.ca/geogratis/CBM_CBC?lang=fr",
-	"geo-attrttl": "GéoGratis - Carte de base du Canada",
+	"geo-attrttl": "GéoGratis - Carte de Base du Canada",
 	"geo-sel": "Sélectionnez",
 	"geo-lblsel": "Cochez pour sélectionner cet élément sur la carte",
 	"geo-locurl-geogratis": "http://geogratis.gc.ca/services/geolocation/fr/locate",
@@ -206,8 +212,6 @@ wb.i18nDict = {
 	/* Disable/enable WET plugins and polyfills */
 	"wb-disable": "Version HTML simplifiée",
 	"wb-enable": "Version standard",
-	/* Dismissable content */
-	"dismiss": "Écarter",
 	/* Template */
 	"tmpl-signin": "Ouvrir une session"
 };
