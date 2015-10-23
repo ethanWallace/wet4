@@ -44,7 +44,7 @@ if (isset($vars['class'])) {
                 if(elgg_is_logged_in()){
                     $buttons = elgg_view_menu('title', array(
 	                   'sort_by' => 'priority',
-	                   'class' => 'list-inline pull-left',
+	                   'class' => 'list-inline pull-right',
                         'item_class' => 'btn btn-primary btn-lg',
                         ));
                     echo $buttons;
