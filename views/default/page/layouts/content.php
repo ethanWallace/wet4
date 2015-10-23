@@ -62,7 +62,42 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
                 'priority' => 500,
             ),
         );
-      }else{
+        
+        } else if((elgg_get_context() == 'thewire')){
+            //changing the tabs in the wire to add 'mentioned'
+            if($user = elgg_get_logged_in_user_entity()){
+                      $tabs = array(
+		'all' => array(
+			'text' => elgg_echo('all'),
+			'href' => (isset($vars['all_link'])) ? $vars['all_link'] : "$context/all",
+			'selected' => ($filter_context == 'all'),
+			'priority' => 200,
+		),
+		'mine' => array(
+			'text' => elgg_echo('mine'),
+			'href' => (isset($vars['mine_link'])) ? $vars['mine_link'] : "$context/owner/$username",
+			'selected' => ($filter_context == 'mine'),
+			'priority' => 300,
+		),
+		'friend' => array(
+			'text' => elgg_echo('friends'),
+			'href' => (isset($vars['friend_link'])) ? $vars['friend_link'] : "$context/friends/$username",
+			'selected' => ($filter_context == 'friends'),
+			'priority' => 400,
+		),
+        'mention' => array(
+            'text' => 'Mentions',
+            "href" => "thewire/search/@" . $user->username,
+            "text" => elgg_echo("thewire_tools:menu:mentions"),
+            "context" => "thewire",
+            'priority' => 500,
+            ),
+        );  
+            }
+
+            
+            
+        }else{
     
 	$tabs = array(
 		'all' => array(
