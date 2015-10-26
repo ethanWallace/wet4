@@ -199,6 +199,17 @@ function wet4_theme_pagesetup() {
 		if ($item){
           echo '<div> What that mean?</div>';          
         }
+    
+    	if (elgg_is_logged_in() && elgg_get_config('allow_registration')) {
+		$params = array(
+			'name' => 'invite',
+			'text' => elgg_echo('friends:invite'),
+			'href' => "invite",
+			'contexts' => array('friends'),
+            'priority' => 300,
+		);
+		elgg_register_menu_item('page', $params);
+	}
 	
 	
     

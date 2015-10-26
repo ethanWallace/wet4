@@ -34,7 +34,12 @@ if (isset($vars['class'])) {
 			
 			
 			echo elgg_view('page/layouts/elements/header', $vars);
-			
+            // This basically moves the "page menu" element to the tabs on pages where the side bar links are now tabs :)
+			if((elgg_get_context() == 'friends' || elgg_get_context() == 'messages')){
+            echo elgg_view_menu('page', array('sort_by' => 'priority'));
+            //echo elgg_view_menu('page', array('sort_by' => 'name'));
+            //echo '<div>Maybe Im stoopid?</div>';
+            }
 			// @todo deprecated so remove in Elgg 2.0
 			if (isset($vars['area1'])) {
 				echo $vars['area1'];

@@ -26,7 +26,8 @@ if ($children) {
 
 $item_class = $item->getItemClass();
 if ($item->getSelected()) {
-	$item_class = "$item_class elgg-state-selected";
+    //finds the active tab in the menu and gives it the active class
+	$item_class = "$item_class elgg-state-selected active";
 }
 if (isset($vars['item_class']) && $vars['item_class']) {
 	$item_class .= ' ' . $vars['item_class'];

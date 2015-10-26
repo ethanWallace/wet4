@@ -18,7 +18,9 @@ if((elgg_get_context() == 'thewire'))  {
     echo '';
 }else{
     
-    echo elgg_view_menu('page', array('sort_by' => 'name'));
+    //This display page menus in the sidebar right now 
+    //It's commented out and moved to page/layout/one_sidebar.php
+    //echo elgg_view_menu('page', array('sort_by' => 'name'));
 
 // optional 'sidebar' parameter
     if (isset($vars['sidebar'])) {

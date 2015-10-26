@@ -97,6 +97,10 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
 
             
             
+        }else if((elgg_get_context() == 'friend')){
+            $tabs = elgg_view_menu('page', array('sort_by' => 'name'));
+            //echo elgg_view_menu('page', array('sort_by' => 'name'));
+            //echo '<div>Maybe Im stoopid?</div>';
         }else{
     
 	$tabs = array(
