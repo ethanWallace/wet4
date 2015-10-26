@@ -50,17 +50,17 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
                 'priority' => 300,
             ),
             'champions' => array(
-                'text' => elgg_echo('GCconnex Champions'),
+                'text' => elgg_echo('Friends'), //GCconnex Champions
                 'href' => (isset($vars['friend_link'])) ? $vars['friend_link'] : "$context/friends/$username",
                 'selected' => ($filter_context == 'friends'),
                 'priority' => 400,
-            ),
+            ),/*Hide for now
             'authors' => array(
                 'text' => elgg_echo('My favorite Authors'),
                 'href' => "activity/blog",
                 'selected' => ($filter_context == 'sharemaps'),
                 'priority' => 500,
-            ),
+            ),*/
         );
         
         } else if((elgg_get_context() == 'thewire')){
