@@ -57,7 +57,7 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
             ),
             'authors' => array(
                 'text' => elgg_echo('My favorite Authors'),
-                'href' => "sharemaps/view/74/kite-spots",
+                'href' => "activity/blog",
                 'selected' => ($filter_context == 'sharemaps'),
                 'priority' => 500,
             ),

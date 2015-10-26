@@ -62,7 +62,7 @@ if($checkPage == 'group_profile' && $type == 'GPmod'){
 
 } else { //Normal Style Below
     
-    $attrs['class'][] = 'panel panel-custom';
+    //$attrs['class'][] = 'panel panel-custom';
     if ($type) {
         $attrs['class'][] = "elgg-module-$type";
     }
