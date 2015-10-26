@@ -44,7 +44,7 @@ elgg_register_menu_item('user_menu_subMenu', array(
     ));
 */
 elgg_register_menu_item('user_menu_subMenu', array(
-    'name' => 'thing',
+    'name' => 'profile_card',
     
     'text' => elgg_view('page/elements/profile_card'),
     ));
@@ -54,9 +54,19 @@ $dropdown = elgg_view_menu('user_menu_subMenu', array('class' => 'dropdown-menu 
 
 
 
-
-
-
+//admin link
+//check to see if user is an admin
+if(elgg_is_admin_logged_in()){
+    elgg_register_menu_item('user_menu', array(
+        'name' => 'Admin',
+        'href' => $site_url . 'admin',
+        'text' => '<i class="fa fa-wrench fa-lg mrgn-rght-sm"></i>' . 'Admin',
+        'title' => 'Admin',
+        'item_class' => 'brdr-rght',
+        'class' => '',
+        'priority' => '0',
+        ));
+}
 
 
 //create initial badge
@@ -67,11 +77,9 @@ $initials = substr($breakup[0], 0, 1) . substr($breakup[1], 0, 1);
 //create user menu
 elgg_register_menu_item('user_menu', array(
     'name' => 'Profile',
-    //'href' => $site_url . 'profile/' . $user ,
     'text' => '<span class="init-badge">' . strtoupper($initials) . '</span>' . $displayName . $dropdown,
-    'title' => 'My Profile',
+    'title' => elgg_echo('userMenu:profile'),
     'item_class' => 'brdr-lft dropdown',
-    
     'data-toggle' => 'dropdown',
     'class' => 'dropdown-toggle  dropdownToggle',
     'priority' => '3',
@@ -86,7 +94,7 @@ if(elgg_is_active_plugin('messages')){
     
     $msgbadge = "<span class='notif-badge'>" . $unread . "</span>";
     
-    $title = ' - ' . $unread . ' New';
+    $title = ' - ' . $unread . ' ' . elgg_echo('messages:unreadmessages');
     
     if($unread == 0){
         $msgbadge = '';
@@ -96,8 +104,8 @@ if(elgg_is_active_plugin('messages')){
 elgg_register_menu_item('user_menu', array(
     'name' => 'messages',
     'href' => 'messages/inbox/' . $user,
-    'text' => '<i class="fa fa-envelope mrgn-rght-sm mrgn-tp-sm fa-lg"></i>Messages' . $msgbadge,
-    'title' => 'My Messages' . $title,
+    'text' => '<i class="fa fa-envelope mrgn-rght-sm mrgn-tp-sm fa-lg"></i>' . elgg_echo('messages') . $msgbadge,
+    'title' => elgg_echo('userMenu:messages') . $title,
     'item_class' => 'brdr-lft ',
     'class' => '',
     'priority' => '2',

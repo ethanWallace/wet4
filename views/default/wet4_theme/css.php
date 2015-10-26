@@ -10590,6 +10590,14 @@ a.shr-opn, a.shr-opn:hover {
     /*position: relative;*/
 }
 
+.elgg-menu-user-menu-subMenu {
+    padding: 0;
+}
+
+.elgg-menu-user-menu-subMenu .elgg-menu-content {
+    display: none;
+}
+
 .visited-link li a:visited{
    color: #284162; 
 }

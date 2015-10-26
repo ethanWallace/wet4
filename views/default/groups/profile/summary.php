@@ -15,6 +15,8 @@ if (!isset($vars['entity']) || !$vars['entity']) {
 $group = $vars['entity'];
 $owner = $group->getOwnerEntity();
 
+$buttonTitle = 'Member';
+
 if (!$owner) {
 	// not having an owner is very bad so we throw an exception
 	$msg = "Sorry, '" . 'group owner' . "' does not exist for guid:" . $group->guid;
@@ -24,24 +26,62 @@ if (!$owner) {
 ?>
 <div class="groups-profile panel panel-custom clearfix elgg-image-block">
 
-        <?php 
-            
-            //load action buttons
-            $buttons = elgg_view_menu('title', array(
-                'sort_by' => 'priority',
-                'class' => 'list-inline pull-right',
-                'item_class' => 'mrgn-rght-sm mrgn-tp-sm btn btn-custom btn-group',
-                
-            ));
-            
-        ?>
+        
     
     
         <div class="panel-heading col-xs-12 mrgn-lft-sm"> 
-            <?php 
-                //action buttons
-                echo $buttons; 
-            ?>
+            
+            <div class="btn-group pull-right mrgn-rght-sm">
+                
+                
+                
+                <?php 
+
+                    $user = get_loggedin_user()->getGUID();
+                            
+                    //see if user is a member
+                    if($group->isFriendOf($user)){
+            
+                        //load action buttons
+                        $buttons = elgg_view_menu('title', array(
+                            'sort_by' => 'priority',
+                            'class' => 'dropdown-menu pull-right',
+                            'item_class' => ' ',
+
+                        ));
+
+                        //display differetn title on button for group owner/mods
+                        if($owner == get_loggedin_user()){
+                            $buttonTitle = "Settings";
+                        }
+                ?>
+                
+
+                <button type="button" class="btn btn-custom dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo $buttonTitle ?> <span class="caret"></span>
+                </button>
+            
+                        <?php 
+                            
+                                //action buttons
+                                echo $buttons; 
+                            } else {
+                        
+                            //load action buttons
+                        $buttons = elgg_view_menu('title', array(
+                            'sort_by' => 'priority',
+                            'class' => '',
+                            'item_class' => 'btn btn-primary',
+
+                        ));
+                        
+                        echo $buttons;
+                    }
+                        ?>
+                
+            </div>
+
+                
             <h2 class="pull-left"><?php echo $group->name; ?></h2>
         </div>
     
@@ -104,7 +144,7 @@ if (!$owner) {
             if(!$tags){
                 
             } else {
-                echo '<b>Tags:</b>';
+                echo '<b>' . elgg_echo('profile:field:tags') . '</b>';
                 echo $tags;
             }
 

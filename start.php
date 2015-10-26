@@ -158,7 +158,7 @@ function wet4_theme_pagesetup() {
 				"name" => "Colleagues",
 				"href" => "friends/" . $user->username,
 				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i>'. elgg_echo("friends") . "<span class='notif-badge'>" . $count . "</span>",
-				"title" => elgg_echo('friends') . ' - ' . $count . ' Request(s)',
+				"title" => elgg_echo('userMenu:colleagues') . ' - ' . $count . ' ' . elgg_echo('friend_request') .'(s)',
                 "class" => '',
                 'item_class' => '',
 				'priority' => '1'

@@ -45,14 +45,15 @@ if (isset($vars['class'])) {
 				echo $vars['area1'];
 			}
 			if (isset($vars['content'])) {
-                
-                if(elgg_is_logged_in()){
-                    $buttons = elgg_view_menu('title', array(
-	                   'sort_by' => 'priority',
-	                   'class' => 'list-inline pull-right',
-                        'item_class' => 'btn btn-primary btn-lg',
-                        ));
-                    echo $buttons;
+                if(elgg_get_context() != 'group_profile'){
+                    if(elgg_is_logged_in()){
+                        $buttons = elgg_view_menu('title', array(
+                           'sort_by' => 'priority',
+                           'class' => 'list-inline pull-right',
+                            'item_class' => 'btn btn-primary btn-md',
+                            ));
+                        echo $buttons;
+                    }
                 }
 				echo $vars['content'];
 			}

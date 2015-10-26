@@ -1,5 +1,15 @@
 <?php
 return array(
+    
+/**
+ * User Menu
+ */
+    
+    'userMenu:profile' => "My Profile",
+    'userMenu:account' => "Account Settings",
+    'userMenu:messages' => "My Messages",
+    'userMenu:colleagues' => "My Colleagues",
+    
 /**
  * Sites
  */

@@ -3,23 +3,21 @@ return array(
     
     
     
-    /**
+/**
  * User Menu
  */
     
-    
-    'user_menu:profile' => 'Profile',
-    'user_menu:messages' => 'Messages',
-    'user_menu:friends' => 'Colleagues',
-    'user_menu:settings' => 'Settings',
-    
+    'userMenu:profile' => "My Profile",
+    'userMenu:account' => "Account Settings",
+    'userMenu:messages' => "My Messages",
+    'userMenu:colleagues' => "My Colleagues",
     
     
+ /**
+ * Group Profile
+ */   
     
-    
-   
-    
-    
+    'gprofile:about' => "About",
     
 /**
  * Sites
