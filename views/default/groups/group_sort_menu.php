@@ -20,7 +20,7 @@ $tabs = array(
 		"href" => "groups/all?filter=popular",
 		"priority" => 300,
 	),
-	"discussion" => array(
+	/*"discussion" => array(
 		"text" => elgg_echo("groups:latestdiscussion"),
 		"href" => "groups/all?filter=discussion",
 		"priority" => 400,
@@ -44,7 +44,7 @@ $tabs = array(
 		"text" => elgg_echo("group_tools:groups:sorting:ordered"),
 		"href" => "groups/all?filter=ordered",
 		"priority" => 800,
-	),
+	),*/
 	"suggested" => array(
 		"text" => elgg_echo("group_tools:groups:sorting:suggested"),
 		"href" => "groups/suggested",
