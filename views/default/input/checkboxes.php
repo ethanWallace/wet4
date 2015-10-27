@@ -85,7 +85,7 @@ foreach ($vars['options'] as $label => $value) {
 	
 	$input = elgg_view('input/checkbox', $input_vars);
 
-	$checkboxes .= "<li>$input</li>";
+	$checkboxes .= "<li><label>$input</label></li>";
 }
 
 echo elgg_format_element('ul', ['class' => $list_class, 'id' => $id], $checkboxes);
