@@ -3,8 +3,8 @@
  * All groups listing page navigation
  *
  */
-
-$tabs = array(
+$user = elgg_get_logged_in_user_entity();
+/*$tabs = array(
 	"newest" => array(
 		"text" => elgg_echo("sort:newest"),
 		"href" => "groups/all?filter=newest",
@@ -20,7 +20,7 @@ $tabs = array(
 		"href" => "groups/all?filter=popular",
 		"priority" => 300,
 	),
-	/*"discussion" => array(
+	"discussion" => array(
 		"text" => elgg_echo("groups:latestdiscussion"),
 		"href" => "groups/all?filter=discussion",
 		"priority" => 400,
@@ -44,13 +44,33 @@ $tabs = array(
 		"text" => elgg_echo("group_tools:groups:sorting:ordered"),
 		"href" => "groups/all?filter=ordered",
 		"priority" => 800,
-	),*/
+	),
 	"suggested" => array(
-		"text" => elgg_echo("group_tools:groups:sorting:suggested"),
+		"text" => elgg_echo("Suggested"),
 		"href" => "groups/suggested",
 		"priority" => 900,
 	),
-);
+    "personal" => array(
+		"text" => elgg_echo("Personal"),
+		'data-toggle' => 'dropdown',
+        'class' => 'dropdown-toggle  dropdownToggle',
+		"priority" => 1000,
+	),
+    "own" => array(
+		"text" => elgg_echo("Groups I own"),
+		"href" => "groups/owner/$user->username",
+        'data-toggle' => 'dropdown',
+        'class' => 'dropdown-toggle  dropdownToggle',
+		"priority" => 1100,
+	),
+    "invitations" => array(
+		"text" => elgg_echo("Invitations"),
+		"href" => "groups/invitations/$user->username",
+        'data-toggle' => 'dropdown',
+        'class' => 'dropdown-toggle  dropdownToggle',
+		"priority" => 1200,
+	),
+);*/
 
 foreach ($tabs as $name => $tab) {
 	$show_tab = false;
@@ -77,5 +97,22 @@ foreach ($tabs as $name => $tab) {
 		elgg_register_menu_item("filter", $tab);
 	}
 }
+
+?>
+
+<ul class="nav nav-tabs mrgn-tp-md">  <!--top Tabs--> 
+            <li role="presentation" class="active"><a href="all?filter=feature">Featured</a></li>
+            <li role="presentation"><a href="all?filter=popular">Popular</a></li>
+            <li role="presentation"><a href="suggested">Suggested</a></li>
+            <li class="dropdown"> <!--More dropdown. This works with the bootstrap javascript tag at the bottom of this page-->
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Personal<b class="caret"></b></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a  href="all?filter=yours">My Groups</a></li>
+                        <li><a  href="owner/<?php echo get_loggedin_user()->username; ?>">Groups I Own</a></li>
+                        <li><a  href="invitations/<?php echo get_loggedin_user()->username; ?>">Invitations</a></li>
+                                    
+                </ul>
+        </ul>
+<?php
 
 echo elgg_view_menu("filter", array("sort_by" => "priority", "class" => "list-inline mrgn-lft-sm"));
