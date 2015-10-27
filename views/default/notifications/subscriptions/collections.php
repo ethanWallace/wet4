@@ -27,27 +27,27 @@ $user = $vars['user'];
 			<?php echo elgg_echo('notifications:subscriptions:friends:title'); ?>
 		</h3>
 	</div>
-<p class="margin-none">
+<p class="margn-bttm-sm">
 	<?php echo elgg_echo('notifications:subscriptions:friends:description'); ?>
 </p>
-<table id="notificationstable" cellspacing="0" cellpadding="4" width="100%">
-	<tr>
-		<td>&nbsp;</td>
+<div class="clearfix">
+	<div>
+		
 <?php
 	$i = 0; 
 	$NOTIFICATION_HANDLERS = _elgg_services()->notifications->getMethodsAsDeprecatedGlobal();
 	foreach($NOTIFICATION_HANDLERS as $method => $foo) {
 		if ($i > 0) {
-			echo "<td class='spacercolumn'>&nbsp;</td>";
+			//echo "<td class='spacercolumn'>&nbsp;</td>";
 		}
 ?>
-	<td class="<?php echo $method; ?>togglefield"><?php echo elgg_echo('notification:method:'.$method); ?></td>
+	
 <?php
 		$i++;
 	}
 ?>
-		<td>&nbsp;</td>
-	</tr>
+		
+	</div>
 <?php
 	$members = array();
 	$friends = $user->getFriends(array('limit' => 0));
@@ -60,12 +60,12 @@ $user = $vars['user'];
 	$members = implode(',',$members);
 
 ?>
-	<tr>
-		<td class="namefield">
+	<div class="clearfix">
+		<div class="namefield col-md-6 mrgn-bttm-md">
 			<p>
 				<?php echo elgg_echo('friends:all'); ?> (<?php echo $memberno; ?>)
 			</p>
-		</td>
+		</div>
 <?php
 
 	$fields = '';
@@ -85,20 +85,21 @@ $user = $vars['user'];
 			}
 		}
 		if ($i > 0) {
-			$fields .= "<td class='spacercolumn'>&nbsp;</td>";
+			//$fields .= "<td class='spacercolumn'>&nbsp;</td>";
 		}
+        $test =  elgg_echo('notification:method:'.$method);
 		$fields .= <<< END
-			<td class="{$method}togglefield">
+			<div class="{$method}togglefield col-xs-3 mrgn-bttm-md ">
 			<a border="0" id="{$method}collections-1" class="{$method}toggleOff" onclick="adjust{$method}_alt('{$method}collections-1'); setCollection([{$members}],'{$method}',-1);">
-			<input type="checkbox" name="{$method}collections[]" id="{$method}checkbox" onclick="adjust{$method}('{$method}collections-1');" value="-1" {$collectionschecked[$method]} /></a></td>
+			<label><input type="checkbox" name="{$method}collections[]" id="{$method}checkbox" onclick="adjust{$method}('{$method}collections-1');" value="-1" {$collectionschecked[$method]} /><span class="mrgn-lft-sm">{$test}</span></label></a></div>
 END;
 		$i++;
 	}
 	echo $fields;
 
 ?>
-		<td>&nbsp;</td>
-	</tr>
+		
+	</div>
 <?php
 
 	if ($collections = get_user_access_collections($user->guid)) {
@@ -114,12 +115,12 @@ END;
 
 
 ?>
-	<tr>
-		<td class="namefield">
+	<div class="clearfix">
+		<div class="namefield col-md-6 mrgn-bttm-md">
 			<p>
 				<?php echo $collection->name; ?> (<?php echo $memberno; ?>)
 			</p>
-		</td>
+		</div>
 
 <?php
 
@@ -140,12 +141,13 @@ END;
 					}
 				}
 				if ($i > 0) {
-					$fields .= "<td class='spacercolumn'>&nbsp;</td>";
+					//$fields .= "<div class='spacercolumn'>&nbsp;</div>";
 				}
+                $test =  elgg_echo('notification:method:'.$method);
 				$fields .= <<< END
-					<td class="{$method}togglefield">
+					<div class="{$method}togglefield col-xs-3 mrgn-bttm-md">
 					<a border="0" id="{$method}collections{$collection->id}" class="{$method}toggleOff" onclick="adjust{$method}_alt('{$method}collections{$collection->id}'); setCollection([{$members}],'{$method}',{$collection->id});">
-					<input type="checkbox" name="{$method}collections[]" id="{$method}checkbox" onclick="adjust{$method}('{$method}collections{$collection->id}');" value="{$collection->id}" {$collectionschecked[$method]} /></a></td>
+					<label><input type="checkbox" name="{$method}collections[]" id="{$method}checkbox" onclick="adjust{$method}('{$method}collections{$collection->id}');" value="{$collection->id}" {$collectionschecked[$method]} /><span class="mrgn-lft-sm">{$test}</span></label></a></div>
 END;
 				$i++;
 			}
@@ -153,13 +155,13 @@ END;
 
 ?>
 
-		<td>&nbsp;</td>
-	</tr>
+		
+	</div>
 <?php
 
 		}
 	}
 
 ?>
-</table>
+</div>
 </div>

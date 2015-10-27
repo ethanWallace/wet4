@@ -32,7 +32,19 @@ if (isset($vars['selected_item'])) {
 	}
 }
 
-foreach ($vars['menu'] as $section => $menu_items) {
+//test to see if user is on the settings page
+if((elgg_get_context() == 'settings')){
+  foreach ($vars['menu'] as $section => $menu_items) {
+	echo elgg_view('navigation/menu/elements/section', array(
+		'items' => $menu_items,
+		'class' => "$class elgg-menu-page-$section dropdown",
+		'section' => $section,
+		'name' => $vars['name'],
+		'show_section_headers' => $headers
+	));
+}     
+}else{
+  foreach ($vars['menu'] as $section => $menu_items) {
 	echo elgg_view('navigation/menu/elements/section', array(
 		'items' => $menu_items,
 		'class' => "$class elgg-menu-page-$section",
@@ -40,4 +52,9 @@ foreach ($vars['menu'] as $section => $menu_items) {
 		'name' => $vars['name'],
 		'show_section_headers' => $headers
 	));
+}  
+    
 }
+
+
+

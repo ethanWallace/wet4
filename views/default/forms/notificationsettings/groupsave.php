@@ -33,6 +33,7 @@ foreach ($NOTIFICATION_HANDLERS as $method => $foo) {
 
 <div>
     <div class="clearfix">
+
         	<?php
 		echo elgg_view('notifications/subscriptions/jsfuncs',$vars);
 	?>
