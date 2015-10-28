@@ -46,7 +46,7 @@ if ($alt_image) {
 }
 
 echo <<<HTML
-<div class="$class clearfix" $id>
+<div class="$class clearfix mrgn-bttm-md" $id>
 	$image$alt_image$body
 </div>
 HTML;

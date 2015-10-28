@@ -948,7 +948,7 @@ a {
   text-decoration: none; }
   a:hover,
   a:focus {
-    color: #0535d2;
+    color: #047177;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -3035,7 +3035,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #2572b4; }
+  background-color: #047177; }
 
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
@@ -10890,8 +10890,17 @@ a.shr-opn, a.shr-opn:hover {
 
 .ui-autocomplete{
     background-color: white;
-    min-width:400px;
-    border: 2px solid black;
+    max-width:400px;
+    border: 1px solid black;
+     content: " ";
+  display: table; 
+
+
+  clear: both;
+}
+
+.ui-autocomplete:hover{
+    cursor: pointer;   
 }
 
 .elgg-menu-hover{
