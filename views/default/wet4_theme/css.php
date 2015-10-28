@@ -4289,13 +4289,13 @@ a.thumbnail.active {
   .alert-warning .alert-link {
     color: #66512c; }
 
-.alert-danger {
+.alert-error {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442; }
-  .alert-danger hr {
+  .alert-error hr {
     border-top-color: #e4b9c0; }
-  .alert-danger .alert-link {
+  .alert-error .alert-link {
     color: #843534; }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -5736,7 +5736,7 @@ a {
 .label-warning[href]:focus,
 .label-warning[href]:active, .alert-warning, .label-danger, .label-danger[href]:hover,
 .label-danger[href]:focus,
-.label-danger[href]:active, .alert-danger {
+.label-danger[href]:active, .alert-error {
   color: #000; }
 
 .label-default[href]:hover,
@@ -5798,11 +5798,11 @@ a {
 
 .label-danger, .label-danger[href]:hover,
 .label-danger[href]:focus,
-.label-danger[href]:active, .alert-danger, details.alert-danger {
+.label-danger[href]:active, .alert-error, details.alert-error {
   background: #f3e9e8;
   border-color: #d3080c; }
 
-.alert-danger > :first-child:before {
+.alert-error > :first-child:before {
   color: #d3080c;
   content: "\e101"; }
 
@@ -7172,7 +7172,7 @@ details.alert-warning:before {
   color: #f90;
   content: "\e107"; }
 
-details.alert-danger:before {
+details.alert-error:before {
   color: #d3080c;
   content: "\e101"; }
 
@@ -9754,7 +9754,7 @@ body {
   font-weight: 300; }
 
 a {
-  color: #284162; }
+  color: #055959; }
   a img.thumbnail:hover {
     -webkit-box-shadow: 1px 1px 5px #999;
             box-shadow: 1px 1px 5px #999; }
@@ -10604,7 +10604,7 @@ a.shr-opn, a.shr-opn:hover {
 }
 
 .visited-link li a:visited{
-   color: #284162; 
+   color: #055959; 
 }
 
 .btn-primary:visited{
@@ -10656,7 +10656,7 @@ a.shr-opn, a.shr-opn:hover {
     color: #b6b6b6; 
 }
 
-
+/*This is where the elgg icons get loaded!*/
 <?php echo elgg_view('css/elements/icons - Copy', $vars); ?> 
 
     /****************************************/
@@ -10876,6 +10876,35 @@ a.shr-opn, a.shr-opn:hover {
     margin-top: 10px;
 }
 
+
+/*** Messages ***/
+
+.unread-custom{
+    background-color: #F5F5F5;
+    margin-bottom: 5px;
+}
+.unread-custom a{
+    color: #055959;
+    font-weight: bold;
+}
+
+.ui-autocomplete{
+    background-color: white;
+    min-width:400px;
+    border: 2px solid black;
+}
+
+.elgg-menu-hover{
+    background-color:white;
+    padding: 10px;
+    border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+}
 
 /*
  * Mobile panel

@@ -39,8 +39,10 @@ if ($title || $buttons) {
 	   
     } else {
         // @todo .elgg-heading-main supports action buttons - maybe rename class name?
+       
 	  echo $buttons;   
         echo elgg_view_title($vars['title'], array('class' => 'elgg-heading-main mrgn-lft-sm'));
+      
     }
 
 }

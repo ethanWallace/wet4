@@ -35,13 +35,17 @@ if (isset($vars['selected_item'])) {
 //test to see if user is on the settings page
 if((elgg_get_context() == 'settings')){
   foreach ($vars['menu'] as $section => $menu_items) {
+      //trying to put the lists in dropdown menus, but then you can't tab to them :(
+      //echo '<li class="dropdown pull-left">';
+      //echo '<a class=" dropdown-toggle " type="button" id="dropdownMenu-'.$section.'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'. $section .'<span class="caret"></span></a>';
 	echo elgg_view('navigation/menu/elements/section', array(
 		'items' => $menu_items,
-		'class' => "$class elgg-menu-page-$section dropdown",
+		'class' => "$class elgg-menu-page-$section ",
 		'section' => $section,
 		'name' => $vars['name'],
 		'show_section_headers' => $headers
 	));
+      //echo '</li>';
 }     
 }else{
   foreach ($vars['menu'] as $section => $menu_items) {

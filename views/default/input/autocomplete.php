@@ -14,9 +14,9 @@
  */
 
 if (isset($vars['class'])) {
-	$vars['class'] = "elgg-input-autocomplete {$vars['class']}";
+	$vars['class'] = "elgg-input-autocomplete {$vars['class']} form-control";
 } else {
-	$vars['class'] = "elgg-input-autocomplete";
+	$vars['class'] = "elgg-input-autocomplete form-control";
 }
 
 $defaults = array(

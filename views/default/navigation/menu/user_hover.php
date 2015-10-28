@@ -13,7 +13,7 @@ $actions = elgg_extract('action', $vars['menu'], null);
 $main = elgg_extract('default', $vars['menu'], null);
 $admin = elgg_extract('admin', $vars['menu'], null);
 
-echo '<ul class="elgg-menu elgg-menu-hover">';
+echo '<ul class="elgg-menu elgg-menu-hover hover-custom">';
 
 // name and username
 $name_link = elgg_view('output/url', array(
