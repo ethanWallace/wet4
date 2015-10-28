@@ -22,6 +22,12 @@ return array(
     'gprofile:calendar' => "Agenda",
     'gprofile:pages' => "Pages",
     'gprofile:bookmarks' => "Signets",
+    'gprofile:polls' => "Sondages",
+    'gprofile:tasks' => "Tâches",
+    'gprofile:photos' => "Photos",
+    'gprofile:photoCatch' => "photos",
+    'gprofile:ideas' => "Idées",
+    'gprofile:more' => "More",
     
 /**
  * Sites

@@ -17,6 +17,7 @@ function wet4_theme_init() {
     elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_elgg_entity_menu_setup');
     elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_likes_entity_menu_setup', 400);
     //elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_delete_entity_menu', 400);
+    
 	// theme specific CSS
 	elgg_extend_view('css/elgg', 'wet4_theme/css');
 
@@ -24,6 +25,7 @@ function wet4_theme_init() {
 	//elgg_extend_view('page/elements/sidebar', 'search/header', 0);
 	
 	elgg_register_plugin_hook_handler('head', 'page', 'wet4_theme_setup_head');
+	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'my_owner_block_handler');
 
     
 	// non-members do not get visible links to RSS feeds
@@ -366,8 +368,90 @@ function wet4_elgg_entity_menu_setup($hook, $type, $return, $params) {
 }
 
 
-
-
+//arrange owner block menu
+function my_owner_block_handler($hook, $type, $menu, $params){
+    
+    /*
+     *
+     * If new tool has been added to group tools
+     * Make sure the priority is less then 100
+     *
+     */
+    
+    
+    //rearrange menu items
+    if(elgg_get_context() == 'group_profile'){
+        
+        elgg_unregister_menu_item('owner_block', 'activity');
+        
+        //turn owner_block  menu into tabs
+        foreach ($menu as $key => $item){
+             
+            switch ($item->getName()) {
+                case 'discussion':
+                    $item->setText(elgg_echo('gprofile:discussion'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:discussion')));
+                    $item->setPriority('1');
+                    break;
+                case 'file':
+                    $item->setText(elgg_echo('gprofile:files'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:files')));
+                    $item->setPriority('2');
+                    break;
+                case 'blog':
+                    $item->setText(elgg_echo('gprofile:blogs'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:blogs')));
+                    $item->setPriority('3');
+                    break;
+                case 'event_calendar':
+                    $item->setText(elgg_echo('gprofile:events'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:calendar')));
+                    $item->setPriority('5');
+                    break;
+                case 'pages':
+                    $item->setText(elgg_echo('gprofile:pages'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:pages')));
+                    $item->setPriority('6');
+                    break;
+                case 'bookmarks':
+                    $item->setText(elgg_echo('gprofile:bookmarks'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:bookmarks')));
+                    $item->setPriority('7');
+                    break;
+                case 'polls':
+                    $item->setText(elgg_echo('gprofile:polls'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:polls')));
+                    $item->setPriority('8');
+                    break;
+                case 'tasks':
+                    $item->setText(elgg_echo('gprofile:tasks'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:tasks')));
+                    $item->setPriority('9');
+                    break;
+                case 'photos':
+                    $item->setText(elgg_echo('gprofile:photos'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:photoCatch')));
+                    $item->setPriority('10');
+                    break;
+                case 'ideas':
+                    $item->setText(elgg_echo('gprofile:ideas'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:ideas')));
+                    $item->setPriority('11');
+                    break;
+                case 'activity':
+                    $item->setText('Activity');
+                    $item->setHref('#activity');
+                    $item->setPriority('11');
+                    break;
+                
+            }
+            
+        }
+        
+        
+    }
+    
+}
 
 
 
