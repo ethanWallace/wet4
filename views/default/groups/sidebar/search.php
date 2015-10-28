@@ -12,4 +12,4 @@ $body = elgg_view_form('groups/search', array(
 	'disable_security' => true,
 ), $vars);
 
-echo elgg_view_module('aside', elgg_echo('groups:search_in_group'), $body);
+echo elgg_view_module('GPmod', elgg_echo('groups:search_in_group'), $body);

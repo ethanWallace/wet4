@@ -24,6 +24,7 @@ function wet4_theme_init() {
 	//elgg_extend_view('page/elements/sidebar', 'search/header', 0);
 	
 	elgg_register_plugin_hook_handler('head', 'page', 'wet4_theme_setup_head');
+
     
 	// non-members do not get visible links to RSS feeds
 	if (!elgg_is_logged_in()) {

@@ -11,8 +11,9 @@ echo '<div id="customWidgets">';
 
                 $widget_types = elgg_get_widget_types();
 
+                elgg_push_context('groups');
                 $context = elgg_get_context();
-                elgg_push_context('widgets');
+                
 
                 $widgets = elgg_get_widgets($owner->guid, $context);
 
@@ -51,7 +52,7 @@ echo '<div id="customWidgets">';
                         $column_widgets = array();
                     }
                     
-                    echo "<div class=\"$widget_class elgg-widgets col-sm-6\" id=\"elgg-widget-col-$column_index\">";
+                    echo "<div class=\"$widget_class elgg-widgets col-sm-6 widget-area-col\" id=\"elgg-widget-col-$column_index\">";
                     
                     if (sizeof($column_widgets) > 0) {
                         foreach ($column_widgets as $widget) {

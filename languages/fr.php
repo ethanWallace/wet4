@@ -10,6 +10,19 @@ return array(
     'userMenu:messages' => "My Messages",
     'userMenu:colleagues' => "My Colleagues",
     
+  /**
+ * Group Profile
+ */     
+    
+    'gprofile:about' => "About",
+    'gprofile:discussion' => "Discussion",
+    'gprofile:files' => "Fichiers",
+    'gprofile:blogs' => "Blogues",
+    'gprofile:events' => "Evénement",
+    'gprofile:calendar' => "Agenda",
+    'gprofile:pages' => "Pages",
+    'gprofile:bookmarks' => "Signets",
+    
 /**
  * Sites
  */

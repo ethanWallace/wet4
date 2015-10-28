@@ -10498,6 +10498,11 @@ a.shr-opn, a.shr-opn:hover {
         padding-left: 5px;
         padding-right: 5px;
     }
+
+
+.widget-area-col {
+    min-height:50px;
+}
     
     /****************************************/
     

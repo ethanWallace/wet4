@@ -18,6 +18,13 @@ return array(
  */   
     
     'gprofile:about' => "About",
+    'gprofile:discussion' => "Discussion",
+    'gprofile:files' => "Files",
+    'gprofile:blogs' => "Blog",
+    'gprofile:events' => "Events",
+    'gprofile:calendar' => "calendar",
+    'gprofile:pages' => "Pages",
+    'gprofile:bookmarks' => "Bookmarks",
     
 /**
  * Sites

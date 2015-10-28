@@ -50,7 +50,7 @@ if($checkPage == 'group_profile' && $type == 'GPmod'){
 
     $body = elgg_format_element('div', ['class' => ''], $body);
     if ($footer) {
-        $footer = elgg_format_element('div', ['class' => 'text-right'], $footer);
+        $footer = elgg_format_element('div', ['class' => 'text-right panel-footer'], $footer);
     }
 
     $contents = $header . $body . $footer;

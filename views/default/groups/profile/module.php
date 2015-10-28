@@ -19,6 +19,8 @@ $header = $vars['title'];
 
 $content = $vars['content'];
 
+$footer = $vars['all_link'];
+
 if ($group->canWriteToContainer() && isset($vars['add_link'])) {
     
     /*
@@ -49,12 +51,18 @@ if ($group->canWriteToContainer() && isset($vars['add_link'])) {
 //remove group from title to create an id for module
 $id = explode(' ', $vars['title']);
 
-
+if(get_current_language() == 'en'){
+    if($id[1] == 'calender'){
+        $id[1] = 'events';
+    }
+    $modID = $id[1];
+} else {
+    $modID = strtolower($id[0]);
+}
 
 echo elgg_view_module('GPmod', '', $content, array(
-	'header' => $header,
 	'class' => 'tab-pane fade-in',
-    'id' => $id[1],
-    'footer' => $vars['all_link'],
+    'id' => $modID,
+    'footer' => $footer,
 ));
 

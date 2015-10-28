@@ -42,7 +42,7 @@ if (!$owner) {
                     //see if user is a member
                     if($group->isFriendOf($user)){
             
-                        //load action buttons
+                        //load action buttons in dropdown
                         $buttons = elgg_view_menu('title', array(
                             'sort_by' => 'priority',
                             'class' => 'dropdown-menu pull-right',
@@ -50,7 +50,7 @@ if (!$owner) {
 
                         ));
 
-                        //display differetn title on button for group owner/mods
+                        //display different title on button for group owner/mods
                         if($owner == get_loggedin_user()){
                             $buttonTitle = "Settings";
                         }
@@ -65,9 +65,10 @@ if (!$owner) {
                             
                                 //action buttons
                                 echo $buttons; 
+                        
                             } else {
                         
-                            //load action buttons
+                            //if only join group option, display as button not in dropdown
                         $buttons = elgg_view_menu('title', array(
                             'sort_by' => 'priority',
                             'class' => '',

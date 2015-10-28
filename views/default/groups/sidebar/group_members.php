@@ -12,14 +12,9 @@ $limit = elgg_extract('limit', $vars, 14);
 
 
 
-$members = elgg_list_entities_from_relationship(array(
-	'relationship' => 'member',
-	'relationship_guid' => $vars['entity']->guid,
-	'inverse_relationship' => true,
-	'type' => 'user',
-));
+$members = $vars['entity']->getMembers();
 
-$membersCount = '';//'(' . count($members) . ')';
+$membersCount = '(' . count($members) . ')';
 
 $all_link = elgg_view('output/url', array(
 	'href' => 'groups/members/' . $vars['entity']->guid,
