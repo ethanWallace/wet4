@@ -12,16 +12,7 @@ $site_url = elgg_get_site_url();
 
       <!-- Beautiful Wavy Blue Bar at the top -->
 		<div class="container">
-			<section id="wb-lng" class="visible-md visible-lg text-right">
-            <h2 class="wb-inv">Language selection</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="list-inline margin-bottom-none">
-                        <li><a lang="fr" href="index-fr.html">Français</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+			
         <div class="row">
             <div class="brand col-xs-8 col-sm-9 col-md-6">
                 <a href="<?php echo $site_url ?>"><img src="<?php echo $site_url ?>/mod/wet4/graphics/gcconnex_logo.png" alt="GCconnex Logo"><span class="wb-inv">GCconnex</span></a>
