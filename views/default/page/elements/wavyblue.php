@@ -24,6 +24,7 @@ $site_url = elgg_get_site_url();
                 </ul>
                 <div id="mb-pnl"></div>
             </section>
+            <!--
             <section id="wb-srch" class="col-xs-6 text-right visible-md visible-lg">
                 <h2>Search</h2>
                 <form action="#" method="post" name="cse-search-box" role="search" class="form-inline">
@@ -33,13 +34,15 @@ $site_url = elgg_get_site_url();
                         <datalist id="wb-srch-q-ac">
                             <!--[if lte IE 9]><select><![endif]-->
                             <!--[if lte IE 9]></select><![endif]-->
-                        </datalist>
+        
+                        <!--</datalist>
                     </div>
                     <div class="form-group submit">
                         <button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
                     </div>
                 </form>
-            </section>
+            </section> -->
+            <?php echo elgg_view('search/search_box', $vars); ?>
         </div>
 		</div>
         <!-- End of Beautiful Wavy Blue Bar at the top -->
