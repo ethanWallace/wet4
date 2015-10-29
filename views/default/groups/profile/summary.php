@@ -36,9 +36,9 @@ if (!$owner) {
                 
                 
                 <?php 
-
+                    if(elgg_is_logged_in()){ 
                     $user = get_loggedin_user()->getGUID();
-                            
+                           
                     //see if user is a member
                     if($group->isFriendOf($user)){
             
@@ -78,6 +78,8 @@ if (!$owner) {
                         
                         echo $buttons;
                     }
+                    }
+                    
                         ?>
                 
             </div>

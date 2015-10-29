@@ -7,11 +7,13 @@ echo '<div id="customWidgets">';
                 $exact_match = elgg_extract('exact_match', $vars, false);
                 $show_access = elgg_extract('show_access', $vars, true);
 
+                
                 $owner = elgg_get_page_owner_entity();
 
+                elgg_push_context('groups');
                 $widget_types = elgg_get_widget_types();
 
-                elgg_push_context('groups');
+                
                 $context = elgg_get_context();
                 
 
@@ -59,6 +61,7 @@ echo '<div id="customWidgets">';
                             if (array_key_exists($widget->handler, $widget_types)) {
                                 echo elgg_view_entity($widget, array('show_access' => $show_access));
                             }
+                            
                         }
                     }
                     echo '</div>';

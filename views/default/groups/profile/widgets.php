@@ -14,6 +14,7 @@ if ($right || $left) {
 	echo $right;
 }
 
+//tool tabs
 echo elgg_view('groups/profile/tab_menu');
 ?>
 
@@ -21,10 +22,10 @@ echo elgg_view('groups/profile/tab_menu');
 
     <div id="<?php echo elgg_echo('gprofile:about') ?>" class="tab-pane fade-in active">
 
-        <?php echo elgg_view('groups/profile/fields', $vars);
+        <?php 
+    echo elgg_view('groups/profile/fields', $vars);
                 
-                
-                echo elgg_view('groups/profile/widget_area', $vars);
+    echo elgg_view('groups/profile/widget_area', $vars);
         ?>
 
     </div>
