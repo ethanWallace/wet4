@@ -117,6 +117,7 @@ function groups_handle_owned_page() {
 
 	if ($page_owner->guid == elgg_get_logged_in_user_guid()) {
 		$title = elgg_echo('groups:owned');
+        
 	} else {
 		$title = elgg_echo('groups:owned:user', array($page_owner->name));
 	}
@@ -125,7 +126,7 @@ function groups_handle_owned_page() {
 	if (elgg_get_plugin_setting('limited_groups', 'groups') != 'yes' || elgg_is_admin_logged_in()) {
 		elgg_register_title_button();
 	}
-
+    
 	$dbprefix = elgg_get_config('dbprefix');
 	$content = elgg_list_entities(array(
 		'type' => 'group',
@@ -136,13 +137,14 @@ function groups_handle_owned_page() {
 		'no_results' => elgg_echo('groups:none'),
 		'distinct' => false,
 	));
-
+$filter = elgg_view("groups/group_sort_menu", array("selected" => $selected_tab));
+    
 	$params = array(
 		'content' => $content,
 		'title' => $title,
-		'filter' => '',
+		'filter' => $filter,
 	);
-	$body = elgg_view_layout('content', $params);
+	$body = elgg_view_layout('content',  $params);
 
 	echo elgg_view_page($title, $body);
 }
