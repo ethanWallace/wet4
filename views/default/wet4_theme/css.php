@@ -10951,7 +10951,7 @@ a.shr-opn, a.shr-opn:hover {
   border-color: #d6e9c6;
     position:fixed;
     z-index: 100000;
-    top: 20px;
+   
    margin-left: 5%;
     width: 50%;
     border-left: solid 5px #2b542c;
@@ -10979,7 +10979,7 @@ details.elgg-state-success:before {
   border-color: #ebccd1;
       position:fixed;
     z-index: 100000;
-    top: 20px;
+    
    margin-left:5%;
     width: 50%;
     border-left: solid 5px #843534;

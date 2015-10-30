@@ -1,16 +1,18 @@
 <?php
 /**
- * Discussion topic add/edit form body
+ * Edit / add a bookmark
  *
+ * @package Bookmarks
  */
 
 $title = elgg_extract('title', $vars, '');
 $desc = elgg_extract('description', $vars, '');
-$status = elgg_extract('status', $vars, '');
+$address = elgg_extract('address', $vars, '');
 $tags = elgg_extract('tags', $vars, '');
 $access_id = elgg_extract('access_id', $vars, ACCESS_DEFAULT);
 $container_guid = elgg_extract('container_guid', $vars);
 $guid = elgg_extract('guid', $vars, null);
+$shares = elgg_extract('shares', $vars, array());
 
 ?>
 <div class="mrgn-bttm-md">
@@ -18,28 +20,26 @@ $guid = elgg_extract('guid', $vars, null);
 	<?php echo elgg_view('input/text', array('name' => 'title', 'value' => $title, 'id' => 'title')); ?>
 </div>
 <div class="mrgn-bttm-md">
-	<label for="description"><?php echo elgg_echo('groups:topicmessage'); ?></label>
+	<label for="address"><?php echo elgg_echo('bookmarks:address'); ?></label><br />
+	<?php echo elgg_view('input/text', array('name' => 'address', 'value' => $address, 'id' =>'address')); ?>
+</div>
+<div class="mrgn-bttm-md">
+	<label for="description"><?php echo elgg_echo('description'); ?></label>
 	<?php echo elgg_view('input/longtext', array('name' => 'description', 'value' => $desc, 'id' => 'description')); ?>
 </div>
-<div>
+<div class="mrgn-bttm-md">
 	<label for="tags"><?php echo elgg_echo('tags'); ?></label>
 	<?php echo elgg_view('input/tags', array('name' => 'tags', 'value' => $tags, 'id' => 'tags')); ?>
 </div>
+<?php
+
+$categories = elgg_view('input/categories', $vars);
+if ($categories) {
+	echo $categories;
+}
+
+?>
 <div class="mrgn-bttm-md">
-    <label for="status"><?php echo elgg_echo("groups:topicstatus"); ?></label><br />
-	<?php
-		echo elgg_view('input/select', array(
-			'name' => 'status',
-            'id' => 'status',
-			'value' => $status,
-			'options_values' => array(
-				'open' => elgg_echo('status:open'),
-				'closed' => elgg_echo('status:closed'),
-			),
-		));
-	?>
-</div>
-<div class="mrgn-bttm-md"> 
 	<label for="access_id"><?php echo elgg_echo('access'); ?></label><br />
 	<?php echo elgg_view('input/access', array(
 		'name' => 'access_id',
@@ -47,7 +47,7 @@ $guid = elgg_extract('guid', $vars, null);
         'id' => 'access_id',
 		'entity' => get_entity($guid),
 		'entity_type' => 'object',
-		'entity_subtype' => 'groupforumtopic',
+		'entity_subtype' => 'bookmarks',
 	)); ?>
 </div>
 <div class="elgg-foot">
@@ -56,10 +56,10 @@ $guid = elgg_extract('guid', $vars, null);
 echo elgg_view('input/hidden', array('name' => 'container_guid', 'value' => $container_guid));
 
 if ($guid) {
-	echo elgg_view('input/hidden', array('name' => 'topic_guid', 'value' => $guid));
+	echo elgg_view('input/hidden', array('name' => 'guid', 'value' => $guid));
 }
 
-echo elgg_view('input/submit', array('value' => 'Create Discussion'));
+echo elgg_view('input/submit', array('value' => 'Add Bookmark'));
 
 ?>
 </div>
