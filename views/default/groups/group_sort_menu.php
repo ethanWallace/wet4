@@ -122,7 +122,7 @@ $email = get_loggedin_user()->email;
 elgg_register_menu_item('user_menu_tabs', array(
     'name' => 'own',
     "href" => "groups/owner/$user->username",
-    "text" => elgg_echo("grouptoolsgroupssortingown"),
+    "text" => elgg_echo("Groups I own"),
     'title' => 'My Dashboard',
     'class' => '',
     ));
@@ -148,7 +148,7 @@ $dropdown = elgg_view_menu('user_menu_tabs', array('class' => 'dropdown-menu  pu
 //create user menu
 elgg_register_menu_item('tabs_menu', array(
     'name' => 'Profile',
-    'text' =>  'Personal' . $dropdown,
+    'text' =>  'Personal<b class="caret"></b>' . $dropdown,
     'title' => elgg_echo('userMenu:profile'),
     'item_class' => 'dropdown',
     'data-toggle' => 'dropdown',
