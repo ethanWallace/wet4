@@ -39,7 +39,13 @@ if ($title || $buttons) {
 	   
     } else {
         // @todo .elgg-heading-main supports action buttons - maybe rename class name?
-       
+        if(elgg_get_page_owner_entity()){
+            if(elgg_get_page_owner_entity()->getType() == 'group'){
+                echo elgg_view('groups/profile/summaryBlock', $vars);
+                elgg_push_context('groupSubPage');
+                elgg_pop_context();
+            }
+        }
 	  echo $buttons;   
         echo elgg_view_title($vars['title'], array('class' => 'elgg-heading-main mrgn-lft-sm'));
       

@@ -68,4 +68,6 @@ echo '<div id="customWidgets">';
                 }
             echo '</div>'; 
 
+            
+
 elgg_pop_context();
