@@ -10915,6 +10915,88 @@ a.shr-opn, a.shr-opn:hover {
           background-clip: padding-box;
 }
 
+/*** more messages stuff ;3****/
+
+.elgg-message {
+  padding: 15px;
+  margin-bottom: 23px;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+  .elgg-message h4 {
+    margin-top: 0;
+    color: inherit; }
+  .elgg-message .alert-link {
+    font-weight: bold; }
+  .elgg-message > p,
+  .elgg-message > ul {
+    margin-bottom: 0; }
+  .elgg-message > p + p {
+    margin-top: 5px; }
+
+.elgg-message > :first-child{
+     margin-left: 1.2em;
+    margin-top: auto;   
+}
+
+.elgg-message > :first-child:before{
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    margin-left: -1.3em;
+    position: absolute;   
+}
+
+
+.elgg-state-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+    position:fixed;
+    z-index: 100000;
+    top: 20px;
+   margin-left: 5%;
+    width: 50%;
+    border-left: solid 5px #2b542c;
+   }
+  .elgg-state-success hr {
+    border-top-color: #c9e2b3; }
+  .aelgg-state-success .alert-link {
+    color: #2b542c; }
+
+details.elgg-state-success:before {
+  color: #278400;
+  content: "\e084"; }
+
+.label-success[href]:active, .elgg-state-success, details.alert-success {
+  background: #d8eeca;
+  border-color: #278400; }
+
+.elgg-state-success > :first-child:before {
+  color: #278400;
+  content: "\e084"; }
+
+
+.elgg-state-error {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+      position:fixed;
+    z-index: 100000;
+    top: 20px;
+   margin-left:5%;
+    width: 50%;
+    border-left: solid 5px #843534;
+}
+  .elgg-state-error hr {
+    border-top-color: #e4b9c0; }
+  .elgg-state-error .alert-link {
+    color: #843534; }
+
+
+.label-danger[href]:active, .elgg-state-error, details.alert-error {
+  background: #f3e9e8;
+  border-color: #d3080c; }
+
+.elgg-state-error > :first-child:before {
+  color: #d3080c;
+  content: "\e101"; }
 /*
  * Mobile panel
  */
