@@ -227,6 +227,11 @@ return array(
 	'group' => "Group",
 	'item:group' => "Groups",
     'group_tools:groups:sorting:alphabetical' => 'Alphabetical',
+    'groups:own' => 'Groups I own',
+    'groups:personal' => 'Personal',
+    'groups:feature' => 'Feature',
+    'groups:popular' => 'Popular',
+    'groups:suggested' => 'Suggested',
 /**
  * Users
  */

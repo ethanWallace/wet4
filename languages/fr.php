@@ -211,6 +211,11 @@ return array(
 
 	'group' => "Groupe",
 	'item:group' => "Groupes",
+    'groups:own' => 'Groupe dont je suis propriétaire.',
+    'groups:personal' => 'Personel',
+    'groups:feature' => 'Vedette',
+    'groups:popular' => 'Populaire',
+    'groups:suggested' => 'Suggestion',
 
 /**
  * Users
