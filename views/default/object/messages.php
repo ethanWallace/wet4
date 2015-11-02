@@ -100,7 +100,7 @@ if ($full) {
 	
 		$entity_listing = elgg_view_image_block($icon, $body, array('class' => $class));
 		
-		echo elgg_view_image_block($checkbox, $entity_listing);
+		echo  $entity_listing;
 	} else {
         
         //echo elgg_view_image_block($checkbox, $entity_listing);
