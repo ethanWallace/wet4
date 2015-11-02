@@ -25,21 +25,8 @@ if (!$owner) {
     
     
         <div class="panel-heading col-xs-12 mrgn-lft-sm"> 
-            
-            <div class="btn-group pull-right mrgn-rght-sm">
                 
-                
-                
-                <?php 
-                    
-                    
-                    
-                        ?>
-                
-            </div>
-
-                
-            <h2 class="pull-left"><?php echo $group->name; ?></h2>
+            <h2 class="pull-left"><a href="<?php echo $group->getURL(); ?>"><?php echo $group->name; ?></a></h2>
         </div>
     
 		<div class="groups-profile-icon pull-left mrgn-lft-md">

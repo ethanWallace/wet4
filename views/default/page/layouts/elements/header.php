@@ -43,6 +43,7 @@ if ($title || $buttons) {
             if(elgg_get_page_owner_entity()->getType() == 'group'){
                 echo elgg_view('groups/profile/summaryBlock', $vars);
                 elgg_push_context('groupSubPage');
+                echo elgg_view('groups/profile/tab_menu');
                 elgg_pop_context();
             }
         }

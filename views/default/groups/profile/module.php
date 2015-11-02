@@ -39,12 +39,12 @@ if ($group->canWriteToContainer() && isset($vars['add_link'])) {
     //create button from gathered variables
     $addButton = elgg_view('output/url', array(
         'text' =>  $buttonText[0],
-        'class' => 'btn btn-custom-cta mrgn-bttm-sm',
+        'class' => 'btn btn-primary mrgn-bttm-sm',
         'style' => 'color:white',
         'href' => $buttonHREF[1],
     ));
     
-    $content = $addButton . $vars['content'];
+    $content = '<div class="text-right">' . $addButton . '</div>' . $vars['content'];
 }
 
 

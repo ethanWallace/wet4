@@ -26,7 +26,10 @@ function wet4_theme_init() {
 	
 	elgg_register_plugin_hook_handler('head', 'page', 'wet4_theme_setup_head');
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'my_owner_block_handler');
-
+    
+    //replace files lost while removing require.js
+    elgg_register_js('elgg/dev', elgg_get_site_url() . 'mod/wet4/views/default/js/elgg/dev.js', 'footer');
+    elgg_register_js('elgg/reportedcontent', elgg_get_site_url() . 'mod/wet4/views/default/js/elgg/reportedcontent.js', 'footer');
     
 	// non-members do not get visible links to RSS feeds
 	if (!elgg_is_logged_in()) {
@@ -40,7 +43,10 @@ function wet4_theme_init() {
  * Rearrange menu items
  */
 function wet4_theme_pagesetup() {
-
+    
+    //elgg_load_js('elgg/dev');
+    //elgg_load_js('elgg/reportedcontent');
+    
 	if (elgg_is_logged_in()) {
 
 		elgg_register_menu_item('topbar', array(
@@ -441,6 +447,79 @@ function my_owner_block_handler($hook, $type, $menu, $params){
                 case 'activity':
                     $item->setText('Activity');
                     $item->setHref('#activity');
+                    $item->setPriority('11');
+                    break;
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
+    //rearrange menu items
+    if(elgg_get_context() == 'groupSubPage'){
+        
+        elgg_unregister_menu_item('owner_block', 'activity');
+        
+        //turn owner_block  menu into tabs
+        foreach ($menu as $key => $item){
+             
+            switch ($item->getName()) {
+                case 'discussion':
+                    $item->setText(elgg_echo('gprofile:discussion'));
+
+                    $item->setPriority('1');
+                    break;
+                case 'file':
+                    $item->setText(elgg_echo('gprofile:files'));
+
+                    $item->setPriority('2');
+                    break;
+                case 'blog':
+                    $item->setText(elgg_echo('gprofile:blogs'));
+
+                    $item->setPriority('3');
+                    break;
+                case 'event_calendar':
+                    $item->setText(elgg_echo('gprofile:events'));
+
+                    $item->setPriority('5');
+                    break;
+                case 'pages':
+                    $item->setText(elgg_echo('gprofile:pages'));
+
+                    $item->setPriority('6');
+                    break;
+                case 'bookmarks':
+                    $item->setText(elgg_echo('gprofile:bookmarks'));
+
+                    $item->setPriority('7');
+                    break;
+                case 'polls':
+                    $item->setText(elgg_echo('gprofile:polls'));
+
+                    $item->setPriority('8');
+                    break;
+                case 'tasks':
+                    $item->setText(elgg_echo('gprofile:tasks'));
+
+                    $item->setPriority('9');
+                    break;
+                case 'photos':
+                    $item->setText(elgg_echo('gprofile:photos'));
+
+                    $item->setPriority('10');
+                    break;
+                case 'ideas':
+                    $item->setText(elgg_echo('gprofile:ideas'));
+
+                    $item->setPriority('11');
+                    break;
+                case 'activity':
+                    $item->setText('Activity');
+
                     $item->setPriority('11');
                     break;
                 
