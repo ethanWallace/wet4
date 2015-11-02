@@ -15,6 +15,7 @@ function wet4_theme_init() {
 	elgg_register_event_handler('pagesetup', 'system', 'wet4_theme_pagesetup', 1000);
     elgg_register_event_handler('pagesetup', 'system', 'messages_notifier');
     elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_elgg_entity_menu_setup');
+    elgg_register_plugin_hook_handler('register', 'menu:river', 'wet4_elgg_river_menu_setup');
     elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_likes_entity_menu_setup', 400);
     //elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_delete_entity_menu', 400);
     
@@ -366,6 +367,102 @@ function wet4_elgg_entity_menu_setup($hook, $type, $return, $params) {
 			'priority' => 300,
 		);
 		$return[] = \ElggMenuItem::factory($options);
+        
+
+	}
+
+	return $return;
+}
+
+function wet4_elgg_river_menu_setup($hook, $type, $return, $params){
+	if (elgg_is_logged_in()) {
+		$item = $params['item'];
+		/* @var \ElggRiverItem $item */
+		$object = $item->getObjectEntity();
+		// add comment link but annotations cannot be commented on
+		if ($item->annotation_id == 0) {
+			if ($object->canComment()) {
+				$options = array(
+					'name' => 'comment',
+					'href' => "#comments-add-$object->guid",
+					'text' => '<i class="fa fa-comment-o fa-lg icon-unsel"><span class="wb-inv">Comment on this</span></i>',
+					'title' => elgg_echo('comment:this'),
+					//'rel' => 'toggle',
+                   'data-toggle' => 'collapse',
+                    'aria-expanded' => 'false',
+					'priority' => 50,
+				);
+				$return[] = \ElggMenuItem::factory($options);
+                
+                
+            }else{
+                      $options = array(
+					'name' => 'reply',
+					'href' => "#comments-add-$object->guid",
+					'text' => '<i class="fa fa-comment-o fa-lg icon-unsel"><span class="wb-inv">Comment on this</span></i>',
+					'title' => 'Reply to this',
+					//'rel' => 'toggle',
+                         'data-toggle' => 'collapse',
+                  'aria-expanded' => 'false',
+					'priority' => 50,
+				);
+				$return[] = \ElggMenuItem::factory($options);  
+            }
+            
+
+    
+		}
+        
+
+        
+        	$object = $item->getObjectEntity();
+	if (!$object || !$object->canAnnotate(0, 'likes')) {
+		return;
+	}
+
+	$hasLiked = \Elgg\Likes\DataService::instance()->currentUserLikesEntity($object->guid);
+
+	// Always register both. That makes it super easy to toggle with javascript
+	$return[] = ElggMenuItem::factory(array(
+		'name' => 'likes',
+		'href' => elgg_add_action_tokens_to_url("/action/likes/add?guid={$object->guid}"),
+		'text' => '<i class="fa fa-thumbs-up fa-lg icon-unsel"></i><span class="wb-inv">Like This</span>',
+		'title' => elgg_echo('likes:likethis'),
+		'item_class' => $hasLiked ? 'hidden' : '',
+		'priority' => 100,
+	));
+	$return[] = ElggMenuItem::factory(array(
+		'name' => 'unlike',
+		'href' => elgg_add_action_tokens_to_url("/action/likes/delete?guid={$object->guid}"),
+		'text' => '<i class="fa fa-thumbs-up fa-lg icon-sel"></i><span class="wb-inv">Like This</span>',
+		'title' => elgg_echo('likes:remove'),
+		'item_class' => $hasLiked ? '' : 'hidden',
+		'priority' => 100,
+	));
+
+	// likes count
+	$count = elgg_view('likes/count', array('entity' => $object));
+	if ($count) {
+		$return[] = ElggMenuItem::factory(array(
+			'name' => 'likes_count',
+			'text' => $count,
+			'href' => false,
+			'priority' => 101,
+		));
+	}
+        
+		
+		if (elgg_is_admin_logged_in()) {
+			$options = array(
+				'name' => 'delete',
+				'href' => elgg_add_action_tokens_to_url("action/river/delete?id=$item->id"),
+				'text' => '<i class="fa fa-trash-o fa-lg icon-unsel"><span class="wb-inv">Delete This</span></i>',
+				'title' => elgg_echo('river:delete'),
+				'confirm' => elgg_echo('deleteconfirm'),
+				'priority' => 200,
+			);
+			$return[] = \ElggMenuItem::factory($options);
+		}
         
 
 	}

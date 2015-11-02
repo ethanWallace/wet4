@@ -10932,6 +10932,10 @@ a.shr-opn, a.shr-opn:hover {
     margin-right:3%;
 }
 
+.river-margin li{
+    margin:5px;   
+}
+
 /*** more messages stuff ;3****/
 
 .elgg-message {

@@ -11,6 +11,7 @@ $item = $vars['item'];
 /* @var ElggRiverItem $item */
 
 $subject = $item->getSubjectEntity();
+//makes the widget icons small and the main river icons big :)
 if(elgg_get_context() !== 'widgets'){
   if (elgg_in_context('widgets')) {
 	echo elgg_view_entity_icon($subject, 'medium');
