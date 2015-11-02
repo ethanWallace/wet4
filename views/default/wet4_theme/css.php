@@ -10876,6 +10876,12 @@ a.shr-opn, a.shr-opn:hover {
     margin-top: 10px;
 }
 
+.gallery-margin li{
+    margin:5px;
+    border:none;
+}   
+
+
 
 /*** Messages ***/
 
@@ -10913,6 +10919,17 @@ a.shr-opn, a.shr-opn:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
+}
+
+
+.messages-chkbx{
+    float:left;
+    width:3%;
+}
+
+.messages-owner{
+    width:15%;
+    margin-right:3%;
 }
 
 /*** more messages stuff ;3****/

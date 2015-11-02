@@ -68,8 +68,15 @@ $delete_link = elgg_view("output/url", array(
 						'encode_text' => false,
 					));
 
+$checkbox = elgg_view('input/checkbox', array(
+			'name' => 'message_id[]',
+			'value' => $message->guid,
+			'default' => false,
+		));
+
 $body = <<<HTML
 <div class="mrgn-bttm-md clearfix">
+<div class="messages-chkbx">$checkbox</div>
 <div class="messages-owner">$user_link</div>
 <div class="messages-subject">$subject_info</div>
 <div class="messages-timestamp">$timestamp</div>
@@ -88,13 +95,15 @@ if ($full) {
 		$checkbox = elgg_view('input/checkbox', array(
 			'name' => 'message_id[]',
 			'value' => $message->guid,
-			'default' => false
+			'default' => false,
 		));
 	
 		$entity_listing = elgg_view_image_block($icon, $body, array('class' => $class));
 		
 		echo elgg_view_image_block($checkbox, $entity_listing);
 	} else {
-		echo elgg_view_image_block($icon, $body, array('class' => $class));
+        
+        //echo elgg_view_image_block($checkbox, $entity_listing);
+		echo elgg_view_image_block( $icon, $body, array('class' => $class));
 	}
 }
