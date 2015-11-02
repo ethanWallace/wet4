@@ -29,8 +29,9 @@ $body = elgg_list_entities_from_relationship(array(
 	'type' => 'user',
 	'limit' => $limit,
 	'pagination' => false,
+    'size' => 'small',
 	'list_type' => 'gallery',
-	'gallery_class' => 'elgg-gallery-users',
+	'gallery_class' => 'elgg-gallery-users gallery-margin',
 ));
 
 
