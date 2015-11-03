@@ -66,13 +66,15 @@ FORM;
 		'name' => 'description',
 		'value' => $value,
         'class' => '',
+        'id' => 'box-'. $reply->guid,
 	));
 
 echo <<<FORM
 <div class="panel-footer">
 	<div>
-		<label>$reply_label</label>
+		<label for="box-$reply->guid">$reply_label </label>
 		$description_input
+        
 	</div>
 	<div>
 		$reply_guid_input

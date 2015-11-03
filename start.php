@@ -13,9 +13,11 @@ function wet4_theme_init() {
     elgg_register_library('elgg:groups', elgg_get_plugins_path() . 'wet4/lib/groups.php');
     
 	elgg_register_event_handler('pagesetup', 'system', 'wet4_theme_pagesetup', 1000);
+    elgg_register_event_handler('pagesetup', 'system', 'wet4_riverItem_remove');
     elgg_register_event_handler('pagesetup', 'system', 'messages_notifier');
     elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_elgg_entity_menu_setup');
     elgg_register_plugin_hook_handler('register', 'menu:river', 'wet4_elgg_river_menu_setup');
+    
     elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_likes_entity_menu_setup', 400);
     //elgg_register_plugin_hook_handler('register', 'menu:entity', 'wet4_delete_entity_menu', 400);
     
@@ -374,7 +376,14 @@ function wet4_elgg_entity_menu_setup($hook, $type, $return, $params) {
 	return $return;
 }
 
+function wet4_riverItem_remove(){
+    elgg_unregister_menu_item('river', 'comment'); 
+    elgg_unregister_menu_item('river', 'reply'); 
+}
+
 function wet4_elgg_river_menu_setup($hook, $type, $return, $params){
+    
+    
 	if (elgg_is_logged_in()) {
 		$item = $params['item'];
 		/* @var \ElggRiverItem $item */
@@ -382,6 +391,7 @@ function wet4_elgg_river_menu_setup($hook, $type, $return, $params){
 		// add comment link but annotations cannot be commented on
 		if ($item->annotation_id == 0) {
 			if ($object->canComment()) {
+                /*
 				$options = array(
 					'name' => 'comment',
 					'href' => "#comments-add-$object->guid",
@@ -393,9 +403,10 @@ function wet4_elgg_river_menu_setup($hook, $type, $return, $params){
 					'priority' => 50,
 				);
 				$return[] = \ElggMenuItem::factory($options);
-                
+                */
                 
             }else{
+                /*
                       $options = array(
 					'name' => 'reply',
 					'href' => "#comments-add-$object->guid",
@@ -406,7 +417,7 @@ function wet4_elgg_river_menu_setup($hook, $type, $return, $params){
                   'aria-expanded' => 'false',
 					'priority' => 50,
 				);
-				$return[] = \ElggMenuItem::factory($options);  
+				$return[] = \ElggMenuItem::factory($options);  */
             }
             
 

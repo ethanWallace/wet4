@@ -23,7 +23,7 @@ $body = elgg_extract('body', $vars, '');
 $image = elgg_extract('image', $vars, '');
 $alt_image = elgg_extract('image_alt', $vars, '');
 
-$class = 'col-xs-12 mrgn-tp-sm';
+$class = 'col-xs-12 mrgn-tp-sm ';
 $additional_class = elgg_extract('class', $vars, '');
 if ($additional_class) {
 	$class = "$class $additional_class";
@@ -44,9 +44,12 @@ if ($image) {
 if ($alt_image) {
 	$alt_image = "<div class=\"elgg-image-alt\">$alt_image</div>";
 }
-
+//elgg body appends the edit comment text box thing
 echo <<<HTML
 <div class="$class clearfix mrgn-bttm-md" $id>
 	$image$alt_image$body
+    <div class=" elgg-body clearfix edit-comment">
+    
+    </div>
 </div>
 HTML;

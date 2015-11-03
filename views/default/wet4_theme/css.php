@@ -11018,6 +11018,17 @@ details.elgg-state-success:before {
 .elgg-state-error > :first-child:before {
   color: #d3080c;
   content: "\e101"; }
+
+
+/** comment stuff ;) **/
+.elgg-body{
+    overflow:visible;   
+}
+
+.edit-comment form fieldset{
+    width:100%;   
+}
+
 /*
  * Mobile panel
  */
