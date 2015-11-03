@@ -27,7 +27,7 @@ return array(
     'gprofile:photos' => "Photos",
     'gprofile:photoCatch' => "photos",
     'gprofile:ideas' => "Idées",
-    'gprofile:more' => "More",
+    'gprofile:more' => "Plus",
     
 /**
  * Sites

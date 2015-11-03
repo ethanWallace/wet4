@@ -65,7 +65,8 @@ function groups_handle_all_page() {
 	$filter = elgg_view('groups/group_sort_menu', array('selected' => $selected_tab));
 
 	$sidebar = elgg_view('groups/sidebar/find');
-	$sidebar .= elgg_view('groups/sidebar/featured');
+	//$sidebar .= elgg_view('groups/sidebar/featured');
+    $sidebar .= elgg_view('groups/sidebar/suggested');
 
 	$params = array(
 		'content' => $content,
@@ -95,7 +96,7 @@ function groups_search_page() {
 	$content = elgg_list_entities_from_metadata($params);
 
 	$sidebar = elgg_view('groups/sidebar/find');
-	$sidebar .= elgg_view('groups/sidebar/featured');
+	//$sidebar .= elgg_view('groups/sidebar/featured');
 
 	$params = array(
 		'content' => $content,
@@ -138,10 +139,12 @@ function groups_handle_owned_page() {
 		'distinct' => false,
 	));
 $filter = elgg_view("groups/group_sort_menu", array("selected" => $selected_tab));
+$sidebar = elgg_view('groups/sidebar/suggested');
     
 	$params = array(
 		'content' => $content,
 		'title' => $title,
+        "sidebar" => $sidebar,
 		'filter' => $filter,
 	);
 	$body = elgg_view_layout('content',  $params);
@@ -181,10 +184,13 @@ function groups_handle_mine_page() {
 	));
 
     $filter = elgg_view("groups/group_sort_menu", array("selected" => $selected_tab));
+    $sidebar = elgg_view('groups/sidebar/suggested');
+    $sidebar .= elgg_view('groups/sidebar/featured');
     
 	$params = array(
 		'content' => $content,
 		'title' => $title,
+        "sidebar" => $sidebar,
 		'filter' => $filter,
 	);
 	$body = elgg_view_layout('content', $params);

@@ -48,10 +48,12 @@ $content = elgg_view("groups/invitationrequests", array(
 	"email_invitations" => $email_invitations
 ));
 $filter = elgg_view("groups/group_sort_menu", array("selected" => $selected_tab));
+$sidebar = elgg_view('groups/sidebar/suggested');
 // build page content
 $params = array(
 	"content" => $content,
 	"title" => $title,
+    "sidebar" => $sidebar,
 	"filter" => $filter,
 );
 $body = elgg_view_layout("content", $params);
