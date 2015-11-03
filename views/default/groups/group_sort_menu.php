@@ -16,7 +16,7 @@ elgg_register_menu_item('user_menu_tabs', array(
 
 elgg_register_menu_item('user_menu_tabs', array(
     'name' => 'myGroups',
-    "href" => "groups/all?filter=yours",
+    "href" => "groups/member/$user->username",
     "text" => elgg_echo("groups:yours"),
     'title' => elgg_echo("groups:yours"),
     'class' => '',

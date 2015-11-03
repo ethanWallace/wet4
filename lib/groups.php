@@ -180,10 +180,12 @@ function groups_handle_mine_page() {
 		'no_results' => elgg_echo('groups:none'),
 	));
 
+    $filter = elgg_view("groups/group_sort_menu", array("selected" => $selected_tab));
+    
 	$params = array(
 		'content' => $content,
 		'title' => $title,
-		'filter' => '',
+		'filter' => $filter,
 	);
 	$body = elgg_view_layout('content', $params);
 
@@ -292,7 +294,7 @@ function groups_handle_profile_page($guid) {
 	groups_register_profile_buttons($group);
 
 	$content = elgg_view('groups/profile/layout', array('entity' => $group));
-	$sidebar = elgg_view('groups/sidebar/sidebar', array('entity' => $group));
+	//$sidebar = elgg_view('groups/sidebar/sidebar', array('entity' => $group));
     /*
 	if (elgg_group_gatekeeper(false)) {
 		if (elgg_is_active_plugin('search')) {
