@@ -44,3 +44,4 @@ $content = elgg_list_entities(array(
 	$content .= elgg_view_form('comment/save', array(), $vars);
 
 
+echo elgg_format_element('div', $attr, $content);

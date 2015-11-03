@@ -20,6 +20,7 @@ if (!elgg_instanceof($comment, 'object', 'comment') || !$comment->canEdit()) {
 }
 
 $form_vars = array(
+	'class' => ' mvl',
 	'id' => "edit-comment-{$guid}",
 );
 $body_vars = array('comment' => $comment);
