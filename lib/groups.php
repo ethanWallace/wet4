@@ -300,7 +300,7 @@ function groups_handle_profile_page($guid) {
 	groups_register_profile_buttons($group);
 
 	$content = elgg_view('groups/profile/layout', array('entity' => $group));
-	//$sidebar = elgg_view('groups/sidebar/sidebar', array('entity' => $group));
+	$sidebar = elgg_view('groups/sidebar/sidebar', array('entity' => $group));
     /*
 	if (elgg_group_gatekeeper(false)) {
 		if (elgg_is_active_plugin('search')) {
