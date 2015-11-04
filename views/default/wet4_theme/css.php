@@ -10705,7 +10705,7 @@ a.shr-opn, a.shr-opn:hover {
     }
 
 .dropdown a:focus {
-    border: 1px solid #a3c5fc;
+   outline: 5px auto -webkit-focus-ring-color;;
     border-radius: 2px;
 }
     
