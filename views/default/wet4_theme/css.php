@@ -10678,6 +10678,11 @@ a.shr-opn, a.shr-opn:hover {
     .btn-custom:hover {
         background: #cfd1d5;
     }
+
+    .btn-custom:focus {
+        background: #cfd1d5;
+        border-color: lightblue;
+    }
     
     .btn-custom-cta {
         background: #055959;
@@ -10698,6 +10703,11 @@ a.shr-opn, a.shr-opn:hover {
     .form-control {
         border-radius: 0;
     }
+
+.dropdown a:focus {
+    border: 1px solid #a3c5fc;
+    border-radius: 2px;
+}
     
     .dropdown-menu {
         border-radius: 0;

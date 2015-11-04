@@ -49,6 +49,8 @@ elgg_register_menu_item('owner_block', array(
     'href' => '',
     'priority' => '100',
     ));
+
+
 if(elgg_get_context() == 'group_profile'){
     elgg_register_menu_item('owner_block', array(
         'name' => 'search',
