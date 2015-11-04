@@ -46,12 +46,12 @@ if ($tags === '') {
 if ($title_link) {
 	echo "<h3 class=\"mrgn-bttm-0 panel-title\">$title_link</h3>";
 }
+
+echo "<div class=\" mrgn-bttm-sm timeStamp clearfix\">$subtitle</div>";
+echo "<div class=\"tags\">$tags</div>";
 if ($metadata) {
 	echo $metadata;
 }
-echo "<div class=\"elgg-subtext mrgn-bttm-sm timeStamp clearfix\">$subtitle</div>";
-echo "<div class=\"tags\">$tags</div>";
-
 
 echo elgg_view('object/summary/extend', $vars);
 

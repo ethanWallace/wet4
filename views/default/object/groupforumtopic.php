@@ -23,7 +23,7 @@ if (!$poster) {
 
 $excerpt = elgg_get_excerpt($topic->description);
 
-$poster_icon = elgg_view_entity_icon($poster, 'tiny');
+$poster_icon = elgg_view_entity_icon($poster, 'medium');
 $poster_link = elgg_view('output/url', array(
 	'href' => $poster->getURL(),
 	'text' => $poster->name,
