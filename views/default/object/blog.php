@@ -20,7 +20,15 @@ if (empty($excerpt)) {
 	$excerpt = elgg_get_excerpt($blog->description);
 }
 
-$owner_icon = elgg_view_entity_icon($owner, 'tiny');
+//test to see if it is widget view
+if(elgg_get_context() !== 'widgets'){
+$owner_icon = elgg_view_entity_icon($owner, 'medium');
+}else{
+   
+   $owner_icon = elgg_view_entity_icon($owner, 'small'); 
+    
+}
+
 $owner_link = elgg_view('output/url', array(
 	'href' => "blog/owner/$owner->username",
 	'text' => $owner->name,
@@ -92,6 +100,12 @@ if ($full) {
 		"icon" => $owner_icon,
 		"body" => $blog_icon . $body,
 	));
+       
+
+    echo '<h2 class="panel-title mrgn-lft-sm mrgn-bttm-md mrgn-tp-md">Replies</h2>';
+
+    echo '<div id="group-replies" class="elgg-comments mrgn-rght-md mrgn-lft-md clearfix">';
+    
 } else {
 	// how to show strapline
 	if (elgg_in_context("listing")) {
@@ -135,6 +149,8 @@ if ($full) {
 	$params = $params + $vars;
 
 	$list_body = elgg_view('object/elements/summary', $params);
+    
 
 	echo elgg_view_image_block($owner_icon, $list_body);
+
 }

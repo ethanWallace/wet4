@@ -13,7 +13,7 @@ if (!$reply) {
 
 $poster = $reply->getOwnerEntity();
 
-$poster_icon = elgg_view_entity_icon($poster, 'tiny');
+$poster_icon = elgg_view_entity_icon($poster, 'medium');
 $poster_link = elgg_view('output/url', array(
 	'href' => $poster->getURL(),
 	'text' => $poster->name,
@@ -57,6 +57,7 @@ $params = array(
 	'metadata' => $metadata,
 	'subtitle' => $subtitle,
 	'content' => $content,
+    '' => $title_link,
 );
 $params = $params + $vars;
 $list_body = elgg_view('object/elements/summary', $params);
