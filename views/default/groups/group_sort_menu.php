@@ -11,7 +11,8 @@ elgg_register_menu_item('user_menu_tabs', array(
     "href" => "groups/owner/$user->username",
     "text" => elgg_echo("groups:own"),
     'title' => elgg_echo("groups:own"),
-    'class' => '',
+    'priority' => '5',
+    
     ));
 
 elgg_register_menu_item('user_menu_tabs', array(
@@ -19,7 +20,8 @@ elgg_register_menu_item('user_menu_tabs', array(
     "href" => "groups/member/$user->username",
     "text" => elgg_echo("groups:yours"),
     'title' => elgg_echo("groups:yours"),
-    'class' => '',
+    'priority' => '4',
+    
     ));
 
 elgg_register_menu_item('user_menu_tabs', array(
@@ -27,10 +29,11 @@ elgg_register_menu_item('user_menu_tabs', array(
     "href" => "groups/invitations/$user->username",
     "text" => elgg_echo("Invitations"),
     'title' => elgg_echo("Invitations"),
-    'class' => '',
+    'priority' => '6',
+    
     ));
 
-$dropdown = elgg_view_menu('user_menu_tabs', array('class' => 'dropdown-menu  pull-right'));
+$dropdown = elgg_view_menu('user_menu_tabs', array('sort_by' => 'priority','class' => 'dropdown-menu  pull-right'));
 $caret = elgg_echo('<b class="caret"></b>');
 //create tabs menu
 elgg_register_menu_item('tabs_menu', array(
@@ -40,7 +43,7 @@ elgg_register_menu_item('tabs_menu', array(
     'item_class' => 'dropdown',
     'data-toggle' => 'dropdown',
     'class' => 'dropdown-toggle',
-    'priority' => '4',
+    'priority' => '10',
     ));
 
 
@@ -52,8 +55,6 @@ elgg_register_menu_item('tabs_menu', array(
     "href" => "groups/all?filter=feature",
     'text' => elgg_echo('groups:feature'),
     'title' => elgg_echo('groups:feature') . $title,
-    'item_class' => '',
-    'class' => '',
     'priority' => '1',
     ));
 
@@ -62,8 +63,6 @@ elgg_register_menu_item('tabs_menu', array(
     "href" => "groups/all?filter=popular",
     'text' => elgg_echo('groups:popular'),
     'title' => elgg_echo('groups:popular') . $title,
-    'item_class' => ' ',
-    'class' => '',
     'priority' => '2',
     ));
 
@@ -72,8 +71,6 @@ elgg_register_menu_item('tabs_menu', array(
     "href" => "groups/suggested",
     'text' => elgg_echo('groups:suggested'),
     'title' => elgg_echo('groups:suggested') . $title,
-    'item_class' => '',
-    'class' => '',
     'priority' => '3',
     ));
 
