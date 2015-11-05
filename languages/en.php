@@ -28,7 +28,9 @@ return array(
     'gprofile:polls' => "Polls",
     'gprofile:tasks' => "Tasks",
     'gprofile:photos' => "Photos",
-    'gprofile:photoCatch' => "recent",
+    'gprofile:photoCatch' => "Images",
+    'gprofile:albums' => "Albums",
+    'gprofile:albumsCatch' => "Photo Albums",
     'gprofile:ideas' => "Ideas",
     'gprofile:more' => "More",
     

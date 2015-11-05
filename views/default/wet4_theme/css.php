@@ -10891,7 +10891,9 @@ a.shr-opn, a.shr-opn:hover {
     border:none;
 }   
 
-
+.removeMe {
+    display: none;
+}
 
 /*** Messages ***/
 

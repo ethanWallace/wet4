@@ -48,6 +48,7 @@ if ($group->canWriteToContainer() && isset($vars['add_link'])) {
 }
 
 
+
 //remove group from title to create an id for module
 $id = explode(' ', $vars['title']);
 
@@ -58,6 +59,10 @@ if(get_current_language() == 'en'){
     $modID = $id[1];
 } else {
     $modID = strtolower($id[0]);
+}
+
+if($vars['title'] == 'Most recent albums' || $vars['title'] == 'Most recent images'){
+    $modID = $id[2];
 }
 
 echo elgg_view_module('GPmod', '', $content, array(

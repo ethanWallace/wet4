@@ -496,7 +496,7 @@ function my_owner_block_handler($hook, $type, $menu, $params){
     //rearrange menu items
     if(elgg_get_context() == 'group_profile'){
         
-        elgg_unregister_menu_item('owner_block', 'activity');
+        elgg_unregister_menu_item('owner_block', 'Activity');
         
         //turn owner_block  menu into tabs
         foreach ($menu as $key => $item){
@@ -547,15 +547,22 @@ function my_owner_block_handler($hook, $type, $menu, $params){
                     $item->setHref('#' . strtolower(elgg_echo('gprofile:photoCatch')));
                     $item->setPriority('10');
                     break;
+                case 'photo_albums':
+                    $item->setText(elgg_echo('gprofile:albumsCatch'));
+                    $item->setHref('#' . strtolower(elgg_echo('gprofile:albums')));
+                    $item->setPriority('11');
+                    break;
                 case 'ideas':
                     $item->setText(elgg_echo('gprofile:ideas'));
                     $item->setHref('#' . strtolower(elgg_echo('gprofile:ideas')));
-                    $item->setPriority('11');
+                    $item->setPriority('12');
                     break;
                 case 'activity':
+                    elgg_unregister_menu_item('owner_block', 'activity');
                     $item->setText('Activity');
                     $item->setHref('#activity');
-                    $item->setPriority('11');
+                    $item->setPriority('13');
+                    $item->addItemClass('removeMe');
                     break;
                 
             }
@@ -620,15 +627,21 @@ function my_owner_block_handler($hook, $type, $menu, $params){
 
                     $item->setPriority('10');
                     break;
+                case 'photo_albums':
+                    $item->setText(elgg_echo('gprofile:albumsCatch'));
+
+                    $item->setPriority('11');
+                    break;
                 case 'ideas':
                     $item->setText(elgg_echo('gprofile:ideas'));
 
-                    $item->setPriority('11');
+                    $item->setPriority('12');
                     break;
                 case 'activity':
                     $item->setText('Activity');
 
-                    $item->setPriority('11');
+                    $item->setPriority('13');
+                    $item->addItemClass('removeMe');
                     break;
                 
             }

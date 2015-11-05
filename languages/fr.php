@@ -26,6 +26,8 @@ return array(
     'gprofile:tasks' => "Tâches",
     'gprofile:photos' => "Photos",
     'gprofile:photoCatch' => "photos",
+    'gprofile:albums' => "Albums",
+    'gprofile:albumsCatch' => "Albums",
     'gprofile:ideas' => "Idées",
     'gprofile:more' => "Plus",
     
