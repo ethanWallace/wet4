@@ -14,7 +14,7 @@ return array(
  * Group Profile
  */     
     
-    'gprofile:about' => "About",
+    'gprofile:about' => "À propos",
     'gprofile:discussion' => "Discussion",
     'gprofile:files' => "Fichiers",
     'gprofile:blogs' => "Blogues",
