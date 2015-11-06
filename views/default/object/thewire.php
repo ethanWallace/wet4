@@ -21,8 +21,12 @@ if (!$thread_id) {
 }
 
 $owner = $post->getOwnerEntity();
+if(elgg_get_context() == 'widgets' || elgg_get_context() == 'custom_index_widgets'){
+    $owner_icon = elgg_view_entity_icon($owner, 'small');
+}else{
+    $owner_icon = elgg_view_entity_icon($owner, 'medium');
+}
 
-$owner_icon = elgg_view_entity_icon($owner, 'medium');
 $owner_link = elgg_view('output/url', array(
 	'href' => "thewire/owner/$owner->username",
 	'text' => $owner->name,
