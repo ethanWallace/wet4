@@ -62,9 +62,9 @@ if(elgg_get_context() == 'group_profile'){
         'priority' => '101',
         ));
 }
-
+if(elgg_get_context() == 'group_profile'){
 echo elgg_view_menu('owner_block', array('entity' => $owner, 'class' => 'nav nav-tabs tabMenuGroup clearfix', 'sort_by' => 'priority',));
-
+}
 //condition for page
 //see what page we are on for proper js
 if(elgg_get_context() == 'group_profile'){
