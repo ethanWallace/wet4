@@ -32,7 +32,7 @@ $content = elgg_view_entity_list($widget_datas, $options);
 
 $all_link = elgg_view('output/url', array(
 	'href' => 'groups/member/' . $owner->username,
-	'text' => elgg_echo('View All Groups') . $groupCount,
+	'text' => elgg_echo('View My Groups') . $groupCount,
 	'is_trusted' => true,
 ));
 
