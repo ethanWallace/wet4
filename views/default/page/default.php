@@ -43,6 +43,12 @@ $tabskip = elgg_view('page/elements/tabskip', $vars);
 
 $breadcrumbs = elgg_view('navigation/breadcrumbs');
 
+
+//WIP development banner
+if(elgg_is_active_plugin('GoC_dev_banner')){
+    $alert = elgg_view('banner/dev_banner');
+}
+
 $body = <<<__BODY
     $tabskip
 <div class="elgg-page elgg-page-default">
@@ -55,7 +61,7 @@ $userMenu = elgg_view('page/elements/topbar_wrapper', $vars);
 
 $body .= <<<__BODY
 	<header class="" role="banner">
-    
+    $alert
     <div class="elgg-inner">
 			$lang
 		</div>
