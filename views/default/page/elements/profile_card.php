@@ -23,6 +23,6 @@ $email = get_loggedin_user()->email;
 </div>
 
 <div class="panel-footer clearfix">
-    <a href="<?php echo  $site_url ?>settings" class="btn btn-default mrgn-tp-sm pull-left"><?php echo elgg_echo('userMenu:account') ?></a>
+    <a href="<?php echo  $site_url ?>settings/user/<?php echo $user ?>" class="btn btn-default mrgn-tp-sm pull-left"><?php echo elgg_echo('userMenu:account') ?></a>
     <a href="<?php echo  $site_url ?>action/logout" class="btn btn-default mrgn-tp-sm pull-right"><?php echo elgg_echo('logout') ?></a>
 </div>
