@@ -4,6 +4,8 @@ $user = get_loggedin_user()->username;
 $displayName = get_loggedin_user()->name;
 $user_avatar = get_loggedin_user()->geticonURL('medium');
 $email = get_loggedin_user()->email;
+
+$department = get_loggedin_user()->get('department');
 ?>
 
 
@@ -16,7 +18,7 @@ $email = get_loggedin_user()->email;
     <div class="pull-left mrgn-lft-md">
         <h4><?php echo $displayName?></h4>
         <div><?php echo  $email ?></div>
-        <div>Department</div>
+        <div><?php echo $department; ?></div>
         <a href="<?php echo  $site_url ?>profile/<?php echo  $user ?>" class="btn btn-default mrgn-tp-sm"><?php echo elgg_echo('userMenu:profile') ?></a>
     </div>
     
