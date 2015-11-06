@@ -77,7 +77,7 @@ if(elgg_get_context() == 'group_profile'){
 ?>
 
 
-<script>
+<script type="text/javascript">
     
     //place additional group tools in dropdown menu
 $(document).ready( function(){
@@ -98,7 +98,7 @@ $(document).ready( function(){
         //put rest in dropdown
        if(i >= 4 && i < (listItems.length) - <?php echo $num ?> ){
            //remove extra li's
-           listItems[i].remove();
+          listItems[i].parentNode.removeChild(listItems[i]);
            //add them to dropdown menu
            $('.elgg-menu-item-more ul').append(listItems[i]);
        }
