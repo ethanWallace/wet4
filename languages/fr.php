@@ -5,8 +5,8 @@ return array(
  * User Menu
  */
     
-    'userMenu:profile' => "My Profile",
-    'userMenu:account' => "Account Settings",
+    'userMenu:profile' => "Mon profil",
+    'userMenu:account' => "Paramètres",
     'userMenu:messages' => "My Messages",
     'userMenu:colleagues' => "My Colleagues",
     

@@ -4,7 +4,7 @@
   if (!isset($num_items)) $num_items = 10;
  
   $widget_context_mode = $vars['entity']->widget_context_mode;
-  if (!isset($widget_context_mode)) $widget_context_mode = 'search';
+  if (!isset($widget_context_mode)) $widget_context_mode = 'custom_index_widgets';
   elgg_set_context($widget_context_mode);
 
  $owner = elgg_get_logged_in_user_entity();
@@ -32,12 +32,12 @@ $content = elgg_view_entity_list($widget_datas, $options);
 
 $all_link = elgg_view('output/url', array(
 	'href' => 'groups/member/' . $owner->username,
-	'text' => elgg_echo('View All Groups') . $groupCount,
+	'text' => elgg_echo('View My Groups') . $groupCount,
 	'is_trusted' => true,
 ));
 
 echo $content;
 
-echo "<div class='text-right'>$all_link</div>";
+echo "<div class='text-right mrgn-tp-sm'>$all_link</div>";
 ?>       
 
