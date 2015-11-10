@@ -30,11 +30,14 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 		}
 
         if($key == 'description'){
-            echo "<div class=\"{$even_odd}\">";
-            echo "<h4>";
-            echo 'Description';
-            echo ": </h4>";
-            echo elgg_view("output/$valtype", $options);
+            echo "<div class=\"{$even_odd} panel panel-custom\">";
+                echo '<div class="panel-heading clearfix">';
+                    echo '<h3 class="profile-info-head pull-left clearfix">Description</h3>';
+                echo "</div>";
+                echo '<div class="panel-body">';
+            
+                echo elgg_view("output/$valtype", $options);
+                echo "</div>";
             echo "</div>";
             }
 
