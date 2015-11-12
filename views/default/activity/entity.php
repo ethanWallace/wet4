@@ -6,7 +6,7 @@ if (!$entity || !$user) {
 	return true;
 }
 
-$user_icon = elgg_view_entity_icon($user, 'tiny');
+$user_icon = elgg_view_entity_icon($user, 'small');
 $user_link = "<a href=\"{$user->getURL()}\">$user->name</a>";
 
 $title = $entity->getDisplayName();
