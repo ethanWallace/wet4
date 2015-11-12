@@ -48,9 +48,9 @@ if($checkPage == 'group_profile' && $type == 'GPmod'){
     }
 
 
-    $body = elgg_format_element('div', ['class' => ''], $body);
+    $body = elgg_format_element('div', ['class' => 'clearfix'], $body);
     if ($footer) {
-        $footer = elgg_format_element('div', ['class' => 'text-right panel-footer'], $footer);
+        $footer = elgg_format_element('div', ['class' => 'text-right panel-footer clearfix'], $footer);
     }
 
     $contents = $header . $body . $footer;
@@ -73,9 +73,9 @@ if($checkPage == 'group_profile' && $type == 'GPmod'){
     }
 
     if ($header !== null) {
-        $header = elgg_format_element('div', ['class' => 'panel-heading clearfix'], $header);
+        $header = elgg_format_element('div', ['class' => 'panel-heading'], $header);
     }
-    $body = elgg_format_element('div', ['class' => 'panel-body'], $body);
+    $body = elgg_format_element('div', ['class' => 'panel-body clearfix'], $body);
     if ($footer) {
         $footer = elgg_format_element('div', ['class' => 'panel-footer text-right'], $footer);
     }

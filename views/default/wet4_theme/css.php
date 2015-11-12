@@ -10659,6 +10659,12 @@ a.shr-opn, a.shr-opn:hover {
 /*This is where the elgg icons get loaded!*/
 <?php echo elgg_view('css/elements/icons - Copy', $vars); ?> 
 
+
+.profile-info-head {
+    margin: 5px 0;
+    border-bottom: 1px solid #af3c43;
+}
+
     /****************************************/
     
     /******************** Custom Button Styles ********************/

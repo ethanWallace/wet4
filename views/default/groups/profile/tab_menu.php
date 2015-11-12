@@ -25,7 +25,7 @@ if(elgg_get_context() == 'groupSubPage'){
     'priority' => '0',
     ));
     
-} else {
+} else if(elgg_get_context() == 'group_profile'){
     
     elgg_register_menu_item('owner_block', array(
     'name' => 'about',
@@ -38,6 +38,34 @@ if(elgg_get_context() == 'groupSubPage'){
     'priority' => '0',
     ));
     
+} else if(elgg_get_context() == 'profile'){
+    elgg_register_menu_item('owner_block', array(
+    'name' => 'profile',
+    'href' => '#profile-display',
+    'text' => elgg_echo('gcconnex_profile:profile'),
+    'item_class' => 'active',
+    'data-toggle' => 'tab',
+    'class' => '',
+    'priority' => '0',
+    ));
+    
+    elgg_register_menu_item('owner_block', array(
+    'name' => 'widgets',
+    'href' => '#splashboard',
+    'text' => elgg_echo('gcconnex_profile:widgets'),
+    'data-toggle' => 'tab',
+    'class' => '',
+    'priority' => '0',
+    ));
+    
+    elgg_register_menu_item('owner_block', array(
+    'name' => 'portfolio',
+    'href' => '#portfolio',
+    'text' => elgg_echo('gcconnex_profile:portfolio'),
+    'data-toggle' => 'tab',
+    'class' => '',
+    'priority' => '0',
+    ));
 }
  
 elgg_register_menu_item('owner_block', array(
@@ -62,9 +90,9 @@ if(elgg_get_context() == 'group_profile'){
         'priority' => '101',
         ));
 }
-if(elgg_get_context() == 'group_profile'){
+//if(elgg_get_context() == 'group_profile'){
 echo elgg_view_menu('owner_block', array('entity' => $owner, 'class' => 'nav nav-tabs tabMenuGroup clearfix', 'sort_by' => 'priority',));
-}
+//}
 //condition for page
 //see what page we are on for proper js
 if(elgg_get_context() == 'group_profile'){
@@ -73,8 +101,15 @@ if(elgg_get_context() == 'group_profile'){
     $num = 1;
 }
 
+//display more items on user profile page
+if(elgg_get_context() == 'profile'){
+    $itemNum = 6;
+} else {
+    $itemNum = 4;
+}
 
-?>
+ ?> 
+
 
 
 <script type="text/javascript">
@@ -82,7 +117,7 @@ if(elgg_get_context() == 'group_profile'){
     //place additional group tools in dropdown menu
 $(document).ready( function(){
     
-    <?php if(elgg_get_context() == 'group_profile'){ ?>
+    <?php if(elgg_get_context() == 'group_profile' || elgg_get_context() == 'profile'){ ?>
     //add tab data to li's
     $('.tabMenuGroup .elgg-menu-content').attr('data-toggle', 'tab');
     <?php } ?>
@@ -96,7 +131,7 @@ $(document).ready( function(){
     for(var i = 0; i < listItems.length; i++){
         //only display four li's outside of dropdown menu
         //put rest in dropdown
-       if(i >= 4 && i < (listItems.length) - <?php echo $num ?> ){
+       if(i >= <?php echo $itemNum ?> && i < (listItems.length) - <?php echo $num ?> ){
            //remove extra li's
           listItems[i].parentNode.removeChild(listItems[i]);
            //add them to dropdown menu
@@ -108,4 +143,4 @@ $(document).ready( function(){
 
 </script>
 
-    
+  
