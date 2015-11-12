@@ -10,6 +10,8 @@ if ($vars['page'] != 'friends') {
 	echo elgg_view('page/elements/comments_block', array(
 		'subtypes' => 'blog',
 		'container_guid' => elgg_get_page_owner_guid(),
+         'limit' => 2,//$num,
+        
 	));
 }
 /*

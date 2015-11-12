@@ -812,6 +812,8 @@ These changes will only affect new users on the site.',
 	'friends:icon_size' => "Icon size",
 	'friends:tiny' => "tiny",
 	'friends:small' => "small",
+    
+    'custom_index_widgets:latest_groups_index' => "My Groups",
 
 /**
  * Icons
