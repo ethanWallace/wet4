@@ -26,7 +26,6 @@ if (!($user instanceof ElggUser)) {
 	return;
 }
 
-$size = 'large'; // Set all image in the sidebar only at small size.
 
 $name = htmlspecialchars($user->name, ENT_QUOTES, 'UTF-8', false);
 $username = $user->username;
