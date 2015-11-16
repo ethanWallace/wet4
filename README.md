@@ -1,6 +1,12 @@
 WET 4 Theme
 =============
 
+Code GCconnex
+------
+For use during Code GCconnex event.
+
+
+
 Design
 ------
 
