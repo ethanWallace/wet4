@@ -3,8 +3,12 @@ WET 4 Theme
 
 Code GCconnex
 ------
+
 For use during Code GCconnex event.
 
+!! Important !!
+Rename the plugin folder to:
+wet4
 
 
 Design
