@@ -20,7 +20,7 @@
 
 //check which page module will be rendering on for styling
 $checkPage = elgg_get_context();
-//echo $checkPage;
+//echo $checkPage
 $type = elgg_extract('type', $vars, false);
 $title = elgg_extract('title', $vars, '');
 $body = elgg_extract('body', $vars, '');
