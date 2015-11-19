@@ -112,7 +112,7 @@ if (!$owner) {
 						'text' => $owner->name,
 						'value' => $owner->getURL(),
 						'is_trusted' => true,
-					));  
+					)); 
 				?>
 			</p>
             
