@@ -11047,6 +11047,12 @@ details.elgg-state-success:before {
     width:100%;   
 }
 
+
+/** Photo Gallery Custom Classes**/
+
+.panel-body-gallery {
+ padding:7px;   
+}
 /*
  * Mobile panel
  */

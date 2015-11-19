@@ -32,7 +32,7 @@ if (isset($vars['class'])) {
         <div class=" clearfix">
 		<?php
 			
-			
+			//echo elgg_get_context();
 			echo elgg_view('page/layouts/elements/header', $vars);
             // This basically moves the "page menu" element to the tabs on pages where the side bar links are now tabs :)
 			if((elgg_get_context() == 'friends' || elgg_get_context() == 'messages' || elgg_get_context() == 'settings')){
