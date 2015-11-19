@@ -166,11 +166,18 @@ function wet4_theme_pagesetup() {
             
             //user menu
             
+            $countTitle = $count;
+            
+            //display 9+ instead of huge numbers in notif badge
+            if($count >= 10){
+                $count = '9+';
+            }
+            
 			$params = array(
 				"name" => "Colleagues",
 				"href" => "friends/" . $user->username,
 				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i><span class="hidden-xs">'. elgg_echo("friends") . "</span><span class='notif-badge'>" . $count . "</span>",
-				"title" => elgg_echo('userMenu:colleagues') . ' - ' . $count . ' ' . elgg_echo('friend_request') .'(s)',
+				"title" => elgg_echo('userMenu:colleagues') . ' - ' . $countTitle . ' ' . elgg_echo('friend_request') .'(s)',
                 "class" => '',
                 'item_class' => '',
 				'priority' => '1'
@@ -545,6 +552,7 @@ function my_owner_block_handler($hook, $type, $menu, $params){
                 case 'photos':
                     $item->setText(elgg_echo('gprofile:photos'));
                     $item->setHref('#' . strtolower(elgg_echo('gprofile:photoCatch')));
+                    $item->addItemClass('removeMe');
                     $item->setPriority('10');
                     break;
                 case 'photo_albums':
@@ -624,7 +632,7 @@ function my_owner_block_handler($hook, $type, $menu, $params){
                     break;
                 case 'photos':
                     $item->setText(elgg_echo('gprofile:photos'));
-
+                    $item->addItemClass('removeMe');
                     $item->setPriority('10');
                     break;
                 case 'photo_albums':
