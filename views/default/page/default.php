@@ -31,7 +31,7 @@ $jsLocation = $site_url . "mod/wet4/views/default/js/wet-boew.js";
 
 $messages = elgg_view('page/elements/messages', array('object' => $vars['sysmessages']));
 
-$header = elgg_view('page/elements/header', $vars);
+
 $lang = elgg_view('page/elements/chng-lang', $vars);
 $navbar = elgg_view('page/elements/navbar', $vars);
 $content = elgg_view('page/elements/body', $vars);

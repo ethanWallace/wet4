@@ -135,7 +135,7 @@ function wet4_theme_pagesetup() {
     $params = array(
 				"name" => "Colleagues",
 				"href" => "friends/" . $user->username,
-				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i>' . elgg_echo("friends"),
+				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i><span class="hidden-xs">' . elgg_echo("friends") . '</span>',
 				"title" => elgg_echo('friends'),
                 "class" => '',
                 'item_class' => '',
@@ -169,7 +169,7 @@ function wet4_theme_pagesetup() {
 			$params = array(
 				"name" => "Colleagues",
 				"href" => "friends/" . $user->username,
-				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i>'. elgg_echo("friends") . "<span class='notif-badge'>" . $count . "</span>",
+				"text" => '<i class="fa fa-users mrgn-rght-sm mrgn-tp-sm fa-lg"></i><span class="hidden-xs">'. elgg_echo("friends") . "</span><span class='notif-badge'>" . $count . "</span>",
 				"title" => elgg_echo('userMenu:colleagues') . ' - ' . $count . ' ' . elgg_echo('friend_request') .'(s)',
                 "class" => '',
                 'item_class' => '',

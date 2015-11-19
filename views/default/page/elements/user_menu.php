@@ -60,7 +60,7 @@ if(elgg_is_admin_logged_in()){
     elgg_register_menu_item('user_menu', array(
         'name' => 'Admin',
         'href' => $site_url . 'admin',
-        'text' => '<i class="fa fa-wrench fa-lg mrgn-rght-sm"></i>' . 'Admin',
+        'text' => '<i class="fa fa-wrench fa-lg mrgn-rght-sm"></i>' . '<span class="hidden-xs">Admin</span>',
         'title' => 'Admin',
         'item_class' => 'brdr-rght',
         'class' => '',
@@ -77,7 +77,7 @@ $initials = substr($breakup[0], 0, 1) . substr($breakup[1], 0, 1);
 //create user menu
 elgg_register_menu_item('user_menu', array(
     'name' => 'Profile',
-    'text' => '<span class="init-badge">' . strtoupper($initials) . '</span>' . $displayName . $dropdown,
+    'text' => '<span class="init-badge">' . strtoupper($initials) . '</span><span class="hidden-xs">' . $displayName . '</span>' . $dropdown,
     'title' => elgg_echo('userMenu:profile'),
     'item_class' => 'brdr-lft dropdown',
     'data-toggle' => 'dropdown',
@@ -104,7 +104,7 @@ if(elgg_is_active_plugin('messages')){
 elgg_register_menu_item('user_menu', array(
     'name' => 'messages',
     'href' => 'messages/inbox/' . $user,
-    'text' => '<i class="fa fa-envelope mrgn-rght-sm mrgn-tp-sm fa-lg"></i>' . elgg_echo('messages') . $msgbadge,
+    'text' => '<i class="fa fa-envelope mrgn-rght-sm mrgn-tp-sm fa-lg"></i><span class="hidden-xs">' . elgg_echo('messages') . '</span>' . $msgbadge,
     'title' => elgg_echo('userMenu:messages') . $title,
     'item_class' => 'brdr-lft ',
     'class' => '',

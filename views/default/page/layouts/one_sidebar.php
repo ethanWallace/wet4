@@ -26,8 +26,9 @@ if (isset($vars['class'])) {
         /*
         echo elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
         */
+
+    //main section
     ?>
-    
     <section class="col-md-8 mrgn-bttm-md" id="wb-cont">
         <div class=" clearfix">
 		<?php
@@ -66,6 +67,8 @@ if (isset($vars['class'])) {
 		?>
         </div>
 	</section>
+    
+    <?php //sidebar ?>
 	<section class="col-md-4">
 		<?php
 			
