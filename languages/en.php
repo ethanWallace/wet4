@@ -247,7 +247,7 @@ return array(
  * Friends
  */
 
-	'friends' => "Friends",
+	'friends' => "My Colleagues", //Friends
 	'friends:yours' => "Your friends",
 	'friends:owned' => "%s's friends",
 	'friend:add' => "Add friend",
