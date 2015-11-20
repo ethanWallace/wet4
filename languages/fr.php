@@ -31,6 +31,8 @@ return array(
     'gprofile:ideas' => "Idées",
     'gprofile:more' => "Plus",
     
+    'gprofile:create' => "Create Group",
+    
 /**
  * Sites
  */
