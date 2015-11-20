@@ -78,7 +78,7 @@ if($checkPage == 'group_profile' && $type == 'GPmod'){
     if ($header !== null) {
         $header = elgg_format_element('div', ['class' => 'panel-heading'], $header);
     }
-    $body = elgg_format_element('div', ['class' => 'panel-body-gallery clearfix'], $body);
+    $body = elgg_format_element('div', ['class' => 'panel-body-gallery  clearfix'], $body);
     if ($footer) {
         $footer = elgg_format_element('div', ['class' => 'panel-footer text-right'], $footer);
     }

@@ -24,13 +24,13 @@ $owner_link = elgg_view('output/url', array(
 $author_text = elgg_echo('byline', array($owner_link));
 $date = elgg_view_friendly_time($image->time_created);
 
-$owner_icon = elgg_view_entity_icon($photo->getOwnerEntity(), 'tiny');
+$owner_icon = elgg_view_entity_icon($photo->getOwnerEntity(), 'medium');
 
 $metadata = elgg_view_menu('entity', array(
 	'entity' => $vars['entity'],
 	'handler' => 'photos',
 	'sort_by' => 'priority',
-	'class' => 'elgg-menu-hz',
+	'class' => 'list-inline',
 ));
 
 $subtitle = "$author_text $date";
@@ -68,8 +68,8 @@ echo '</div>';
 if ($photo->description) {
 	echo elgg_view('output/longtext', array(
 		'value' => $photo->description,
-		'class' => 'mbl',
+		'class' => 'mbl mrgn-tp-md mrgn-bttm-md',
 	));
 }
-
+echo '<h2 class="panel-title mrgn-lft-sm mrgn-bttm-md mrgn-tp-lg">Comments</h2>';
 echo elgg_view_comments($photo);

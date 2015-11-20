@@ -29,7 +29,7 @@ $body = elgg_view('output/url', array(
 	'href' => $image->getURL(),
 	'encode_text' => false,
 	'is_trusted' => true,
-    'class' => 'test',
+    'class' => 'test ',
 ));
 
 echo elgg_view_module('tidypics-image-wet4', $header, $body);
