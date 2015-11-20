@@ -54,7 +54,7 @@ if(!$photoContext){
    $item_classes = ['pull-left  elgg-item clearfix '];
 }else{
  //if the boolean is true (is photo context) add col class :)
-    $item_classes = ['pull-left  elgg-item clearfix col-sm-3 hght-inhrt'];
+    $item_classes = ['  elgg-item clearfix col-xs-6 col-sm-3  '];
         $list_classes = ['clearfix wb-eqht'];
 }
 

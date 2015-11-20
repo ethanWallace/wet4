@@ -15,6 +15,7 @@ $img = elgg_view_entity_icon($image, 'large', array(
 	'href' => $image->getIconURL('master'),
 	//'img_class' => 'tidypics-photo',
 	//'link_class' => 'tidypics-lightbox',
+    
 ));
 
 $owner_link = elgg_view('output/url', array(

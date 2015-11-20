@@ -36,7 +36,7 @@ $class = '';
 if (isset($vars['img_class'])) {
 	$class = $vars['img_class'];
 }
-$class = " $class center-block";
+$class = " $class center-block img-responsive";
 
 $img_src = $entity->getIconURL($vars['size']);
 $img_src = elgg_format_url($img_src);

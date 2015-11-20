@@ -65,7 +65,7 @@ if($checkPage == 'group_profile' && $type == 'GPmod'){
 } else if ($checkPage =='gallery'){
     // check to see if the page is a photo gallery to style the photo stuff :)
     
-        $attrs['class'][] = 'panel panel-custom ';
+        $attrs['class'][] = 'panel panel-custom hght-inhrt ';
     if ($type) {
         $attrs['class'][] = "elgg-module-$type";
     }
@@ -80,10 +80,10 @@ if($checkPage == 'group_profile' && $type == 'GPmod'){
     }
     $body = elgg_format_element('div', ['class' => 'panel-body-gallery  clearfix'], $body);
     if ($footer) {
-        $footer = elgg_format_element('div', ['class' => 'panel-footer text-right'], $footer);
+        $footer = elgg_format_element('div', ['class' => 'panel-body-gallery'], $footer);
     }
 
-    $contents =  $body . $header ;
+    $contents =  $body  .$footer ;
     if ($show_inner) {
         $contents = elgg_format_element('div', ['class' => 'elgg-inner'], $contents);
     }
