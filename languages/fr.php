@@ -7,8 +7,8 @@ return array(
     
     'userMenu:profile' => "Mon profil",
     'userMenu:account' => "Paramètres",
-    'userMenu:messages' => "My Messages",
-    'userMenu:colleagues' => "My Colleagues",
+    'userMenu:messages' => "Mes messages",
+    'userMenu:colleagues' => "Mes collègues",
     
   /**
  * Group Profile
@@ -230,7 +230,7 @@ return array(
  * Friends
  */
 
-	'friends' => "Contacts",
+	'friends' => "Mes collègues",//Contacts
 	'friends:yours' => "Vos contacts",
 	'friends:owned' => "Les contacts de %s",
 	'friend:add' => "Ajouter un contact",
