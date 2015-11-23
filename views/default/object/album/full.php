@@ -17,7 +17,7 @@ $metadata = elgg_view_menu('entity', array(
 	'entity' => $album,
 	'handler' => 'photos',
 	'sort_by' => 'priority',
-	'class' => 'elgg-menu-hz',
+	'class' => 'list-inline',
 ));
 
 $owner_link = elgg_view('output/url', array(
@@ -45,7 +45,7 @@ $body = '';
 if ($album->description) {
 	$body = elgg_view('output/longtext', array(
 		'value' => $album->description,
-		'class' => 'mbm',
+		'class' => 'mbm mrgn-bttm-lg',
 	));
 }
 

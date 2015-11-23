@@ -26,7 +26,9 @@ $header = elgg_view('output/url', array(
 
 $container = $album->getContainerEntity();
 if ($container) {
-        $footer = '<div class="elgg-subtext">' . elgg_echo('album:created_by') . elgg_view('output/url', array(
+    
+    
+        $footer = '<div class="elgg-subtext brdr-tp">' . elgg_echo('album:created_by') . elgg_view('output/url', array(
                 'text' => $album->getContainerEntity()->name,
                 'href' => $album->getContainerEntity()->getURL(),
                 'is_trusted' => true,
