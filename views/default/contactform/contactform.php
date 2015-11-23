@@ -36,7 +36,8 @@ if(isset($_POST['submitted']))
    if($formproc->ProcessForm())
    {
 	system_messages(elgg_echo('contactform:thankyoumsg'));
-	forward(elgg_get_site_url());
+	forward("mod/contactform/index.php");
+   // forward(elgg_get_site_url());
    }
 }
 
@@ -53,7 +54,7 @@ if(isset($_POST['submitted']))
 <form id='contactus' action='<?php echo $formproc->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <!--<legend><?php //echo elgg_echo('contactform:menu'); ?></legend>-->
-
+<?php echo elgg_echo(get_language()); ?>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <input type='hidden' name='<?php echo $formproc->GetFormIDInputName(); ?>' value='<?php echo $formproc->GetFormIDInputValue(); ?>'/>
 <!--<input type='text'  class='spmhidip' name='<?php //echo $formproc->GetSpamTrapInputName(); ?>' />-->
@@ -72,9 +73,9 @@ if(isset($_POST['submitted']))
 </div>
     
 <div class='form-group'>
-    <label for='text' class="required"><span class="field-name"><?php echo elgg_echo('contactform:select'); ?></span><strong class="required">(required)</strong></label><br/>   
+    <label for='reason' class="required"><span class="field-name"><?php echo elgg_echo('contactform:select'); ?></span><strong class="required">(required)</strong></label><br/>   
   <?php  
-
+	global $SESSION;
 $dbname = $CONFIG->dbname;
 $host = $CONFIG->dbhost;
 
@@ -85,13 +86,16 @@ $db = new PDO("mysql:host=$host;dbname=$dbname", $CONFIG->dbuser, $CONFIG->dbpas
 
 $r = $db->query('SELECT * FROM contact_list');
 ?>
-<select class="form-control"  id="text" name="text" value='<?php echo $formproc->SafeDisplay('text'); ?>'>
+<select class="form-control"  id="reason" name="reason" value='<?php echo $formproc->SafeDisplay('reason'); ?>'>
     <option><?php echo elgg_echo('contactform:reason'); ?></option>
 <?php  
+
 foreach ($r as $row) {
-
-    echo '<option>'.$row['dept'].'</option>';
-
+    if ($SESSION['language'] == 'fr'){
+       echo '<option>'.$row['francais'].'</option>';
+}else{
+    echo '<option>'.$row['english'].'</option>';
+    }
 }
 echo '</select>';
 ?>
