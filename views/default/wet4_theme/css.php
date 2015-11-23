@@ -10767,6 +10767,10 @@ a.shr-opn, a.shr-opn:hover {
     .breadcrumb {
         margin-bottom: 5px;
     }
+
+    .elgg-form-group-operators-add fieldset {
+        width: 100%;   
+    }
     
     .userControlDisc {
         margin-bottom: 5px;
