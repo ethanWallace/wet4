@@ -15,12 +15,12 @@ if (elgg_is_logged_in()) {
 }
 
 require_once("./include/fgcontactform.php");
-require_once("./include/simple-captcha.php");
+//require_once("./include/simple-captcha.php");
 $email=elgg_get_plugin_setting('email','contactform');
-$list1=elgg_get_plugin_setting('list1','contactform');
+//$list1=elgg_get_plugin_setting('list1','contactform');
 $formproc = new FGContactForm();
-$sim_captcha = new FGSimpleCaptcha('scaptcha');
-$formproc->EnableCaptcha($sim_captcha);
+//$sim_captcha = new FGSimpleCaptcha('scaptcha');
+//$formproc->EnableCaptcha($sim_captcha);
 
 //1. Add your email address here.
 //You can add more than one receipients.
@@ -30,6 +30,7 @@ $formproc->EnableCaptcha($sim_captcha);
 // and put it here
 $formproc->SetFormRandomKey('CnRrspl1FyEylUj');
 
+$formproc->AddFileUploadField('photo','',5120);
 
 if(isset($_POST['submitted']))
 {
@@ -51,10 +52,9 @@ if(isset($_POST['submitted']))
 <?php echo elgg_echo("contactform:body"); ?>
 <!-- END FAQ PART-->
 
-<form id='contactus' action='<?php echo $formproc->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<form id='contactus' action='<?php echo $formproc->GetSelfScript(); ?>' enctype="multipart/form-data" method='post' accept-charset='UTF-8'>
 <fieldset >
 <!--<legend><?php //echo elgg_echo('contactform:menu'); ?></legend>-->
-<?php echo elgg_echo(get_language()); ?>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <input type='hidden' name='<?php echo $formproc->GetFormIDInputName(); ?>' value='<?php echo $formproc->GetFormIDInputValue(); ?>'/>
 <!--<input type='text'  class='spmhidip' name='<?php //echo $formproc->GetSpamTrapInputName(); ?>' />-->
@@ -68,7 +68,7 @@ if(isset($_POST['submitted']))
 <div class='form-group'>
     <label for='email' class="required"><span class="field-name"><?php echo elgg_echo('contactform:email'); ?></span><strong class="required">(required)</strong></label><br/>
     
-    <input type='text' name='email' class="form-control"  id='email' value='<?php if (elgg_is_logged_in()){ echo $sender_email;}else{echo $formproc->SafeDisplay('name');}  ?>'/><br/>
+    <input type='text' name='email' class="form-control"  id='email' value='<?php if (elgg_is_logged_in()){ echo $sender_email;}else{echo $formproc->SafeDisplay('email');}  ?>'/><br/>
     <span id='contactus_email_errorloc' class='error'></span>
 </div>
     
@@ -103,7 +103,14 @@ echo '</select>';
     
    
     <span id='contactus_text_errorloc' class='error'></span>
-</div>    
+</div>
+    
+    <div class='container'>
+    <label for='photo' >Upload your photo:</label><br/>
+    <input type="file" name='photo' id='photo' /><br/>
+    <span id='contactus_photo_errorloc' class='error'></span>
+</div>
+    
     <div class='form-group'>
         <label for='message' class="required"><span class="field-name"><?php echo elgg_echo('contactform:message');?></span><strong class="required">(required)</strong></label>
     <?php echo elgg_view('input/longtext', array('name' => 'message', 'class' => 'form-control', 'id'=>'message', 'value' => $formproc->SafeDisplay('message') ));?>
@@ -140,7 +147,7 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     frmvalidator.addValidation("email","req",<?php echo elgg_echo('contactform:validator:email'); ?>);
     frmvalidator.addValidation("email","email",<?php echo elgg_echo('contactform:validator:emailvalid'); ?>);
     frmvalidator.addValidation("message","maxlen=2048",<?php echo elgg_echo('contactform:validator:msgtoolong'); ?>);
-    frmvalidator.addValidation("scaptcha","req",<?php echo elgg_echo('contactform:validator:answer'); ?>);
+      frmvalidator.addValidation("photo","file_extn=jpg;jpeg;gif;png;bmp","Upload images only. Supported file types are: jpg,gif,png,bmp");
 
 // ]]>
 </script>
