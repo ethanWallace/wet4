@@ -138,8 +138,8 @@ if (!$owner) {
                 
             <h2 class="pull-left"><?php echo $group->name; ?></h2>
         </div>
-    
-		<div class="groups-profile-icon pull-left mrgn-lft-md">
+    <div class="row mrgn-lft-sm mrgn-rght-sm">
+		<div class="groups-profile-icon col-xs-2 col-md-2 mrgn-tp-sm">
 			<?php
 				// we don't force icons to be square so don't set width/height
 				echo elgg_view_entity_icon($group, 'medium', array(
@@ -153,7 +153,7 @@ if (!$owner) {
     
     
     
-		<div class="groups-info pull-left mrgn-lft-md">
+		<div class="groups-info col-xs-10 col-md-10 ">
             
             
 			<p class="mrgn-bttm-sm">
@@ -207,7 +207,7 @@ if (!$owner) {
             <div class="groups-stats mrgn-tp-0 mrgn-bttm-sm"></div>
            
 		</div>
-    
+    </div>
 
 
 </div>

@@ -68,10 +68,10 @@ HTML;
     
 }else{
     
-    $body = "<div class=\"mrgn-tp-sm col-sm-10\">$body</div>";
+    $body = "<div class=\"mrgn-tp-sm col-xs-10\">$body</div>";
 
 if ($image) {
-	$image = "<div class=\"mrgn-tp-sm col-sm-2\">$image</div>";
+	$image = "<div class=\"mrgn-tp-sm col-xs-2\">$image</div>";
 }
 
 if ($alt_image) {
