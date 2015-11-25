@@ -10590,7 +10590,7 @@ a.shr-opn, a.shr-opn:hover {
 
 .user-menu{
     min-width: 400px;
-    min-height: 200px;
+
    
     /*position: relative;*/
 }
